@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yang.test.mapper.PrintIncomeMapper">
+
+    <resultMap id="BaseResultMap" type="com.yang.test.po.PrintIncome">
+        <id column="ID" property="id" />
+        <result column="Date"  property="date" />
+        <result column="Money" property="money" />
+        <result column="Remark"  property="remark" />
+    </resultMap>
+    <!--返回所有用户信息-->
+    <select id="selectAllRecords"  resultMap="BaseResultMap">
+        select * from printincome
+    </select>
+
+
+</mapper>
