@@ -13,5 +13,33 @@
         select * from printincome
     </select>
 
+    <!--根据id更改用户信息-->
+   <update id="updateRecordByID" parameterType="com.yang.test.po.PrintIncome">
+       update printincome
+       <set >
+           <if test="date != null" >
+               Date = #{date,jdbcType=VARCHAR},
+           </if>
+           <if test="money != null" >
+               Money = #{money,jdbcType=DOUBLE},
+           </if>
+           <if test="remark != null" >
+               Remark = #{remark,jdbcType=VARCHAR},
+           </if>
+       </set>
+       where ID = #{id,jdbcType=VARCHAR}
+   </update>
+
+   <!--新增record-->
+    <insert id="addRecord" parameterType="com.yang.test.po.PrintIncome">
+    insert into
+    printincome(id,Date,Money,Remark)
+    values(#{id},#{date},#{money},#{remark})
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteRecordByID" parameterType="java.lang.String">
+       delete from printincome where id=#{id}
+    </delete>
 
 </mapper>

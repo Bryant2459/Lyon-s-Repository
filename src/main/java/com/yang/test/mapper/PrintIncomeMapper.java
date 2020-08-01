@@ -19,5 +19,12 @@ public interface PrintIncomeMapper {
    // @Select("select * from printincome")
     List<PrintIncome> selectAllRecords();
 
+    //按照ID 修改记录
+    int updateRecordByID(PrintIncome printIncome);
 
+    //新增
+    int addRecord(PrintIncome printIncome);
+
+    //删除
+    int deleteRecordByID(String id);
 }
