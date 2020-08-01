@@ -14,5 +14,14 @@ public interface IPrintIncomeService {
     //查询所有
      public List<PrintIncome> findAll();
 
+     //修改
+    public Boolean updateRecordByID(PrintIncome printIncome);
+
+    //新增
+    public Boolean addRecord(PrintIncome printIncome);
+
+    //删除
+
+    public Boolean delleteRecord(String id);
 
 }
