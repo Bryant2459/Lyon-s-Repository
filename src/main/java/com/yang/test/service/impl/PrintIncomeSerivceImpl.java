@@ -40,7 +40,7 @@ public class PrintIncomeSerivceImpl implements IPrintIncomeService {
             updateResult=false;
             return updateResult;
         }
-        System.out.println("updateRecordByID 的结果："+impactNum);
+        System.out.println("updateRecordByID  --> ："+printIncome.getId()+" impact num:"+impactNum);
         return updateResult;
     }
 
@@ -52,7 +52,7 @@ public class PrintIncomeSerivceImpl implements IPrintIncomeService {
             addresult=false;
             return addresult;
         }
-        System.out.println("add record 的结果："+impactNum);
+        System.out.println("add record --> "+printIncome.getId()+" impact num："+impactNum);
         return addresult;
     }
 
@@ -64,7 +64,7 @@ public class PrintIncomeSerivceImpl implements IPrintIncomeService {
             delResult=false;
             return delResult;
         }
-        System.out.println("del record id = "+id+"的结果："+impactNum);
+        System.out.println("del record id --> "+id+" 的结果："+impactNum);
         return delResult;
     }
 
