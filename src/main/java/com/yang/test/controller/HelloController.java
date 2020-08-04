@@ -1,12 +1,13 @@
 package com.yang.test.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.yang.test.common.Response;
 import com.yang.test.constants.Constants;
 import com.yang.test.po.PrintIncome;
 import com.yang.test.service.impl.PrintIncomeSerivceImpl;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,8 @@ import java.util.UUID;
 
 @RestController
 public class HelloController {
+     Logger logger= LoggerFactory.getLogger(HelloController.class);
+
     // 获取.yml 文件中值
     @Value("${name}")
     private String name;
@@ -49,12 +52,13 @@ public class HelloController {
         response.setData(null);
         return response;
     }
-       System.out.println("查出来的结果数量："+listRecord.size());
+      // System.out.println("查出来的结果数量："+listRecord.size());
         response.setStatus(Constants.SELECT_SUCCESS_CODE);
         response.setMessage(Constants.SELECT_SUCCESS_MESSAGE);
         response.setErroCode(Constants.SELECT_SUCCESS_CODE);
         response.setData(listRecord);
         //String ResStr= JSON.toJSONString(response);
+        logger.info("查出来的结果数量："+listRecord.size());
         return response;
     }
 
@@ -84,6 +88,7 @@ public class HelloController {
             response.setMessage(Constants.UPDATE_FAILED_MESSAGE);
             response.setErroCode(Constants.UPDATE_FAILED_CODE);
             response.setStatus(Constants.FAILED_CODE);
+
             return  response;
         }
         response.setData(null);
