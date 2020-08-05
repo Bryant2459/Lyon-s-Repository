@@ -2,6 +2,7 @@ package com.yang.test.controller;
 
 import com.yang.test.common.Response;
 import com.yang.test.constants.Constants;
+import com.yang.test.po.PrintIncome;
 import com.yang.test.po.User;
 import com.yang.test.service.IUserService;
 import org.apache.commons.collections4.CollectionUtils;
@@ -53,18 +54,17 @@ public class UserController {
     }
    //登录
    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public Response login(User  user){
+    public Response login(User  user) throws Exception {
        User loginUser=new User();
        Response response=new Response();
        List<User> allUser= userService.findAllUsers();
-       if(null ==user){
+       if(null == user){
            response.setStatus(Constants.FAILED_CODE);
            response.setErroCode(Constants.LOGIN_FAILED_CODE);
            response.setMessage(Constants.LOGIN_FAILED_MESSAGE_NO_INFO_FROM_FRONT);
            response.setData(null);
            return response;
        }
-
        if(StringUtils.isEmpty(user.getUserName())){
            response.setStatus(Constants.FAILED_CODE);
            response.setErroCode(Constants.LOGIN_FAILED_CODE);
@@ -79,15 +79,18 @@ public class UserController {
            response.setData(null);
            return response;
        }
-
        loginUser.setUserName(user.getUserName());
        loginUser.setUserPassword(user.getUserPassword());
+
+
        User userResult = userService.login(loginUser);
+
        if(null ==userResult){
            response.setStatus(Constants.FAILED_CODE);
            response.setErroCode(Constants.LOGIN_FAILED_CODE);
            response.setMessage(Constants.LOGIN_FAILED_MESSAGE_NAME_PASSWORD_NULL);
            response.setData(null);
+           return response;
        }
        response.setStatus(Constants.SUCCESS_CODE);
        response.setErroCode(Constants.LOGIN_SUCCESS_CODE);
@@ -142,8 +145,17 @@ public class UserController {
         if(StringUtils.isNotBlank(user.getRealName()) && StringUtils.isNotEmpty(user.getRealName()) ){
             userBack.setRealName(user.getRealName());
         }
-
-
+        List<User> allUser= userService.findAllUsers();
+        for (User tempUser:allUser) {
+           if(StringUtils.equals(user.getUserName(),tempUser.getUserName())){
+               response.setData(null);
+               response.setMessage(Constants.REGISTER_FAILED_MESSAGE_USERNAME_REPEAT);
+               logger.info("当前已经占用的用户名："+user.getUserName());
+               response.setErroCode(Constants.REGISTER_FAILED_CODE);
+               response.setStatus(Constants.FAILED_CODE);
+               return response;
+           }
+        }
         Boolean registerResult = userService.register(userBack);
 
         if(!registerResult){
@@ -158,5 +170,42 @@ public class UserController {
         response.setErroCode(Constants.REGISTER_SUCCESS_CODE);
         response.setStatus(Constants.REGISTER_SUCCESS_CODE);
         return response;
+    }
+
+    //删除
+    @RequestMapping(value = "/deleteUser",method = RequestMethod.POST)
+    public Response deleteRecord(User  user){
+        Response response=new Response();
+        Boolean deleteResult=false;
+        Boolean confirm=false;
+        if(null == user){
+            response.setErroCode(Constants.DELETE_FAILED_CODE);
+            response.setMessage(Constants.DELETE_FAILED_MESSAGE_NO_DATA);
+            response.setStatus(Constants.FAILED_CODE);
+            response.setData(null);
+            return response;
+        }else{
+           if(StringUtils.isEmpty(user.getId())||StringUtils.isBlank(user.getId())){
+           response.setErroCode(Constants.DELETE_FAILED_CODE);
+           response.setMessage(Constants.DELETE_FAILED_MESSAGE_NO_COULD_DELETE_ID);
+           response.setStatus(Constants.FAILED_CODE);
+           response.setData(null);
+           return response;
+           }else{
+              deleteResult = userService.deleteUser(user.getId());
+               if(!deleteResult){
+                   response.setErroCode(Constants.DELETE_FAILED_CODE);
+                   response.setMessage(Constants.DELETE_FAILED_MESSAGE);
+                   response.setStatus(Constants.FAILED_CODE);
+                   response.setData(null);
+                   return response;
+               }
+               response.setErroCode(Constants.DELETE_SUCCESS_CODE);
+               response.setMessage(Constants.DELETE_SUCCESS_MESSAGE);
+               response.setStatus(Constants.SUCCESS_CODE);
+               response.setData(null);
+               return response;
+           }
+        }
     }
 }
