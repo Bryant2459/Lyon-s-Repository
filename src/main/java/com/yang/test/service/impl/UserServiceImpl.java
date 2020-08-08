@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.List;
 
 /**
@@ -38,11 +40,10 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User login(User user) {
-
-        User loginUser = userMapper.login(user);
-
-        System.out.println("当前请求登录的用户为："+user.getId());
+    public User login(User user)  {
+        User loginUser =new User();
+        loginUser = userMapper.login(user);
+        System.out.println  ("当前请求登录的用户为："+loginUser.getId());
 
         return loginUser;
     }
@@ -57,6 +58,21 @@ public class UserServiceImpl implements IUserService {
             return  booleanResult;
         }
         System.out.println("当前注册用户为："+user.getId()+";注册结果："+booleanResult);
+        return booleanResult;
+    }
+
+    @Override
+    public Boolean deleteUser(String id) {
+        Boolean booleanResult= true;
+
+        int deleteResult = userMapper.deleteUser(id);
+        if(deleteResult<=0){
+            booleanResult=false;
+            System.out.println("删除用户信息失败："+id);
+            return booleanResult;
+        }
+
+        System.out.println("删除用户信息成功："+id);
         return booleanResult;
     }
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yang.test.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.yang.test.po.User">
+        <id column="id" property="id" />
+        <result column="username"  property="userName" />
+        <result column="userpassword" property="userPassword" />
+        <result column="gender"  property="gender" />
+        <result column="phone"  property="phone" />
+        <result column="address"  property="address" />
+        <result column="realname"  property="realName" />
+        <result column="identitycard"  property="identityCard" />
+        <result column="registerdate"  property="registerDate" />
+    </resultMap>
+    <!--返回所有用户信息-->
+    <select id="findAllUsers"  resultMap="BaseResultMap">
+        select * from user
+    </select>
+
+    <select id="login" resultType="com.yang.test.po.User">
+    select * from user where username=#{userName} and userpassword=#{userPassword}
+    </select>
+    <!--新增user   register-->
+    <insert id="register" parameterType="com.yang.test.po.User">
+    insert into
+    user (id,username,userpassword,gender,phone,address,realname,identitycard,registerdate)
+    values(#{id},#{userName},#{userPassword},#{gender},#{phone},#{address},#{realName},#{identityCard},#{registerDate})
+    </insert>
+    <!--删除-->
+        <delete id="deleteUser" parameterType="java.lang.String">
+           delete from user where id=#{id}
+        </delete>
+
+
+    <!--根据id更改用户信息
+    <update id="updateRecordByID" parameterType="com.yang.test.po.PrintIncome">
+        update printincome
+        <set >
+            <if test="date != null" >
+                Date = #{date,jdbcType=VARCHAR},
+            </if>
+            <if test="money != null" >
+                Money = #{money,jdbcType=DOUBLE},
+            </if>
+            <if test="remark != null" >
+                Remark = #{remark,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
+-->
+
+
+
+
+</mapper>
