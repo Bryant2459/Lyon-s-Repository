@@ -31,9 +31,10 @@ public class UserServiceImpl implements IUserService {
         List<User> allUsers = userMapper.findAllUsers();
 
         if(CollectionUtils.isEmpty(allUsers)){
-            System.out.println("查回来，没有记录");
+            logger.info("查回来，没有记录");
         }
-        System.out.println("selectAll 的结果："+allUsers.size());
+
+        logger.info("selectAll 的结果："+allUsers.size());
         return allUsers;
 
 
@@ -43,21 +44,23 @@ public class UserServiceImpl implements IUserService {
     public User login(User user)  {
         User loginUser =new User();
         loginUser = userMapper.login(user);
-        System.out.println  ("当前请求登录的用户为："+loginUser.getId());
-
-        return loginUser;
+        logger.info("当前请求登录的用户为："+user.getUserName());
+        if(null !=loginUser){
+            return loginUser;
+        }
+         return  loginUser;
     }
 
     @Override
     public Boolean register(User user) {
         Boolean booleanResult= true;
         int registerResult = userMapper.register(user);
-        if(registerResult<=0){
-            booleanResult=false;
-            System.out.println("当前注册用户为："+user.getId()+";注册结果："+booleanResult);
-            return  booleanResult;
+        if(registerResult<=0) {
+            booleanResult = false;
+            logger.info("当前注册用户为：" + user.getId() + ";注册结果：" + booleanResult);
+            return booleanResult;
         }
-        System.out.println("当前注册用户为："+user.getId()+";注册结果："+booleanResult);
+        logger.info("当前注册用户为："+user.getId()+";注册结果："+booleanResult);
         return booleanResult;
     }
 
@@ -68,11 +71,10 @@ public class UserServiceImpl implements IUserService {
         int deleteResult = userMapper.deleteUser(id);
         if(deleteResult<=0){
             booleanResult=false;
-            System.out.println("删除用户信息失败："+id);
+            logger.info("删除用户信息失败："+id);
             return booleanResult;
         }
-
-        System.out.println("删除用户信息成功："+id);
+        logger.info("删除用户信息失败："+id);
         return booleanResult;
     }
 }
