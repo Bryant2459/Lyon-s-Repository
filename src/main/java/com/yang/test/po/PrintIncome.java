@@ -1,6 +1,6 @@
 package com.yang.test.po;
 
-public class PrintIncome {
+public class PrintIncome implements Comparable<PrintIncome> {
 
     private String id;
 
@@ -40,5 +40,10 @@ public class PrintIncome {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    @Override
+    public int compareTo(PrintIncome o) {
+        return this.getDate().compareTo(o.getDate());
     }
 }
