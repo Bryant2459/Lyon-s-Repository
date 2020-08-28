@@ -10,12 +10,12 @@
     </resultMap>
     <!--返回所有用户信息-->
     <select id="selectAllRecords"  resultMap="BaseResultMap">
-        select * from printincome
+        select * from print_income_record
     </select>
 
     <!--根据id更改用户信息-->
    <update id="updateRecordByID" parameterType="com.yang.test.po.PrintIncome">
-       update printincome
+       update print_income_record
        <set >
            <if test="date != null" >
                Date = #{date,jdbcType=VARCHAR},
@@ -33,13 +33,13 @@
    <!--新增record-->
     <insert id="addRecord" parameterType="com.yang.test.po.PrintIncome">
     insert into
-    printincome(id,Date,Money,Remark)
+    print_income_record(id,Date,Money,Remark)
     values(#{id},#{date},#{money},#{remark})
     </insert>
 
     <!--删除-->
     <delete id="deleteRecordByID" parameterType="java.lang.String">
-       delete from printincome where id=#{id}
+       delete from print_income_record where id=#{id}
     </delete>
 
 </mapper>
