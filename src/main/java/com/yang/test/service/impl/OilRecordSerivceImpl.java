@@ -56,7 +56,7 @@ public class OilRecordSerivceImpl implements IOilRecordService {
                         return 0;
                     }
                 });
-        System.out.println("selectAll Oil Record 的结果：" + recordList.size());
+        System.out.println("SelectAll Oil Record 的结果：" + recordList.size());
         return recordList;
     }
 
@@ -69,7 +69,7 @@ public class OilRecordSerivceImpl implements IOilRecordService {
             updateResult = false;
             return updateResult;
         }
-        System.out.println("update Oil RecordByID  --> ：" + oilRecord.getId() + " impact num:" + impactNum);
+        System.out.println("Update Oil RecordByID  --> ：" + oilRecord.getId() + ": impact num:" + impactNum);
         return updateResult;
     }
 
@@ -81,7 +81,7 @@ public class OilRecordSerivceImpl implements IOilRecordService {
             addresult = false;
             return addresult;
         }
-        System.out.println("add Oil record --> " + oilRecord.getId() + " impact num：" + impactNum);
+        System.out.println("Add Oil Record --> " + oilRecord.getId() + " : impact num：" + impactNum);
         return addresult;
     }
 
@@ -93,7 +93,7 @@ public class OilRecordSerivceImpl implements IOilRecordService {
             delResult = false;
             return delResult;
         }
-        System.out.println("del Oil record id --> " + id + " 的结果：" + impactNum);
+        System.out.println("Del Oil Record id --> " + id + ": 的结果：" + impactNum);
         return delResult;
     }
 

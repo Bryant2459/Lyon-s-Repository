@@ -3,6 +3,7 @@ package com.yang.test.controller;
 import com.yang.test.common.Response;
 import com.yang.test.constants.Constants;
 import com.yang.test.po.OilRecord;
+import com.yang.test.po.PrintIncome;
 import com.yang.test.service.impl.OilRecordSerivceImpl;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -12,7 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 
 @RestController
@@ -41,37 +47,80 @@ public class OilController {
         response.setErroCode(Constants.SELECT_SUCCESS_CODE);
         response.setData(listRecord);
         //String ResStr= JSON.toJSONString(response);
-        logger.info("查出来 Oil record 的结果数量："+listRecord.size());
+        logger.info("查出来 Oil Record 的结果数量："+listRecord.size());
         return response;
     }
 
-    /*//修改数据
+   //修改数据
     @RequestMapping(value = "/updateRecordById",method = RequestMethod.POST)
     public Response updatePerson(OilRecord oilRecord){
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         OilRecord record=new OilRecord();
         Response response=new Response();
-        if(StringUtils.isNotBlank(oilRecord.getId()) && StringUtils.isNotEmpty(oilRecord.getId()) ){
+        if(StringUtils.isNotBlank(oilRecord.getId()) ){
             record.setId(oilRecord.getId());
         }
-        if(StringUtils.isNotBlank(printIncome.getDate()) && StringUtils.isNotEmpty(printIncome.getDate()) ){
-            record.setDate(printIncome.getDate());
+        if(StringUtils.isNotBlank(oilRecord.getAddOilDate())){
+            record.setAddOilDate(oilRecord.getAddOilDate());
+        }else{
+            record.setAddOilDate(df.format(new Date()));
         }
-        if(null != printIncome.getMoney()) {
-            record.setMoney(printIncome.getMoney());
+        if(null != oilRecord.getOilVolume()) {
+            record.setOilVolume(oilRecord.getOilVolume());
+        }else{
+            record.setOilVolume(new Double(0.0));
         }
-
-        if(StringUtils.isNotBlank(printIncome.getRemark()) && StringUtils.isNotEmpty(printIncome.getRemark()) ){
-            record.setRemark(printIncome.getRemark());
+        if(StringUtils.isNotBlank(oilRecord.getDashboardMileage())  ){
+            record.setDashboardMileage(oilRecord.getDashboardMileage());
+        }else{
+            record.setDashboardMileage("");
+        }
+        if(null != oilRecord.getCost()) {
+            record.setCost(oilRecord.getCost());
+        }else{
+            record.setCost(null);
+        }
+        if(null != oilRecord.getRealCost()) {
+            record.setRealCost(oilRecord.getRealCost());
+        }else{
+            record.setRealCost(null);
+        }
+        if(null != oilRecord.getOilUnitPrice()) {
+            record.setOilUnitPrice(oilRecord.getOilUnitPrice());
+        }else{
+            record.setOilUnitPrice(null);
+        }
+        if(null != oilRecord.getRealOilUnitPrice()) {
+            record.setRealOilUnitPrice(oilRecord.getRealOilUnitPrice());
+        }else{
+            record.setRealOilUnitPrice(null);
+        }
+        if(StringUtils.isNotBlank(oilRecord.getRemark()) ){
+            record.setRemark(oilRecord.getRemark());
         }else{
             record.setRemark("");
         }
-        Boolean updateResult = printIncomeService.updateRecordByID(record);
+        if(StringUtils.isNotBlank(oilRecord.getRecordFirstDate())  ){
+            record.setRecordFirstDate(oilRecord.getRecordFirstDate());
+        }
+        if(StringUtils.isNotBlank(oilRecord.getRecordLastUpdateDate())  ){
+
+            System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
+            record.setRecordLastUpdateDate(df.format(new Date()));
+        }else{
+            record.setRecordLastUpdateDate(df.format(new Date()));
+        }
+        if(StringUtils.isNotBlank(oilRecord.getOperator())  ){
+            record.setOperator(oilRecord.getOperator());
+        }else{
+            record.setOperator(null);
+        }
+        Boolean updateResult = oilRecordSerivceImpl.updateOilRecordByID(record);
         if(!updateResult){
             response.setData(null);
             response.setMessage(Constants.UPDATE_FAILED_MESSAGE);
             response.setErroCode(Constants.UPDATE_FAILED_CODE);
             response.setStatus(Constants.FAILED_CODE);
-
             return  response;
         }
         response.setData(null);
@@ -80,29 +129,65 @@ public class OilController {
         response.setStatus(Constants.SUCCESS_CODE);
         return response;
     }
-*/
-   /* //新增
-    @RequestMapping(value = "/addRecord",method = RequestMethod.POST)
-    public Response addRecord(PrintIncome printIncome){
+
+   //新增
+    @RequestMapping(value = "/addOilRecord",method = RequestMethod.POST)
+    public Response addOilRecord(OilRecord oilRecord){
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         Response response=new Response();
-        PrintIncome addPrintIncome=new PrintIncome();
-        addPrintIncome.setId(UUID.randomUUID().toString());
-        if(StringUtils.isNotBlank(printIncome.getDate()) && StringUtils.isNotEmpty(printIncome.getDate()) ){
-            addPrintIncome.setDate(printIncome.getDate());
+        OilRecord record=new OilRecord();
+        record.setId(UUID.randomUUID().toString());
+        if(StringUtils.isNotBlank(oilRecord.getAddOilDate()) ){
+            record.setAddOilDate(oilRecord.getAddOilDate());
+        }else {
+            //System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
+            record.setAddOilDate(df.format(new Date()));
+        }
+        if(null != oilRecord.getOilVolume()) {
+            record.setOilVolume(oilRecord.getOilVolume());
         }else{
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-            System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
-            addPrintIncome.setDate(df.format(new Date()));
+            record.setOilVolume(new Double(0.0));
         }
-        if( null != printIncome.getMoney()){
-            addPrintIncome.setMoney(printIncome.getMoney());
+        if(StringUtils.isNotBlank(oilRecord.getDashboardMileage())  ){
+            record.setDashboardMileage(oilRecord.getDashboardMileage());
+        }
+        if(null != oilRecord.getCost()) {
+            record.setCost(oilRecord.getCost());
         }else{
-            addPrintIncome.setMoney(0.00);
+            record.setCost(new Double(0.0));
         }
-        if(StringUtils.isNotBlank(printIncome.getRemark()) && StringUtils.isNotEmpty(printIncome.getRemark()) ){
-            addPrintIncome.setRemark(printIncome.getRemark());
+        if(null != oilRecord.getRealCost()) {
+            record.setRealCost(oilRecord.getRealCost());
+        }else{
+            record.setRealCost(new Double(0.0));
         }
-         Boolean addResult = printIncomeService.addRecord(addPrintIncome);
+        if(null != oilRecord.getOilUnitPrice()) {
+            record.setOilUnitPrice(oilRecord.getOilUnitPrice());
+        }else{
+            record.setOilUnitPrice(new Double(0.0));
+        }
+        if(StringUtils.isNotBlank(oilRecord.getRemark()) ){
+            record.setRemark(oilRecord.getRemark());
+        }else{
+            record.setRemark("");
+        }
+       //新增数据，记录时间，之后不变
+        if(StringUtils.isBlank(oilRecord.getRecordFirstDate()) ){
+            record.setRecordFirstDate(df.format(new Date()));
+        }
+       //更新字段。
+        if(StringUtils.isBlank(oilRecord.getRecordLastUpdateDate()) ){
+            record.setRecordLastUpdateDate(df.format(new Date()));
+        }else{
+            record.setRecordLastUpdateDate(oilRecord.getRecordLastUpdateDate());
+        }
+
+        if(StringUtils.isNotBlank(oilRecord.getOperator())  ){
+            record.setOperator(oilRecord.getOperator());
+        }else{
+            record.setOperator("");
+        }
+         Boolean addResult = oilRecordSerivceImpl.addOilRecord(record);
 
         if(!addResult){
             response.setData(null);
@@ -116,7 +201,7 @@ public class OilController {
         response.setErroCode(Constants.ADD_SUCCESS_CODE);
         response.setStatus(Constants.SUCCESS_CODE);
         return response;
-    }*/
+    }
 
     //删除
     @RequestMapping(value = "/deleteOilRecordByID",method = RequestMethod.POST)
@@ -129,7 +214,7 @@ public class OilController {
             //确保传来的id 数据库中存在
             List<OilRecord> allOilRecord= oilRecordSerivceImpl.selectAllOilRecords();
             for (OilRecord tempOilRecord:allOilRecord) {
-                if(StringUtils.equals(tempOilRecord.getId(),tempOilRecord.getId())){
+                if(StringUtils.equals(tempOilRecord.getId(),oilRecord.getId())){
                     confirm=true;
                 }
             }

@@ -25,7 +25,7 @@
     <!--根据id更改用户信息-->
     <update id="updateOilRecordByID" parameterType="com.yang.test.po.OilRecord">
         update oil_record
-        <set >
+        <trim prefix="set" suffixOverrides=",">
             <if test="addOilDate != null" >           add_oil_date = #{addOilDate,jdbcType=VARCHAR},                     </if>
             <if test="oilVolume != null" >            oil_volume = #{oilVolume,jdbcType=DOUBLE},                         </if>
             <if test="dashboardMileage != null" >     dashboard_mileage = #{dashboardMileage,jdbcType=VARCHAR},          </if>
@@ -37,7 +37,7 @@
             <if test="recordFirstDate != null" >      record_first_date = #{recordFirstDate,jdbcType=VARCHAR},           </if>
             <if test="recordLastUpdateDate != null" > record_last_update_date = #{recordLastUpdateDate,jdbcType=DOUBLE}, </if>
             <if test="operator != null" >             operator = #{operator,jdbcType=DOUBLE},                            </if>
-        </set>
+        </trim>
         where id = #{id,jdbcType=VARCHAR}
     </update>
 
