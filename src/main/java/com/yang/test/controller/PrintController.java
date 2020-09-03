@@ -20,8 +20,9 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-public class HelloController {
-     Logger logger= LoggerFactory.getLogger(HelloController.class);
+@RequestMapping(value = "/print")
+public class PrintController {
+     Logger logger= LoggerFactory.getLogger(PrintController.class);
 
     // 获取.yml 文件中值
     @Value("${name}")
@@ -41,8 +42,8 @@ public class HelloController {
     }
 
     //查询所有
-    @RequestMapping("/all")
-    public  Response findAll(){
+    @RequestMapping("/findAllPrintRecords")
+    public  Response findAllPrintRecords(){
     List<PrintIncome> listRecord= printIncomeService.findAll();
         Response response=new Response();
     if(CollectionUtils.isEmpty(listRecord)){
@@ -63,7 +64,7 @@ public class HelloController {
     }
 
     //修改数据
-    @RequestMapping(value = "/updateRecordById",method = RequestMethod.POST)
+    @RequestMapping(value = "/updatePrintRecordById",method = RequestMethod.POST)
     public Response updatePerson(  PrintIncome printIncome){
         PrintIncome record=new PrintIncome();
         Response response=new Response();
@@ -99,7 +100,7 @@ public class HelloController {
     }
 
     //新增
-    @RequestMapping(value = "/addRecord",method = RequestMethod.POST)
+    @RequestMapping(value = "/addPrintRecord",method = RequestMethod.POST)
     public Response addRecord(PrintIncome printIncome){
         Response response=new Response();
         PrintIncome addPrintIncome=new PrintIncome();
@@ -136,7 +137,7 @@ public class HelloController {
     }
 
     //删除
-    @RequestMapping(value = "/deleteRecord",method = RequestMethod.POST)
+    @RequestMapping(value = "/deletePrintRecord",method = RequestMethod.POST)
     public Response deleteRecord(PrintIncome printIncome){
         Response response=new Response();
         Boolean deleteResult=false;
