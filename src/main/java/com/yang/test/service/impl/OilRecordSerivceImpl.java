@@ -1,8 +1,8 @@
 package com.yang.test.service.impl;
 
-import com.yang.test.mapper.PrintIncomeMapper;
-import com.yang.test.po.PrintIncome;
-import com.yang.test.service.IPrintIncomeService;
+import com.yang.test.mapper.OilRecordMapper;
+import com.yang.test.po.OilRecord;
+import com.yang.test.service.IOilRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -20,27 +20,26 @@ import java.util.List;
  * @Description:
  */
 @Service
-public class PrintIncomeSerivceImpl implements IPrintIncomeService {
+public class OilRecordSerivceImpl implements IOilRecordService {
 
     @Autowired(required = true)
-    private PrintIncomeMapper printIncomeMapper;
+    private OilRecordMapper oilRecordMapper;
 
     @Override
-    public List<PrintIncome> findAll() {
+    public List<OilRecord> selectAllOilRecords() {
 
-        List<PrintIncome> recordList = printIncomeMapper.selectAllRecords();
+        List<OilRecord> recordList = oilRecordMapper.selectAllOilRecords();
         if (CollectionUtils.isEmpty(recordList)) {
             System.out.println("查回来，没有记录");
         }
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Collections.sort(recordList,
-                new Comparator<PrintIncome>() {
-
+                new Comparator<OilRecord>() {
                     @Override
-                    public int compare(PrintIncome o1, PrintIncome o2) {
+                    public int compare(OilRecord o1, OilRecord o2) {
                         try {
-                            Date parse1 = formatter.parse(o1.getDate());
-                            Date parse2 = formatter.parse(o2.getDate());
+                            Date parse1 = formatter.parse(o1.getAddOilDate());
+                            Date parse2 = formatter.parse(o2.getAddOilDate());
                             if (parse1.getTime() < parse2.getTime()) {
                                 return 1;
                             } else if (parse1.getTime() > parse2.getTime()) {
@@ -57,49 +56,44 @@ public class PrintIncomeSerivceImpl implements IPrintIncomeService {
                         return 0;
                     }
                 });
-        System.out.println("selectAll 的结果：" + recordList.size());
-        Double sum = 0.0;
-        for (PrintIncome printIncome : recordList) {
-            sum = sum + printIncome.getMoney();
-        }
-        System.out.println("总收入：" + sum);
+        System.out.println("SelectAll Oil Record 的结果：" + recordList.size());
         return recordList;
     }
 
 
     @Override
-    public Boolean updateRecordByID(PrintIncome printIncome) {
+    public Boolean updateOilRecordByID(OilRecord oilRecord) {
         Boolean updateResult = true;
-        int impactNum = printIncomeMapper.updateRecordByID(printIncome);
+        int impactNum = oilRecordMapper.updateOilRecordByID(oilRecord);
         if (impactNum <= 0) {
             updateResult = false;
             return updateResult;
         }
-        System.out.println("updateRecordByID  --> ：" + printIncome.getId() + " impact num:" + impactNum);
+        System.out.println("Update Oil RecordByID  --> ：" + oilRecord.getId() + ": impact num:" + impactNum);
         return updateResult;
     }
 
     @Override
-    public Boolean addRecord(PrintIncome printIncome) {
+    public Boolean addOilRecord(OilRecord oilRecord) {
         Boolean addresult = true;
-        int impactNum = printIncomeMapper.addRecord(printIncome);
+        int impactNum = oilRecordMapper.addOilRecord(oilRecord);
         if (impactNum <= 0) {
             addresult = false;
             return addresult;
         }
-        System.out.println("add record --> " + printIncome.getId() + " impact num：" + impactNum);
+        System.out.println("Add Oil Record --> " + oilRecord.getId() + " : impact num：" + impactNum);
         return addresult;
     }
 
     @Override
-    public Boolean delleteRecord(String id) {
+    public Boolean deleteOilRecordByID(String id) {
         Boolean delResult = true;
-        int impactNum = printIncomeMapper.deleteRecordByID(id);
+        int impactNum = oilRecordMapper.deleteOilRecordByID(id);
         if (impactNum <= 0) {
             delResult = false;
             return delResult;
         }
-        System.out.println("del record id --> " + id + " 的结果：" + impactNum);
+        System.out.println("Del Oil Record id --> " + id + ": 的结果：" + impactNum);
         return delResult;
     }
 

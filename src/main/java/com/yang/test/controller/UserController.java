@@ -96,6 +96,7 @@ public class UserController {
        response.setErroCode(Constants.LOGIN_SUCCESS_CODE);
        response.setMessage(Constants.LOGIN_SUCCESS_MESSAGE);
        response.setData(null);
+       logger.info("登录成功，用户："+user.getUserName());
        return response;
    }
 
