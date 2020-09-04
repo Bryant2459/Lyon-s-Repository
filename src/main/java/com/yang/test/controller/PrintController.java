@@ -147,7 +147,7 @@ public class PrintController {
             //确保传来的id 数据库中存在
             List<PrintIncome> allRecord= printIncomeService.findAll();
             for (PrintIncome tempPrintIncome:allRecord) {
-                if(StringUtils.equals(tempPrintIncome.getId(),printIncome.getId())){
+                if(StringUtils.equals(tempPrintIncome.getId(),id)){
                     confirm=true;
                 }
             }
