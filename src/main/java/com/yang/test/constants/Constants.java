@@ -54,6 +54,31 @@ public class Constants {
     public static final String REGISTER_FAILED_MESSAGE_PASSWORD_NULL="注册失败-前台没有传过来需要注册的密码";
     public static final String REGISTER_FAILED_MESSAGE_USERNAME_REPEAT="注册失败-用户名已被占用";
 
+    public static final int LIFE_RECORD_SUPERMARKET=1;
+    public static final int LIFE_RECORD_SALARY=2;
+    public static final int LIFE_RECORD_ABOUT_CAR=3;
+    public static final int LIFE_RECORD_PRINT=4;
+    public static final int LIFE_RECORD_CALSS=5;
+    public static final int LIFE_RECORD_BACK_HOME=6;
+    public static final int LIFE_RECORD_OTHER=7;
+
+    public static final String LIFE_RECORD_SUPERMARKET_CH="超市";
+    public static final String LIFE_RECORD_SALARY_CH="工资";
+    public static final String LIFE_RECORD_ABOUT_CAR_CH="车辆";
+    public static final String LIFE_RECORD_PRINT_CH="打印";
+    public static final String LIFE_RECORD_CALSS_CH="上课";
+    public static final String LIFE_RECORD_BACK_HOME_CH="回家";
+    public static final String LIFE_RECORD_OTHER_CH="其他";
+
+    public static final String LIFE_RECORD_PERSON_LYON="1";
+    public static final String LIFE_RECORD_PERSON_YUYING="2";
+    public static final String LIFE_RECORD_ABOUT_OTHER="3";
+
+    public static final String LIFE_RECORD_PERSON_LYON_CH="李阳";
+    public static final String LIFE_RECORD_PERSON_YUYING_CH="党玉莹";
+    public static final String LIFE_RECORD_ABOUT_OTHER_CH="其他";
+
+
 
 
 
