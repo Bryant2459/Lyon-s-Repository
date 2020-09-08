@@ -74,7 +74,7 @@ public class UserServiceImpl implements IUserService {
             logger.info("删除用户信息失败："+id);
             return booleanResult;
         }
-        logger.info("删除用户信息失败："+id);
+        logger.info("删除用户信息成功："+id);
         return booleanResult;
     }
 }

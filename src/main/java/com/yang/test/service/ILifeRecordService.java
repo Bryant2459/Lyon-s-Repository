@@ -12,8 +12,11 @@ import java.util.List;
  */
 public interface ILifeRecordService {
 
-    //查询所有
+    //查询所有 selectLifeRecordByCategoryID
      public List<LifeRecord> selectAllLifeRecord();
+
+    //根据分类id
+    public List<LifeRecord> selectLifeRecordByCategoryID(Integer categoryId);
 
      //修改
     public Boolean updateLifeRecordByID(LifeRecord lifeRecord);

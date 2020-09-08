@@ -25,4 +25,7 @@ public interface LifeRecordMapper {
 
     //删除
     int deleteLifeRecordByID(String id);
+
+    //selectLifeRecordByCategoryID
+    List<LifeRecord> selectLifeRecordByCategoryID(Integer categoryId);
 }

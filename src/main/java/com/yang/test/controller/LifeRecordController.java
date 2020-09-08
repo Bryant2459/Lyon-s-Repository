@@ -11,9 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -42,6 +40,28 @@ public class LifeRecordController {
         return response;
     }
       // System.out.println("查出来的结果数量："+listRecord.size());
+        response.setStatus(Constants.SELECT_SUCCESS_CODE);
+        response.setMessage(Constants.SELECT_SUCCESS_MESSAGE);
+        response.setErroCode(Constants.SELECT_SUCCESS_CODE);
+        response.setData(listRecord);
+        //String ResStr= JSON.toJSONString(response);
+        logger.info("查出来 life Record 的结果数量："+listRecord.size());
+        return response;
+    }
+
+    //查询所有
+    @RequestMapping(value = "/selectLifeRecordByCategoryID",method = RequestMethod.POST)
+    public  Response selectLifeRecordByCategoryID(Integer categoryId ){
+        List<LifeRecord> listRecord= lifeRecordService.selectLifeRecordByCategoryID(categoryId);
+        Response response=new Response();
+        if(CollectionUtils.isEmpty(listRecord)){
+            response.setStatus(Constants.FAILED_CODE);
+            response.setMessage(Constants.SELECT_REMARK_MESSAGE);
+            response.setErroCode(Constants.SELECT_FAILED_CODE);
+            response.setData(null);
+            return response;
+        }
+        // System.out.println("查出来的结果数量："+listRecord.size());
         response.setStatus(Constants.SELECT_SUCCESS_CODE);
         response.setMessage(Constants.SELECT_SUCCESS_MESSAGE);
         response.setErroCode(Constants.SELECT_SUCCESS_CODE);

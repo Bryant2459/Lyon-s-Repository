@@ -61,6 +61,38 @@ public class LifeRecordSerivceImpl implements ILifeRecordService {
         return recordList;
     }
 
+    @Override
+    public List<LifeRecord> selectLifeRecordByCategoryID(Integer categoryId) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        List<LifeRecord> recordList = lifeRecordMapper.selectLifeRecordByCategoryID(categoryId);
+        if (CollectionUtils.isEmpty(recordList)) {
+            System.out.println("查回来，没有记录");
+        }
+        Collections.sort(recordList,
+                new Comparator<LifeRecord>() {
+                    @Override
+                    public int compare(LifeRecord o1, LifeRecord o2) {
+                        try {
+                            Date parse1 = formatter.parse(o1.getProduceRecordDate());
+                            Date parse2 = formatter.parse(o2.getProduceRecordDate());
+                            if (parse1.getTime() < parse2.getTime()) {
+                                return 1;
+                            } else if (parse1.getTime() > parse2.getTime()) {
+                                return -1;
+                            } else {
+                                return 0;
+                            }
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                        return 0;
+                    }
+                });
+        System.out.println("selectLifeRecordByCategoryID："+categoryId+ " 的结果：" + recordList.size());
+
+        return recordList;
+    }
+
 
     @Override
     public Boolean updateLifeRecordByID(LifeRecord lifeRecord) {

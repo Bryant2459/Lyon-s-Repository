@@ -14,10 +14,16 @@
         <result column="remark"                  property="remark" />
         <result column="operator"                property="operator" />
     </resultMap>
-    <!--返回所有用户信息-->
+    <!--返回所有用户信息 SELECT * FROM income_expenditure_record where category_id =3;-->
     <select id="selectAllLifeRecord"  resultMap="BaseResultMap">
         select * from record.income_expenditure_record
     </select>
+
+    <select id="selectLifeRecordByCategoryID"  resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select * from record.income_expenditure_record where category_id =#{categoryId}
+    </select>
+
+
 
     <!--根据id更改用户信息-->
    <update id="updateLifeRecordByID" parameterType="com.yang.test.po.LifeRecord">
