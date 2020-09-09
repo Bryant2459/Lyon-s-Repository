@@ -28,6 +28,7 @@ public class LifeRecordSerivceImpl implements ILifeRecordService {
 
     @Autowired(required = true)
     private LifeRecordMapper lifeRecordMapper;
+
     //LifeRecord lifeRecord
     @Override
     public List<LifeRecord> selectAllLifeRecord() {
@@ -88,7 +89,7 @@ public class LifeRecordSerivceImpl implements ILifeRecordService {
                         return 0;
                     }
                 });
-        System.out.println("selectLifeRecordByCategoryID："+categoryId+ " 的结果：" + recordList.size());
+        System.out.println("selectLifeRecordByCategoryID：" + categoryId + " 的结果：" + recordList.size());
 
         return recordList;
     }

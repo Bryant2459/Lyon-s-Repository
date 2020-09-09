@@ -3,13 +3,14 @@
 <mapper namespace="com.yang.test.mapper.MockMapper">
 
     <resultMap id="BaseResultMap" type="com.yang.test.po.MockData">
-        <id column="id" property="id" />
-        <result column="message"  property="message" />
-        <result column="remark"   property="remark" />
+        <id column="id" property="id"/>
+        <result column="message" property="message"/>
+        <result column="remark" property="remark"/>
 
     </resultMap>
     <!--返回所有用户信息-->
-    <select id="findAllMockDatas"  resultMap="BaseResultMap">
-        select * from record.mock_data
+    <select id="findAllMockDatas" resultMap="BaseResultMap">
+        select *
+        from record.mock_data
     </select>
 </mapper>

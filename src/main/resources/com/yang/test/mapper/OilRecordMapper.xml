@@ -4,53 +4,58 @@
 
     <resultMap id="BaseResultMap" type="com.yang.test.po.OilRecord">
         <!--数据库                                  类-->
-        <id column="id"                           property="id" />
-        <result column="add_oil_date"             property="addOilDate" />
-        <result column="oil_volume"               property="oilVolume" />
-        <result column="dashboard_mileage"        property="dashboardMileage" />
-        <result column="cost"                     property="cost" />
-        <result column="real_cost"                property="realCost" />
-        <result column="oil_unit_price"           property="oilUnitPrice" />
-        <result column="real_oil_unit_price"      property="realOilUnitPrice" />
-        <result column="remark"                   property="remark" />
-        <result column="record_first_date"        property="recordFirstDate" />
-        <result column="record_last_update_date"  property="recordLastUpdateDate" />
-        <result column="operator"                 property="operator" />
+        <id column="id" property="id"/>
+        <result column="add_oil_date" property="addOilDate"/>
+        <result column="oil_volume" property="oilVolume"/>
+        <result column="dashboard_mileage" property="dashboardMileage"/>
+        <result column="cost" property="cost"/>
+        <result column="real_cost" property="realCost"/>
+        <result column="oil_unit_price" property="oilUnitPrice"/>
+        <result column="real_oil_unit_price" property="realOilUnitPrice"/>
+        <result column="remark" property="remark"/>
+        <result column="record_first_date" property="recordFirstDate"/>
+        <result column="record_last_update_date" property="recordLastUpdateDate"/>
+        <result column="operator" property="operator"/>
     </resultMap>
     <!--返回所有用户信息-->
-    <select id="selectAllOilRecords"  resultMap="BaseResultMap">
-        select * from oil_record
+    <select id="selectAllOilRecords" resultMap="BaseResultMap">
+        select *
+        from oil_record
     </select>
 
     <!--根据id更改用户信息-->
     <update id="updateOilRecordByID" parameterType="com.yang.test.po.OilRecord">
         update oil_record
         <trim prefix="set" suffixOverrides=",">
-            <if test="addOilDate != null" >           add_oil_date = #{addOilDate,jdbcType=VARCHAR},                     </if>
-            <if test="oilVolume != null" >            oil_volume = #{oilVolume,jdbcType=DOUBLE},                         </if>
-            <if test="dashboardMileage != null" >     dashboard_mileage = #{dashboardMileage,jdbcType=VARCHAR},          </if>
-            <if test="cost != null" >                 cost = #{cost,jdbcType=DOUBLE},                                    </if>
-            <if test="realCost != null" >             real_cost = #{realCost,jdbcType=DOUBLE},                           </if>
-            <if test="oilUnitPrice != null" >         oil_unit_price = #{oilUnitPrice,jdbcType=DOUBLE},                  </if>
-            <if test="realOilUnitPrice != null" >     real_oil_unit_price = #{realOilUnitPrice,jdbcType=DOUBLE},         </if>
-            <if test="remark != null" >               remark = #{remark,jdbcType=VARCHAR},                               </if>
-            <if test="recordFirstDate != null" >      record_first_date = #{recordFirstDate,jdbcType=VARCHAR},           </if>
-            <if test="recordLastUpdateDate != null" > record_last_update_date = #{recordLastUpdateDate,jdbcType=DOUBLE}, </if>
-            <if test="operator != null" >             operator = #{operator,jdbcType=DOUBLE},                            </if>
+            <if test="addOilDate != null">add_oil_date = #{addOilDate,jdbcType=VARCHAR},</if>
+            <if test="oilVolume != null">oil_volume = #{oilVolume,jdbcType=DOUBLE},</if>
+            <if test="dashboardMileage != null">dashboard_mileage = #{dashboardMileage,jdbcType=VARCHAR},</if>
+            <if test="cost != null">cost = #{cost,jdbcType=DOUBLE},</if>
+            <if test="realCost != null">real_cost = #{realCost,jdbcType=DOUBLE},</if>
+            <if test="oilUnitPrice != null">oil_unit_price = #{oilUnitPrice,jdbcType=DOUBLE},</if>
+            <if test="realOilUnitPrice != null">real_oil_unit_price = #{realOilUnitPrice,jdbcType=DOUBLE},</if>
+            <if test="remark != null">remark = #{remark,jdbcType=VARCHAR},</if>
+            <if test="recordFirstDate != null">record_first_date = #{recordFirstDate,jdbcType=VARCHAR},</if>
+            <if test="recordLastUpdateDate != null">record_last_update_date = #{recordLastUpdateDate,jdbcType=DOUBLE},
+            </if>
+            <if test="operator != null">operator = #{operator,jdbcType=DOUBLE},</if>
         </trim>
         where id = #{id,jdbcType=VARCHAR}
     </update>
 
     <!--新增record-->
     <insert id="addOilRecord" parameterType="com.yang.test.po.OilRecord">
-    insert into
-    oil_record(id,add_oil_date,oil_volume,dashboard_mileage,cost,real_cost,oil_unit_price,real_oil_unit_price,remark,record_first_date,record_last_update_date,operator)
-    values(#{id},#{addOilDate},#{oilVolume},#{dashboardMileage},#{cost},#{realCost},#{oilUnitPrice},#{realOilUnitPrice},#{remark},#{recordFirstDate},#{recordLastUpdateDate},#{operator})
+        insert into oil_record(id, add_oil_date, oil_volume, dashboard_mileage, cost, real_cost, oil_unit_price,
+                               real_oil_unit_price, remark, record_first_date, record_last_update_date, operator)
+        values (#{id}, #{addOilDate}, #{oilVolume}, #{dashboardMileage}, #{cost}, #{realCost}, #{oilUnitPrice},
+                #{realOilUnitPrice}, #{remark}, #{recordFirstDate}, #{recordLastUpdateDate}, #{operator})
     </insert>
 
     <!--删除-->
     <delete id="deleteOilRecordByID" parameterType="java.lang.String">
-       delete from oil_record where id=#{id}
+        delete
+        from oil_record
+        where id = #{id}
     </delete>
 
 </mapper>

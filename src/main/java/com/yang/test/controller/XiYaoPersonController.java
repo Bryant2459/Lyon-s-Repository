@@ -1,9 +1,12 @@
 package com.yang.test.controller;
 
 import com.yang.test.common.Response;
+import com.yang.test.constants.AcitonConstants;
 import com.yang.test.constants.Constants;
+import com.yang.test.po.ActionRecord;
 import com.yang.test.po.PrintIncome;
 import com.yang.test.po.XiYaoPerson;
+import com.yang.test.service.IActionRecordService;
 import com.yang.test.service.IXiYaoPersonService;
 import com.yang.test.service.impl.PrintIncomeSerivceImpl;
 import org.apache.commons.collections4.CollectionUtils;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -24,106 +28,132 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/xiyao")
 public class XiYaoPersonController {
-     Logger logger= LoggerFactory.getLogger(XiYaoPersonController.class);
+    Logger logger = LoggerFactory.getLogger(XiYaoPersonController.class);
 
 
-    @Autowired(required=true)
+    @Autowired(required = true)
     private IXiYaoPersonService xiYaoPersonService;
+
+    @Autowired(required = true)
+    private IActionRecordService actionRecordService;
 
     //查询所有
     @RequestMapping("/selectAllXiYaoPerson")
-    public  Response selectAllXiYaoPerson(){
-    List<XiYaoPerson> listRecord= xiYaoPersonService.selectAllXiYaoPerson();
-        Response response=new Response();
-    if(CollectionUtils.isEmpty(listRecord)){
-        response.setStatus(Constants.FAILED_CODE);
-        response.setMessage(Constants.SELECT_REMARK_MESSAGE);
-        response.setErroCode(Constants.SELECT_FAILED_CODE);
-        response.setData(null);
-        return response;
-    }
-      // System.out.println("查出来的结果数量："+listRecord.size());
+    public Response selectAllXiYaoPerson(HttpSession session) {
+        String realname = (String) session.getAttribute("realName");
+        //设置日期格式   df.format(new Date())
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        List<XiYaoPerson> listRecord = xiYaoPersonService.selectAllXiYaoPerson();
+        Response response = new Response();
+        if (CollectionUtils.isEmpty(listRecord)) {
+            response.setStatus(Constants.FAILED_CODE);
+            response.setMessage(Constants.SELECT_REMARK_MESSAGE);
+            response.setErroCode(Constants.SELECT_FAILED_CODE);
+            response.setData(null);
+            return response;
+        }
+
+        ActionRecord actionRecord = new ActionRecord();
+        actionRecord.setId(UUID.randomUUID().toString());
+        actionRecord.setAction(AcitonConstants.ACTION_SELECT);
+        actionRecord.setActionTime(df.format(new Date()));
+        actionRecord.setOperator(realname);
+        actionRecord.setService(AcitonConstants.SERVICE_XIYAO_PERSON_RECORD);
+        actionRecord.setRecordId(null);
+        actionRecordService.addActionRecord(actionRecord);
+
+        // System.out.println("查出来的结果数量："+listRecord.size());
         response.setStatus(Constants.SELECT_SUCCESS_CODE);
         response.setMessage(Constants.SELECT_SUCCESS_MESSAGE);
         response.setErroCode(Constants.SELECT_SUCCESS_CODE);
         response.setData(listRecord);
         //String ResStr= JSON.toJSONString(response);
-        logger.info("查出来xiyao person的结果数量："+listRecord.size());
+        logger.info("查出来xiyao person的结果数量：" + listRecord.size());
         return response;
     }
 
     //修改数据
-    @RequestMapping(value = "/updateXiYaoPersonByID",method = RequestMethod.POST)
-    public Response updateXiYaoPersonByID(  XiYaoPerson xiYaoPerson){
+    @RequestMapping(value = "/updateXiYaoPersonByID", method = RequestMethod.POST)
+    public Response updateXiYaoPersonByID(XiYaoPerson xiYaoPerson, HttpSession session) {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        XiYaoPerson record=new XiYaoPerson();
-        Response response=new Response();
-        if(StringUtils.isNotBlank(xiYaoPerson.getId())  ){
+        String realname = (String) session.getAttribute("realName");
+        XiYaoPerson record = new XiYaoPerson();
+        Response response = new Response();
+        if (StringUtils.isNotBlank(xiYaoPerson.getId())) {
             record.setId(xiYaoPerson.getId());
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getAddress()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getAddress())) {
             record.setAddress(xiYaoPerson.getAddress());
-        }else{
+        } else {
             record.setAddress("");
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getFamilyMember()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getFamilyMember())) {
             record.setFamilyMember(xiYaoPerson.getFamilyMember());
-        }else{
+        } else {
             record.setFamilyMember("");
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getHeadHousHold()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getHeadHousHold())) {
             record.setHeadHousHold(xiYaoPerson.getHeadHousHold());
-        }else{
+        } else {
             record.setHeadHousHold("");
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getIdentityCard()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getIdentityCard())) {
             record.setIdentityCard(xiYaoPerson.getIdentityCard());
-        }else{
+        } else {
             record.setIdentityCard("");
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getPhone()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getPhone())) {
             record.setPhone(xiYaoPerson.getPhone());
-        }else{
+        } else {
             record.setPhone("");
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getRelation()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getRelation())) {
             record.setRelation(xiYaoPerson.getRelation());
-        }else{
+        } else {
             record.setRelation("");
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getRemark()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getRemark())) {
             record.setRemark(xiYaoPerson.getRemark());
-        }else{
+        } else {
             record.setRemark("");
         }
-        if(xiYaoPerson.getAge()>=0 ){
+        if (xiYaoPerson.getAge() >= 0) {
             record.setAge(xiYaoPerson.getAge());
-        }else{
+        } else {
             record.setAge(0);
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getFirstAddtime())  ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getFirstAddtime())) {
             record.setFirstAddtime(xiYaoPerson.getFirstAddtime());
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getLastUpdate())  ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getLastUpdate())) {
             System.out.println(df.format(new Date()));
             record.setLastUpdate(df.format(new Date()));
-        }else{
+        } else {
             record.setLastUpdate(df.format(new Date()));
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getOperator()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getOperator())) {
             record.setOperator(xiYaoPerson.getOperator());
-        }else{
+        } else {
             record.setOperator("");
         }
         Boolean updateResult = xiYaoPersonService.updateXiYaoPersonByID(record);
-        if(!updateResult){
+        if (!updateResult) {
             response.setData(null);
             response.setMessage(Constants.UPDATE_FAILED_MESSAGE);
             response.setErroCode(Constants.UPDATE_FAILED_CODE);
             response.setStatus(Constants.FAILED_CODE);
 
-            return  response;
+            return response;
         }
+        ActionRecord actionRecord = new ActionRecord();
+        actionRecord.setId(UUID.randomUUID().toString());
+        actionRecord.setAction(AcitonConstants.ACTION_UPDATE);
+        actionRecord.setActionTime(df.format(new Date()));
+        actionRecord.setOperator(realname);
+        actionRecord.setService(AcitonConstants.SERVICE_XIYAO_PERSON_RECORD);
+        actionRecord.setRecordId(record.getId());
+        actionRecordService.addActionRecord(actionRecord);
         response.setData(null);
         response.setMessage(Constants.UPDATE_SUCCESS_MESSAGE);
         response.setErroCode(Constants.UPDATE_SUCCESS_CODE);
@@ -132,80 +162,89 @@ public class XiYaoPersonController {
     }
 
     //新增
-    @RequestMapping(value = "/addXiYaoPerson",method = RequestMethod.POST)
-    public Response addXiYaoPerson(XiYaoPerson xiYaoPerson){
+    @RequestMapping(value = "/addXiYaoPerson", method = RequestMethod.POST)
+    public Response addXiYaoPerson(XiYaoPerson xiYaoPerson, HttpSession session) {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        String realname = (String) session.getAttribute("realName");
 
-        Response response=new Response();
-        XiYaoPerson addXiYaoPerson=new XiYaoPerson();
+        Response response = new Response();
+        XiYaoPerson addXiYaoPerson = new XiYaoPerson();
         addXiYaoPerson.setId(UUID.randomUUID().toString());
-        if(StringUtils.isNotBlank(xiYaoPerson.getId())  ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getId())) {
             addXiYaoPerson.setId(xiYaoPerson.getId());
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getAddress()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getAddress())) {
             addXiYaoPerson.setAddress(xiYaoPerson.getAddress());
-        }else{
+        } else {
             addXiYaoPerson.setAddress("");
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getFamilyMember()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getFamilyMember())) {
             addXiYaoPerson.setFamilyMember(xiYaoPerson.getFamilyMember());
-        }else{
+        } else {
             addXiYaoPerson.setFamilyMember("");
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getHeadHousHold()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getHeadHousHold())) {
             addXiYaoPerson.setHeadHousHold(xiYaoPerson.getHeadHousHold());
-        }else{
+        } else {
             addXiYaoPerson.setHeadHousHold("");
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getIdentityCard()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getIdentityCard())) {
             addXiYaoPerson.setIdentityCard(xiYaoPerson.getIdentityCard());
-        }else{
+        } else {
             addXiYaoPerson.setIdentityCard("");
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getPhone()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getPhone())) {
             addXiYaoPerson.setPhone(xiYaoPerson.getPhone());
-        }else{
+        } else {
             addXiYaoPerson.setPhone("");
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getRelation()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getRelation())) {
             addXiYaoPerson.setRelation(xiYaoPerson.getRelation());
-        }else{
+        } else {
             addXiYaoPerson.setRelation("");
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getRemark()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getRemark())) {
             addXiYaoPerson.setRemark(xiYaoPerson.getRemark());
-        }else{
+        } else {
             addXiYaoPerson.setRemark("");
         }
-        if(xiYaoPerson.getAge()>=0 ){
+        if (xiYaoPerson.getAge() >= 0) {
             addXiYaoPerson.setAge(xiYaoPerson.getAge());
-        }else{
+        } else {
             addXiYaoPerson.setAge(0);
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getFirstAddtime())  ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getFirstAddtime())) {
             addXiYaoPerson.setFirstAddtime(xiYaoPerson.getFirstAddtime());
-        }else{
+        } else {
             addXiYaoPerson.setFirstAddtime(df.format(new Date()));
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getLastUpdate())  ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getLastUpdate())) {
             addXiYaoPerson.setLastUpdate(df.format(new Date()));
-        }else{
+        } else {
             addXiYaoPerson.setLastUpdate(df.format(new Date()));
         }
-        if(StringUtils.isNotBlank(xiYaoPerson.getOperator()) ){
+        if (StringUtils.isNotBlank(xiYaoPerson.getOperator())) {
             addXiYaoPerson.setOperator(xiYaoPerson.getOperator());
-        }else{
+        } else {
             addXiYaoPerson.setOperator("");
         }
-         Boolean addResult = xiYaoPersonService.addXiYaoPerson(addXiYaoPerson);
+        Boolean addResult = xiYaoPersonService.addXiYaoPerson(addXiYaoPerson);
 
-        if(!addResult){
+        if (!addResult) {
             response.setData(null);
             response.setMessage(Constants.ADD_FAILED_MESSAGE);
             response.setErroCode(Constants.ADD_FAILED_CODE);
             response.setStatus(Constants.FAILED_CODE);
             return response;
         }
+        ActionRecord actionRecord = new ActionRecord();
+        actionRecord.setId(UUID.randomUUID().toString());
+        actionRecord.setAction(AcitonConstants.ACTION_ADD);
+        actionRecord.setActionTime(df.format(new Date()));
+        actionRecord.setOperator(realname);
+        actionRecord.setService(AcitonConstants.SERVICE_XIYAO_PERSON_RECORD);
+        actionRecord.setRecordId(addXiYaoPerson.getId());
+        actionRecordService.addActionRecord(actionRecord);
         response.setData(null);
         response.setMessage(Constants.ADD_SUCCESS_MESSAGE);
         response.setErroCode(Constants.ADD_SUCCESS_CODE);
@@ -214,23 +253,27 @@ public class XiYaoPersonController {
     }
 
     //删除
-    @RequestMapping(value = "/deleteXiYaoPersonByID",method = RequestMethod.POST)
-    public Response deleteXiYaoPersonByID(XiYaoPerson xiYaoPerson){
-        Response response=new Response();
-        Boolean deleteResult=false;
-        Boolean confirm=false;
-        String id=xiYaoPerson.getId();
-        if( StringUtils.isNotBlank(id)&&StringUtils.isNotEmpty(id)){
+    @RequestMapping(value = "/deleteXiYaoPersonByID", method = RequestMethod.POST)
+    public Response deleteXiYaoPersonByID(XiYaoPerson xiYaoPerson, HttpSession session) {
+        String realname = (String) session.getAttribute("realName");
+        //设置日期格式   df.format(new Date())
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        Response response = new Response();
+        Boolean deleteResult = false;
+        Boolean confirm = false;
+        String id = xiYaoPerson.getId();
+        if (StringUtils.isNotBlank(id) && StringUtils.isNotEmpty(id)) {
             //确保传来的id 数据库中存在
-            List<XiYaoPerson> allRecord= xiYaoPersonService.selectAllXiYaoPerson();
-            for (XiYaoPerson tempXiYaoPerson:allRecord) {
-                if(StringUtils.equals(tempXiYaoPerson.getId(),id)){
-                    confirm=true;
+            List<XiYaoPerson> allRecord = xiYaoPersonService.selectAllXiYaoPerson();
+            for (XiYaoPerson tempXiYaoPerson : allRecord) {
+                if (StringUtils.equals(tempXiYaoPerson.getId(), id)) {
+                    confirm = true;
                 }
             }
-            if(confirm){
+            if (confirm) {
                 deleteResult = xiYaoPersonService.deleteXiYaoPersonByID(id);
-            }else{
+            } else {
                 response.setData(null);
                 response.setMessage(Constants.DELETE_FAILED_MESSAGE_NO_COULD_DELETE_ID);
                 response.setErroCode(Constants.DELETE_FAILED_CODE);
@@ -238,7 +281,7 @@ public class XiYaoPersonController {
                 System.out.println(Constants.DELETE_FAILED_MESSAGE_NO_COULD_DELETE_ID);
                 return response;
             }
-        }else{
+        } else {
             response.setData(null);
             response.setMessage(Constants.DELETE_FAILED_MESSAGE_NO_ID_FORM_RECEPTION);
             response.setErroCode(Constants.DELETE_FAILED_CODE);
@@ -247,13 +290,21 @@ public class XiYaoPersonController {
             return response;
         }
 
-        if(deleteResult==false){
+        if (deleteResult == false) {
             response.setData(null);
             response.setMessage(Constants.DELETE_FAILED_MESSAGE);
             response.setErroCode(Constants.DELETE_FAILED_CODE);
             response.setStatus(Constants.FAILED_CODE);
             return response;
         }
+        ActionRecord actionRecord = new ActionRecord();
+        actionRecord.setId(UUID.randomUUID().toString());
+        actionRecord.setAction(AcitonConstants.ACTION_DELETE);
+        actionRecord.setActionTime(df.format(new Date()));
+        actionRecord.setOperator(realname);
+        actionRecord.setService(AcitonConstants.SERVICE_XIYAO_PERSON_RECORD);
+        actionRecord.setRecordId(id);
+        actionRecordService.addActionRecord(actionRecord);
         response.setData(null);
         response.setMessage(Constants.DELETE_SUCCESS_MESSAGE);
         response.setErroCode(Constants.DELETE_SUCCESS_CODE);

@@ -6,5 +6,5 @@ package com.yang.test.constants;
  * @Description:
  */
 public class MockConstans {
-    public static final String MOCK_OIL_ID="oil_mock_data";
+    public static final String MOCK_OIL_ID = "oil_mock_data";
 }

@@ -27,7 +27,8 @@ public class XiYaoPersonSerivceImpl implements IXiYaoPersonService {
 
     @Autowired(required = true)
     private XiYaoPersonMapper xiYaoPersonMapper;
-//XiYaoPerson xiYaoPerson
+
+    //XiYaoPerson xiYaoPerson
     @Override
     public List<XiYaoPerson> selectAllXiYaoPerson() {
 
