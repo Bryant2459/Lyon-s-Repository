@@ -10,11 +10,11 @@
         <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yang</groupId>
-    <artifactId>test</artifactId>
+    <artifactId>record</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <!--因为要放入外部的tomcat中，因此更改默认打包方式(jar)为war包-->
     <packaging>war</packaging>
-    <name>test</name>
+    <name>record</name>
     <description>First project for Spring Boot</description>
 
     <properties>
