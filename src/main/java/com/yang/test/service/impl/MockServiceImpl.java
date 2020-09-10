@@ -22,20 +22,20 @@ import java.util.List;
 @Service
 public class MockServiceImpl implements IMockService {
 
-    Logger logger= LoggerFactory.getLogger(MockServiceImpl.class);
+    Logger logger = LoggerFactory.getLogger(MockServiceImpl.class);
 
-    @Autowired(required=true)
+    @Autowired(required = true)
     private MockMapper mockMapper;
 
     @Override
     public List<MockData> findAllMockDatas() {
         List<MockData> allMockDatas = mockMapper.findAllMockDatas();
 
-        if(CollectionUtils.isEmpty(allMockDatas)){
+        if (CollectionUtils.isEmpty(allMockDatas)) {
             logger.info("查回来，没有记录");
         }
 
-        logger.info("selectAll 的结果："+allMockDatas.size());
+        logger.info("selectAll 的结果：" + allMockDatas.size());
         return allMockDatas;
 
 

@@ -21,60 +21,60 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements IUserService {
 
-    Logger logger= LoggerFactory.getLogger(UserServiceImpl.class);
+    Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
-    @Autowired(required=true)
+    @Autowired(required = true)
     private UserMapper userMapper;
 
     @Override
     public List<User> findAllUsers() {
         List<User> allUsers = userMapper.findAllUsers();
 
-        if(CollectionUtils.isEmpty(allUsers)){
+        if (CollectionUtils.isEmpty(allUsers)) {
             logger.info("查回来，没有记录");
         }
 
-        logger.info("selectAll 的结果："+allUsers.size());
+        logger.info("selectAll 的结果：" + allUsers.size());
         return allUsers;
 
 
     }
 
     @Override
-    public User login(User user)  {
-        User loginUser =new User();
+    public User login(User user) {
+        User loginUser = new User();
         loginUser = userMapper.login(user);
-        logger.info("当前请求登录的用户为："+user.getUserName());
-        if(null !=loginUser){
+        logger.info("当前请求登录的用户为：" + user.getUserName());
+        if (null != loginUser) {
             return loginUser;
         }
-         return  loginUser;
+        return loginUser;
     }
 
     @Override
     public Boolean register(User user) {
-        Boolean booleanResult= true;
+        Boolean booleanResult = true;
         int registerResult = userMapper.register(user);
-        if(registerResult<=0) {
+        if (registerResult <= 0) {
             booleanResult = false;
             logger.info("当前注册用户为：" + user.getId() + ";注册结果：" + booleanResult);
             return booleanResult;
         }
-        logger.info("当前注册用户为："+user.getId()+";注册结果："+booleanResult);
+        logger.info("当前注册用户为：" + user.getId() + ";注册结果：" + booleanResult);
         return booleanResult;
     }
 
     @Override
     public Boolean deleteUser(String id) {
-        Boolean booleanResult= true;
+        Boolean booleanResult = true;
 
         int deleteResult = userMapper.deleteUser(id);
-        if(deleteResult<=0){
-            booleanResult=false;
-            logger.info("删除用户信息失败："+id);
+        if (deleteResult <= 0) {
+            booleanResult = false;
+            logger.info("删除用户信息失败：" + id);
             return booleanResult;
         }
-        logger.info("删除用户信息失败："+id);
+        logger.info("删除用户信息成功：" + id);
         return booleanResult;
     }
 }

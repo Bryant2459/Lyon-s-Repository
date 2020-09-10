@@ -3,43 +3,45 @@
 <mapper namespace="com.yang.test.mapper.PrintIncomeMapper">
 
     <resultMap id="BaseResultMap" type="com.yang.test.po.PrintIncome">
-        <id column="ID" property="id" />
-        <result column="Date"  property="date" />
-        <result column="Money" property="money" />
-        <result column="Remark"  property="remark" />
+        <id column="ID" property="id"/>
+        <result column="Date" property="date"/>
+        <result column="Money" property="money"/>
+        <result column="Remark" property="remark"/>
     </resultMap>
     <!--返回所有用户信息-->
-    <select id="selectAllRecords"  resultMap="BaseResultMap">
-        select * from print_income_record
+    <select id="selectAllRecords" resultMap="BaseResultMap">
+        select *
+        from print_income_record
     </select>
 
     <!--根据id更改用户信息-->
-   <update id="updateRecordByID" parameterType="com.yang.test.po.PrintIncome">
-       update print_income_record
-       <set >
-           <if test="date != null" >
-               Date = #{date,jdbcType=VARCHAR},
-           </if>
-           <if test="money != null" >
-               Money = #{money,jdbcType=DOUBLE},
-           </if>
-           <if test="remark != null" >
-               Remark = #{remark,jdbcType=VARCHAR},
-           </if>
-       </set>
-       where ID = #{id,jdbcType=VARCHAR}
-   </update>
+    <update id="updateRecordByID" parameterType="com.yang.test.po.PrintIncome">
+        update print_income_record
+        <set>
+            <if test="date != null">
+                Date = #{date,jdbcType=VARCHAR},
+            </if>
+            <if test="money != null">
+                Money = #{money,jdbcType=DOUBLE},
+            </if>
+            <if test="remark != null">
+                Remark = #{remark,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
 
-   <!--新增record-->
+    <!--新增record-->
     <insert id="addRecord" parameterType="com.yang.test.po.PrintIncome">
-    insert into
-    print_income_record(id,Date,Money,Remark)
-    values(#{id},#{date},#{money},#{remark})
+        insert into print_income_record(id, Date, Money, Remark)
+        values (#{id}, #{date}, #{money}, #{remark})
     </insert>
 
     <!--删除-->
     <delete id="deleteRecordByID" parameterType="java.lang.String">
-       delete from print_income_record where id=#{id}
+        delete
+        from print_income_record
+        where id = #{id}
     </delete>
 
 </mapper>

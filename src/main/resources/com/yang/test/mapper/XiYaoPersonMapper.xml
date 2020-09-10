@@ -3,53 +3,58 @@
 <mapper namespace="com.yang.test.mapper.XiYaoPersonMapper">
 
     <resultMap id="BaseResultMap" type="com.yang.test.po.XiYaoPerson">
-        <id column="id"                  property="id" />
-        <result column="headhousehold"   property="headHousHold" />
-        <result column="familymember"    property="familyMember" />
-        <result column="relation"        property="relation" />
-        <result column="age"             property="age" />
-        <result column="identitycard"    property="identityCard" />
-        <result column="address"         property="address" />
-        <result column="phone"           property="phone" />
-        <result column="remark"          property="remark" />
-        <result column="firstaddtime"         property="firstAddtime" />
-        <result column="lastupdate"           property="lastUpdate" />
-        <result column="operator"          property="operator" />
+        <id column="id" property="id"/>
+        <result column="headhousehold" property="headHousHold"/>
+        <result column="familymember" property="familyMember"/>
+        <result column="relation" property="relation"/>
+        <result column="age" property="age"/>
+        <result column="identitycard" property="identityCard"/>
+        <result column="address" property="address"/>
+        <result column="phone" property="phone"/>
+        <result column="remark" property="remark"/>
+        <result column="firstaddtime" property="firstAddtime"/>
+        <result column="lastupdate" property="lastUpdate"/>
+        <result column="operator" property="operator"/>
     </resultMap>
     <!--返回所有用户信息-->
-    <select id="selectAllXiYaoPerson"  resultMap="BaseResultMap">
-        select * from record.xiyao_village_person ORDER BY xiyao_village_person.headhousehold
+    <select id="selectAllXiYaoPerson" resultMap="BaseResultMap">
+        select *
+        from record.xiyao_village_person
+        ORDER BY xiyao_village_person.headhousehold
     </select>
 
     <!--根据id更改用户信息-->
-   <update id="updateXiYaoPersonByID" parameterType="com.yang.test.po.PrintIncome">
-       update xiyao_village_person
-       <trim prefix="set" suffixOverrides=",">
-           <if test="headHousHold != null" >             headhousehold = #{headHousHold,jdbcType=VARCHAR},                     </if>
-           <if test="familyMember != null" >             familymember = #{familyMember,jdbcType=VARCHAR},                         </if>
-           <if test="relation != null" >                 relation = #{relation,jdbcType=VARCHAR},          </if>
-           <if test="age != null" >                      age = #{age,jdbcType=INTEGER},                                    </if>
-           <if test="identityCard != null" >             identitycard = #{identityCard,jdbcType=VARCHAR},                           </if>
-           <if test="address != null" >                  address = #{address,jdbcType=VARCHAR},                  </if>
-           <if test="phone != null" >                    phone = #{phone,jdbcType=VARCHAR},         </if>
-           <if test="remark != null" >                   remark = #{remark,jdbcType=VARCHAR},                               </if>
-           <if test="firstAddtime != null" >             firstaddtime = #{firstAddtime,jdbcType=VARCHAR},                  </if>
-           <if test="lastUpdate != null" >               lastupdate = #{lastUpdate,jdbcType=VARCHAR},         </if>
-           <if test="operator != null" >                 operator = #{operator,jdbcType=VARCHAR},                               </if>
-           </trim>
-       where id = #{id,jdbcType=VARCHAR}
-   </update>
+    <update id="updateXiYaoPersonByID" parameterType="com.yang.test.po.PrintIncome">
+        update xiyao_village_person
+        <trim prefix="set" suffixOverrides=",">
+            <if test="headHousHold != null">headhousehold = #{headHousHold,jdbcType=VARCHAR},</if>
+            <if test="familyMember != null">familymember = #{familyMember,jdbcType=VARCHAR},</if>
+            <if test="relation != null">relation = #{relation,jdbcType=VARCHAR},</if>
+            <if test="age != null">age = #{age,jdbcType=INTEGER},</if>
+            <if test="identityCard != null">identitycard = #{identityCard,jdbcType=VARCHAR},</if>
+            <if test="address != null">address = #{address,jdbcType=VARCHAR},</if>
+            <if test="phone != null">phone = #{phone,jdbcType=VARCHAR},</if>
+            <if test="remark != null">remark = #{remark,jdbcType=VARCHAR},</if>
+            <if test="firstAddtime != null">firstaddtime = #{firstAddtime,jdbcType=VARCHAR},</if>
+            <if test="lastUpdate != null">lastupdate = #{lastUpdate,jdbcType=VARCHAR},</if>
+            <if test="operator != null">operator = #{operator,jdbcType=VARCHAR},</if>
+        </trim>
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
 
-   <!--新增record-->
+    <!--新增record-->
     <insert id="addXiYaoPerson" parameterType="com.yang.test.po.PrintIncome">
-    insert into
-        xiyao_village_person(id,headhousehold,familymember,relation,age,identitycard,address,phone,remark,firstaddtime,lastupdate,operator)
-    values(#{id},#{headHousHold},#{familyMember},#{relation},#{age},#{identityCard},#{address},#{phone},#{remark},#{firstAddtime},#{lastUpdate},#{operator})
+        insert into xiyao_village_person(id, headhousehold, familymember, relation, age, identitycard, address, phone,
+                                         remark, firstaddtime, lastupdate, operator)
+        values (#{id}, #{headHousHold}, #{familyMember}, #{relation}, #{age}, #{identityCard}, #{address}, #{phone},
+                #{remark}, #{firstAddtime}, #{lastUpdate}, #{operator})
     </insert>
 
     <!--删除-->
     <delete id="deleteXiYaoPersonByID" parameterType="java.lang.String">
-       delete from xiyao_village_person where id=#{id}
+        delete
+        from xiyao_village_person
+        where id = #{id}
     </delete>
 
 </mapper>
