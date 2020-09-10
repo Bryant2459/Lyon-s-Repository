@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.List;
 
 /**
@@ -31,10 +29,10 @@ public class UserServiceImpl implements IUserService {
         List<User> allUsers = userMapper.findAllUsers();
 
         if (CollectionUtils.isEmpty(allUsers)) {
-            logger.info("查回来，没有记录");
+            logger.info("find All Users 查回来，没有记录");
         }
 
-        logger.info("selectAll 的结果：" + allUsers.size());
+        logger.info(" select All 的结果：" + allUsers.size());
         return allUsers;
 
 
@@ -44,10 +42,11 @@ public class UserServiceImpl implements IUserService {
     public User login(User user) {
         User loginUser = new User();
         loginUser = userMapper.login(user);
-        logger.info("当前请求登录的用户为：" + user.getUserName());
+
         if (null != loginUser) {
             return loginUser;
         }
+        logger.info("当前请求登录的用户为：" + user.getUserName());
         return loginUser;
     }
 

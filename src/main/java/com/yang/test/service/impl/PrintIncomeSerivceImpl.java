@@ -3,6 +3,8 @@ package com.yang.test.service.impl;
 import com.yang.test.mapper.PrintIncomeMapper;
 import com.yang.test.po.PrintIncome;
 import com.yang.test.service.IPrintIncomeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -22,6 +24,8 @@ import java.util.List;
 @Service
 public class PrintIncomeSerivceImpl implements IPrintIncomeService {
 
+    Logger logger= LoggerFactory.getLogger(PrintIncomeSerivceImpl.class);
+
     @Autowired(required = true)
     private PrintIncomeMapper printIncomeMapper;
 
@@ -30,7 +34,7 @@ public class PrintIncomeSerivceImpl implements IPrintIncomeService {
 
         List<PrintIncome> recordList = printIncomeMapper.selectAllRecords();
         if (CollectionUtils.isEmpty(recordList)) {
-            System.out.println("查回来，没有记录");
+            logger.info(" PrintIncomeSerivceImpl findAll 查回来，没有记录");
         }
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Collections.sort(recordList,
@@ -57,12 +61,12 @@ public class PrintIncomeSerivceImpl implements IPrintIncomeService {
                         return 0;
                     }
                 });
-        System.out.println("selectAll 的结果：" + recordList.size());
+        logger.info("selectAll 的结果：" + recordList.size());
         Double sum = 0.0;
         for (PrintIncome printIncome : recordList) {
             sum = sum + printIncome.getMoney();
         }
-        System.out.println("总收入：" + sum);
+        logger.info("printIncome 总收入:" + recordList.size());
         return recordList;
     }
 
@@ -75,7 +79,7 @@ public class PrintIncomeSerivceImpl implements IPrintIncomeService {
             updateResult = false;
             return updateResult;
         }
-        System.out.println("updateRecordByID  --> ：" + printIncome.getId() + " impact num:" + impactNum);
+        logger.info("updateRecordByID  --> ：" + printIncome.getId() + " impact num:" + impactNum);
         return updateResult;
     }
 
@@ -87,7 +91,7 @@ public class PrintIncomeSerivceImpl implements IPrintIncomeService {
             addresult = false;
             return addresult;
         }
-        System.out.println("add record --> " + printIncome.getId() + " impact num：" + impactNum);
+        logger.info("add record --> " + printIncome.getId() + " impact num：" + impactNum);
         return addresult;
     }
 
@@ -99,7 +103,7 @@ public class PrintIncomeSerivceImpl implements IPrintIncomeService {
             delResult = false;
             return delResult;
         }
-        System.out.println("del record id --> " + id + " 的结果：" + impactNum);
+        logger.info("del record id --> " + id + " 的结果：" + impactNum);
         return delResult;
     }
 
