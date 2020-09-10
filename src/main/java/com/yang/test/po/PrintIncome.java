@@ -1,5 +1,8 @@
 package com.yang.test.po;
 
+import lombok.Data;
+
+@Data
 public class PrintIncome implements Comparable<PrintIncome> {
 
     private String id;
@@ -9,38 +12,6 @@ public class PrintIncome implements Comparable<PrintIncome> {
     private Double money;
 
     private String remark;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public Double getMoney() {
-        return money;
-    }
-
-    public void setMoney(Double money) {
-        this.money = money;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
 
     @Override
     public int compareTo(PrintIncome o) {

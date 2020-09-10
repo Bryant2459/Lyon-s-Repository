@@ -11,6 +11,7 @@ import com.yang.test.service.IXiYaoPersonService;
 import com.yang.test.service.impl.PrintIncomeSerivceImpl;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,8 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/xiyao")
 public class XiYaoPersonController {
-    Logger logger = LoggerFactory.getLogger(XiYaoPersonController.class);
 
+    Logger logger= LoggerFactory.getLogger(UserController.class);
 
     @Autowired(required = true)
     private IXiYaoPersonService xiYaoPersonService;

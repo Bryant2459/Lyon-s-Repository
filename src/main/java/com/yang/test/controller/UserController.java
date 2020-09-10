@@ -31,7 +31,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
-    Logger logger = LoggerFactory.getLogger(UserController.class);
+    Logger logger= LoggerFactory.getLogger(UserController.class);
 
     @Autowired(required = true)
     private IUserService userService;

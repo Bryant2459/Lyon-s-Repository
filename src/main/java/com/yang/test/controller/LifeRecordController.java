@@ -12,6 +12,7 @@ import com.yang.test.service.IUserService;
 import com.yang.test.service.IXiYaoPersonService;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/lifeRecord")
 public class LifeRecordController {
-    Logger logger = LoggerFactory.getLogger(LifeRecordController.class);
+    Logger logger= LoggerFactory.getLogger(LifeRecordController.class);
 
     //LifeRecord lifeRecord
     @Autowired(required = true)

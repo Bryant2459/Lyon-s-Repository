@@ -10,6 +10,7 @@ import com.yang.test.service.IActionRecordService;
 import com.yang.test.service.impl.OilRecordSerivceImpl;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/oil")
 public class OilController {
-    Logger logger = LoggerFactory.getLogger(OilController.class);
+    Logger logger= LoggerFactory.getLogger(OilController.class);
 
     @Autowired(required = true)
     private OilRecordSerivceImpl oilRecordSerivceImpl;

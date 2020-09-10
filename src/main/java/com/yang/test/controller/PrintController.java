@@ -9,6 +9,7 @@ import com.yang.test.service.IActionRecordService;
 import com.yang.test.service.impl.PrintIncomeSerivceImpl;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,8 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/print")
 public class PrintController {
-    Logger logger = LoggerFactory.getLogger(PrintController.class);
 
+    Logger logger= LoggerFactory.getLogger(PrintController.class);
     // 获取.yml 文件中值
     @Value("${name}")
     private String name;
