@@ -212,7 +212,16 @@ public class LifeRecordController {
                 case Constants.LIFE_RECORD_BACK_HOME:
                     record.setCategory(Constants.LIFE_RECORD_BACK_HOME_CH);
                     break;
-                default:
+                case Constants.LIFE_RECORD_WATER:
+                    record.setCategory(Constants.LIFE_RECORD_WATER_CH);
+                    break;
+                case Constants.LIFE_RECORD_ELECTRICITY:
+                    record.setCategory(Constants.LIFE_RECORD_ELECTRICITY_CH);
+                    break;
+                case Constants.LIFE_RECORD_MEDICAL:
+                    record.setCategory(Constants.LIFE_RECORD_MEDICAL_CH);
+                    break;
+                    default:
                     record.setCategory(Constants.LIFE_RECORD_OTHER_CH);
                     break;
             }

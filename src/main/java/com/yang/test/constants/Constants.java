@@ -61,6 +61,9 @@ public class Constants {
     public static final int LIFE_RECORD_CALSS = 5;
     public static final int LIFE_RECORD_BACK_HOME = 6;
     public static final int LIFE_RECORD_OTHER = 7;
+    public static final int LIFE_RECORD_WATER = 8;
+    public static final int LIFE_RECORD_ELECTRICITY = 9;
+    public static final int LIFE_RECORD_MEDICAL = 10;
 
     public static final String LIFE_RECORD_SUPERMARKET_CH = "超市";
     public static final String LIFE_RECORD_SALARY_CH = "工资";
@@ -69,6 +72,9 @@ public class Constants {
     public static final String LIFE_RECORD_CALSS_CH = "上课";
     public static final String LIFE_RECORD_BACK_HOME_CH = "回家";
     public static final String LIFE_RECORD_OTHER_CH = "其他";
+    public static final String LIFE_RECORD_WATER_CH = "水费";
+    public static final String LIFE_RECORD_ELECTRICITY_CH = "电费";
+    public static final String LIFE_RECORD_MEDICAL_CH = "医药费";
 
     public static final String LIFE_RECORD_PERSON_LYON = "1";
     public static final String LIFE_RECORD_PERSON_YUYING = "2";
