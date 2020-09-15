@@ -110,7 +110,12 @@
             <version>7.3.0</version>
             <scope>compile</scope>
         </dependency>
-
+        <!--Redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-redis</artifactId>
+            <version>1.4.1.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
