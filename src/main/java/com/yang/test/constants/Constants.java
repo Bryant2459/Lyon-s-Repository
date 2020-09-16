@@ -5,7 +5,7 @@ package com.yang.test.constants;
  * @Date: 2020/7/30 19:09
  * @Description:
  */
-public class Constants {
+public interface Constants {
 
     /**
      * Descriptions:公用成功失败状态码

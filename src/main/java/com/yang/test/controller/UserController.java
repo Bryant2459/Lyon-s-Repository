@@ -1,13 +1,14 @@
 package com.yang.test.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.yang.test.common.Response;
 import com.yang.test.constants.AcitonConstants;
 import com.yang.test.constants.Constants;
 import com.yang.test.po.ActionRecord;
-import com.yang.test.po.PrintIncome;
 import com.yang.test.po.User;
 import com.yang.test.service.IActionRecordService;
 import com.yang.test.service.IUserService;
+import com.yang.test.utils.RedisUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -31,7 +32,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
-    Logger logger= LoggerFactory.getLogger(UserController.class);
+    Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired(required = true)
     private IUserService userService;
@@ -41,13 +42,42 @@ public class UserController {
     private IActionRecordService actionRecordService;
 
 
+    @Autowired
+    private RedisUtils redisUtils;
+
     //查询所有
     @RequestMapping("/findAllUser")
     public Response findAll(HttpSession session) {
         String realname = (String) session.getAttribute("realName");
         //设置日期格式   df.format(new Date())
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        List<User> listRecord = userService.findAllUsers();
+//        String redisID = "LifeAllRecord";
+//        List<LifeRecord> listRecord=null;
+//        if (redisUtils.get(redisID)==null) {
+//            listRecord = lifeRecordService.selectAllLifeRecord();
+//            logger.info("数据库中查的"+ JSON.toJSONString(listRecord));
+//            redisUtils.set(redisID,listRecord);
+//        }else {
+//            listRecord= (List<LifeRecord>) redisUtils.get(redisID);
+//            logger.info("redis中查的"+ JSON.toJSONString(listRecord));
+//        }
+
+        String UsersAllRecord = "UsersAllRecord";
+        List<User> listRecord = null;
+
+        if (redisUtils.get(UsersAllRecord) == null) {
+            listRecord = userService.findAllUsers();
+            logger.info("数据库中查的users" + JSON.toJSONString(listRecord));
+            redisUtils.set(UsersAllRecord, listRecord);
+            redisUtils.expire(UsersAllRecord,60);
+            logger.info("设置 redis users的过期时间:" + "60s");
+
+        }else{
+            listRecord= (List<User>) redisUtils.get(UsersAllRecord);
+            logger.info("redis中查的users"+ JSON.toJSONString(listRecord));
+
+        }
+
         Response response = new Response();
         if (CollectionUtils.isEmpty(listRecord)) {
             response.setStatus(Constants.FAILED_CODE);
