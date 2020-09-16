@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -44,7 +43,7 @@ public class UploadImgServiceImpl implements IUploadImgService {
 
 
     public Boolean uploadImage(@RequestParam("file") MultipartFile file) {
-       Boolean result=true;
+        Boolean result = true;
         if (!file.isEmpty()) {
             // 获取文件名称,包含后缀
             String fileName = file.getOriginalFilename();
@@ -52,9 +51,11 @@ public class UploadImgServiceImpl implements IUploadImgService {
             // 存放在这个路径下：该路径是该工程目录下的static文件下：(注：该文件可能需要自己创建)
             // 放在static下的原因是，存放的是静态文件资源，即通过浏览器输入本地服务器地址，加文件名时是可以访问到的+"static/img/"
             String path = null;
-             path = ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/img/";
+            //path = ClassUtils.getDefaultClassLoader().getResource("").getPath() + "static/img/";
+            path="D:/Program Files/ProjectManage/src/main/resources/static/img/";
             //path=ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/";
-            path=path.replaceAll("%20", " ");
+            path = path.replaceAll("%20", " ");
+
             try {
                 // 该方法是对文件写入的封装，在util类中，导入该包即可使用，后面会给出方法
                 FileUtils.fileupload(file.getBytes(), path, fileName);
@@ -81,7 +82,7 @@ public class UploadImgServiceImpl implements IUploadImgService {
             int uploadResult = uploadImageMapper.uploadImage(image);
             if (uploadResult < 0) {
                 logger.info("上传图片失败，Imgae name：" + image.getImgName());
-                result=false;
+                result = false;
                 return result;
             }
             logger.info("上传图片成功，Imgae name：" + image.getImgName());

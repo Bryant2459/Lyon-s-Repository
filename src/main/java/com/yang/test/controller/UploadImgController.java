@@ -9,13 +9,13 @@ import com.yang.test.service.IUploadImgService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
@@ -29,6 +29,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/file")
 public class UploadImgController {
+    private static final String ROOT ="D:/Program Files/ProjectManage/src/main/resources/static/img/" ;
     Logger logger = LoggerFactory.getLogger(UploadImgController.class);
 
     @Autowired
@@ -37,6 +38,8 @@ public class UploadImgController {
     @Autowired
     private IActionRecordService actionRecordService;
 
+
+
     // 传入的参数file是我们指定的文件
     @RequestMapping("/upload")
     @ResponseBody
@@ -44,6 +47,7 @@ public class UploadImgController {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String realname = (String) session.getAttribute("realName");
         Response response = new Response();
+        String fileName = file.getOriginalFilename();
         Boolean uploadResult = uploadImgService.uploadImage(file);
         if (!uploadResult) {
             response.setData(null);
@@ -61,12 +65,29 @@ public class UploadImgController {
         actionRecord.setRecordId(null);
         actionRecordService.addActionRecord(actionRecord);
 
-        response.setData(null);
+        response.setData(fileName);
         response.setStatus(Constants.SUCCESS_CODE);
         response.setErroCode(Constants.UPDATE_SUCCESS_CODE);
         response.setMessage(Constants.UPLOAD_SUCCESS_MESSAGE);
         return response;
     }
+    private final ResourceLoader resourceLoader;
+    @Autowired
+    public UploadImgController(ResourceLoader resourceLoader) {
+        this.resourceLoader = resourceLoader;
+    }
 
+
+    //显示图片
+    @RequestMapping(method = RequestMethod.GET, value = "/image/{filename:.+}")
+    @ResponseBody
+    public ResponseEntity<?> getFile(@PathVariable String filename) {
+
+        try {
+            return ResponseEntity.ok(resourceLoader.getResource("file:" + Paths.get(ROOT, filename).toString()));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 }

@@ -15,7 +15,7 @@ public class FileUtils {
     public static void fileupload(byte[] file,String filePath,String fileName) throws IOException {
         //目标目录
         File targetfile = new File(filePath);
-        if(targetfile.exists()) {
+        if(!targetfile.exists()) {
             targetfile.mkdirs();
         }
 
