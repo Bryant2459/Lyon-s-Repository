@@ -1,22 +1,22 @@
 package com.yang.test.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.yang.test.common.Response;
 import com.yang.test.constants.AcitonConstants;
 import com.yang.test.constants.Constants;
 import com.yang.test.po.ActionRecord;
 import com.yang.test.po.LifeRecord;
-import com.yang.test.po.XiYaoPerson;
 import com.yang.test.service.IActionRecordService;
 import com.yang.test.service.ILifeRecordService;
-import com.yang.test.service.IUserService;
-import com.yang.test.service.IXiYaoPersonService;
+import com.yang.test.utils.RedisUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
@@ -27,7 +27,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/lifeRecord")
 public class LifeRecordController {
-    Logger logger= LoggerFactory.getLogger(LifeRecordController.class);
+    Logger logger = LoggerFactory.getLogger(LifeRecordController.class);
 
     //LifeRecord lifeRecord
     @Autowired(required = true)
@@ -36,16 +36,31 @@ public class LifeRecordController {
     @Autowired(required = true)
     private IActionRecordService actionRecordService;
 
+    @Autowired
+    private RedisUtils redisUtils;
+
+
     //查询所有
     @RequestMapping("/selectAllLifeRecord")
     public Response selectAllLifeRecord(HttpSession session) {
         //设置日期格式   df.format(new Date())
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+
         String userName = (String) session.getAttribute("currentUser");
         String password = (String) session.getAttribute("passWord");
         String realname = (String) session.getAttribute("realName");
-        List<LifeRecord> listRecord = lifeRecordService.selectAllLifeRecord();
+
+        String redisID = "LifeAllRecord";
+        List<LifeRecord> listRecord=null;
+        if (redisUtils.get(redisID)==null) {
+            listRecord = lifeRecordService.selectAllLifeRecord();
+            logger.info("数据库中查的"+ JSON.toJSONString(listRecord));
+            redisUtils.set(redisID,listRecord);
+        }else {
+            listRecord= (List<LifeRecord>) redisUtils.get(redisID);
+            logger.info("redis中查的"+ JSON.toJSONString(listRecord));
+        }
         Response response = new Response();
         if (CollectionUtils.isEmpty(listRecord)) {
             response.setStatus(Constants.FAILED_CODE);
@@ -62,12 +77,11 @@ public class LifeRecordController {
         actionRecord.setService(AcitonConstants.SERVICE_LIFE_RECORD);
         actionRecord.setRecordId(null);
         actionRecordService.addActionRecord(actionRecord);
-        // System.out.println("查出来的结果数量："+listRecord.size());
         response.setStatus(Constants.SELECT_SUCCESS_CODE);
         response.setMessage(Constants.SELECT_SUCCESS_MESSAGE);
         response.setErroCode(Constants.SELECT_SUCCESS_CODE);
         response.setData(listRecord);
-        //String ResStr= JSON.toJSONString(response);
+
         logger.info("查出来 life Record 的结果数量：" + listRecord.size());
         return response;
     }
@@ -87,7 +101,6 @@ public class LifeRecordController {
             response.setData(null);
             return response;
         }
-        // System.out.println("查出来的结果数量："+listRecord.size());
         ActionRecord actionRecord = new ActionRecord();
         actionRecord.setId(UUID.randomUUID().toString());
         actionRecord.setAction(AcitonConstants.ACTION_SELECT);
@@ -102,7 +115,6 @@ public class LifeRecordController {
         response.setMessage(Constants.SELECT_SUCCESS_MESSAGE);
         response.setErroCode(Constants.SELECT_SUCCESS_CODE);
         response.setData(listRecord);
-        //String ResStr= JSON.toJSONString(response);
         logger.info("查出来 life Record 的结果数量：" + listRecord.size());
         return response;
     }
@@ -170,6 +182,18 @@ public class LifeRecordController {
 
             return response;
         }
+        String redisID = "LifeAllRecord";
+        List<LifeRecord> listRecord=null;
+        if (redisUtils.get(redisID)!=null) {
+            listRecord = lifeRecordService.selectAllLifeRecord();
+            logger.info("更新完数据，从数据库中重新查的数据"+ JSON.toJSONString(listRecord));
+            redisUtils.del(redisID);
+            logger.info("删除掉原有的缓存"+ redisID);
+            redisUtils.set(redisID,listRecord);
+            logger.info("更新redis缓存"+ redisID);
+        }
+
+
         ActionRecord actionRecord = new ActionRecord();
         actionRecord.setId(UUID.randomUUID().toString());
         actionRecord.setAction(AcitonConstants.ACTION_UPDATE);
@@ -218,6 +242,15 @@ public class LifeRecordController {
                     break;
                 case Constants.LIFE_RECORD_BACK_HOME:
                     record.setCategory(Constants.LIFE_RECORD_BACK_HOME_CH);
+                    break;
+                case Constants.LIFE_RECORD_WATER:
+                    record.setCategory(Constants.LIFE_RECORD_WATER_CH);
+                    break;
+                case Constants.LIFE_RECORD_ELECTRICITY:
+                    record.setCategory(Constants.LIFE_RECORD_ELECTRICITY_CH);
+                    break;
+                case Constants.LIFE_RECORD_MEDICAL:
+                    record.setCategory(Constants.LIFE_RECORD_MEDICAL_CH);
                     break;
                 default:
                     record.setCategory(Constants.LIFE_RECORD_OTHER_CH);
@@ -285,8 +318,6 @@ public class LifeRecordController {
         actionRecord.setService(AcitonConstants.SERVICE_LIFE_RECORD);
         actionRecord.setRecordId(record.getId());
         actionRecordService.addActionRecord(actionRecord);
-
-
         response.setData(null);
         response.setMessage(Constants.ADD_SUCCESS_MESSAGE);
         response.setErroCode(Constants.ADD_SUCCESS_CODE);

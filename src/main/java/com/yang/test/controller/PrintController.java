@@ -9,7 +9,6 @@ import com.yang.test.service.IActionRecordService;
 import com.yang.test.service.impl.PrintIncomeSerivceImpl;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -62,12 +60,10 @@ public class PrintController {
         actionRecord.setService(AcitonConstants.SERVICE_PRINT_RECORD);
         actionRecord.setRecordId(null);
         actionRecordService.addActionRecord(actionRecord);
-        // System.out.println("查出来的结果数量："+listRecord.size());
         response.setStatus(Constants.SELECT_SUCCESS_CODE);
         response.setMessage(Constants.SELECT_SUCCESS_MESSAGE);
         response.setErroCode(Constants.SELECT_SUCCESS_CODE);
         response.setData(listRecord);
-        //String ResStr= JSON.toJSONString(response);
         logger.info("查出来的结果数量：" + listRecord.size());
         return response;
     }

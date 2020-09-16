@@ -1,12 +1,10 @@
 package com.yang.test.service.impl;
 
 import com.yang.test.mapper.LifeRecordMapper;
-import com.yang.test.mapper.XiYaoPersonMapper;
 import com.yang.test.po.LifeRecord;
-import com.yang.test.po.OilRecord;
-import com.yang.test.po.XiYaoPerson;
 import com.yang.test.service.ILifeRecordService;
-import com.yang.test.service.IXiYaoPersonService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -25,6 +23,7 @@ import java.util.List;
  */
 @Service
 public class LifeRecordSerivceImpl implements ILifeRecordService {
+    Logger logger = LoggerFactory.getLogger(LifeRecordSerivceImpl.class);
 
     @Autowired(required = true)
     private LifeRecordMapper lifeRecordMapper;
@@ -35,7 +34,7 @@ public class LifeRecordSerivceImpl implements ILifeRecordService {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         List<LifeRecord> recordList = lifeRecordMapper.selectAllLifeRecord();
         if (CollectionUtils.isEmpty(recordList)) {
-            System.out.println("查回来，没有记录");
+            logger.info("select All Life Record 查回来，没有记录");
         }
         Collections.sort(recordList,
                 new Comparator<LifeRecord>() {
@@ -57,8 +56,8 @@ public class LifeRecordSerivceImpl implements ILifeRecordService {
                         return 0;
                     }
                 });
-        System.out.println("selectAll Life Records 的结果：" + recordList.size());
 
+        logger.info("selectAll Life Records 的结果：" + recordList.size());
         return recordList;
     }
 
@@ -67,7 +66,7 @@ public class LifeRecordSerivceImpl implements ILifeRecordService {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         List<LifeRecord> recordList = lifeRecordMapper.selectLifeRecordByCategoryID(categoryId);
         if (CollectionUtils.isEmpty(recordList)) {
-            System.out.println("查回来，没有记录");
+            logger.info("selectLifeRecordByCategoryID : 查回来，没有记录");
         }
         Collections.sort(recordList,
                 new Comparator<LifeRecord>() {
@@ -89,8 +88,7 @@ public class LifeRecordSerivceImpl implements ILifeRecordService {
                         return 0;
                     }
                 });
-        System.out.println("selectLifeRecordByCategoryID：" + categoryId + " 的结果：" + recordList.size());
-
+        logger.info("selectLifeRecordByCategoryID：" + categoryId + " 的结果：" + recordList.size());
         return recordList;
     }
 
@@ -103,7 +101,7 @@ public class LifeRecordSerivceImpl implements ILifeRecordService {
             updateResult = false;
             return updateResult;
         }
-        System.out.println("updateLifeRecordByID  --> ：" + lifeRecord.getId() + " impact num:" + impactNum);
+        logger.info("updateLifeRecordByID  --> ：" + lifeRecord.getId() + " impact num:" + impactNum);
         return updateResult;
     }
 
@@ -115,7 +113,7 @@ public class LifeRecordSerivceImpl implements ILifeRecordService {
             addresult = false;
             return addresult;
         }
-        System.out.println("add LifeRecord --> " + lifeRecord.getId() + " impact num：" + impactNum);
+        logger.info("add LifeRecord --> " + lifeRecord.getId() + " impact num：" + impactNum);
         return addresult;
     }
 
@@ -127,7 +125,7 @@ public class LifeRecordSerivceImpl implements ILifeRecordService {
             delResult = false;
             return delResult;
         }
-        System.out.println("del LifeRecordByID  --> " + id + " 的结果：" + impactNum);
+        logger.info("del LifeRecordByID  --> " + id + " 的结果：" + impactNum);
         return delResult;
     }
 

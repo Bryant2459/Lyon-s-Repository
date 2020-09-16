@@ -1,120 +1,180 @@
-2020-09-10 18:10:38.563 [main] INFO  com.yang.test.SpringApplicationLyon - Starting SpringApplicationLyon on PC-20181113GGDD with PID 18104 (D:\Program Files\ProjectManage\target\classes started by Administrator in D:\Program Files\JavaProject\h2)
-2020-09-10 18:10:38.571 [main] INFO  com.yang.test.SpringApplicationLyon - The following profiles are active: dev
-2020-09-10 18:10:41.499 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-09-10 18:10:41.523 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
-2020-09-10 18:10:41.524 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2020-09-10 18:10:41.525 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-10 18:10:41.529 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.24] using APR version [1.7.0].
-2020-09-10 18:10:41.529 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-09-10 18:10:41.529 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-09-10 18:10:41.538 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
-2020-09-10 18:10:41.744 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-09-10 18:10:41.744 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2988 ms
-2020-09-10 18:10:41.836 [main] INFO  com.yang.test.config.DruidConfig - loginUsername:admin
-2020-09-10 18:10:41.837 [main] INFO  com.yang.test.config.DruidConfig - loginPassword:123456
-2020-09-10 18:10:43.354 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-10 18:10:43.830 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
-2020-09-10 18:10:43.897 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2020-09-10 18:10:43.913 [main] INFO  com.yang.test.SpringApplicationLyon - Started SpringApplicationLyon in 6.775 seconds (JVM running for 8.842)
-2020-09-10 18:11:02.562 [http-nio-8081-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1599637229,1599658921,1599701840; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1599731306; JSESSIONID=DDF401466D6C7D6B8B6F138EAC0A51E1] that contained an invalid cookie. That cookie will be ignored.
+2020-09-11 00:06:47.125 [main] INFO  com.yang.test.SpringApplicationLyon - Starting SpringApplicationLyon on PC-20181113GGDD with PID 7972 (D:\Program Files\ProjectManage\target\classes started by Administrator in D:\Program Files\JavaProject\h2)
+2020-09-11 00:06:47.192 [main] INFO  com.yang.test.SpringApplicationLyon - The following profiles are active: dev
+2020-09-11 00:06:53.969 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-09-11 00:06:54.010 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2020-09-11 00:06:54.012 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-11 00:06:54.013 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 00:06:54.018 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.24] using APR version [1.7.0].
+2020-09-11 00:06:54.019 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-09-11 00:06:54.019 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-09-11 00:06:54.080 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2020-09-11 00:06:54.639 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-11 00:06:54.640 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6988 ms
+2020-09-11 00:06:54.762 [main] INFO  com.yang.test.config.DruidConfig - loginUsername:admin
+2020-09-11 00:06:54.763 [main] INFO  com.yang.test.config.DruidConfig - loginPassword:123456
+2020-09-11 00:06:57.578 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 00:06:58.277 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2020-09-11 00:06:58.337 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-11 00:06:58.357 [main] INFO  com.yang.test.SpringApplicationLyon - Started SpringApplicationLyon in 14.386 seconds (JVM running for 18.138)
+2020-09-11 00:07:15.436 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-11 00:07:15.437 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-11 00:07:15.453 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+2020-09-11 00:07:16.855 [http-nio-8081-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-11 00:07:17.039 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - add LifeRecord --> 0b7590a3-7674-4c00-bf4a-dbd782354339 impact num：1
+2020-09-11 00:07:17.050 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：e0c29784-755e-43d2-8b79-76b4fbd6d998;新增结果：true
+2020-09-11 00:07:37.455 [http-nio-8081-exec-4] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1599658921,1599701840,1599752723; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1599752723; JSESSIONID=69076B48EB6D02503FC7A48174D4D30A] that contained an invalid cookie. That cookie will be ignored.
  Note: further occurrences of this error will be logged at DEBUG level.
-2020-09-10 18:11:02.577 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-10 18:11:02.578 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-09-10 18:11:02.590 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 11 ms
-2020-09-10 18:11:03.864 [http-nio-8081-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-2020-09-10 18:11:04.034 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.UserServiceImpl - selectAll 的结果：3
-2020-09-10 18:11:04.085 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.UserServiceImpl - 当前请求登录的用户为：a
-2020-09-10 18:11:04.104 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：ee933e24-596f-4578-8657-a59c865ced2f;新增结果：true
-2020-09-10 18:11:04.105 [http-nio-8081-exec-1] INFO  com.yang.test.controller.UserController - 登录成功，用户：a
-2020-09-10 18:11:04.751 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：b902b201-60ef-427c-a1c8-60179e0988f9;新增结果：true
-2020-09-10 18:11:04.752 [http-nio-8081-exec-2] INFO  com.yang.test.controller.OilController - 查出来 Oil Record 的结果数量：37
-2020-09-10 18:11:05.878 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：5c567a70-ef07-4ba7-a9f4-ddecd46358ad;新增结果：true
-2020-09-10 18:11:05.878 [http-nio-8081-exec-4] INFO  com.yang.test.controller.PrintController - 查出来的结果数量：93
-2020-09-10 18:11:06.356 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：99c41a6f-785a-429e-bfc0-a69e07059588;新增结果：true
-2020-09-10 18:11:06.356 [http-nio-8081-exec-3] INFO  com.yang.test.controller.OilController - 查出来 Oil Record 的结果数量：37
-2020-09-10 18:11:06.992 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：3f886cc1-2e65-4b9b-a588-11c41f321697;新增结果：true
-2020-09-10 18:11:06.992 [http-nio-8081-exec-5] INFO  com.yang.test.controller.UserController - 查出来xiyao person的结果数量：14
-2020-09-10 18:11:07.382 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：7645c08f-e65b-4afc-890f-2462334adb4d;新增结果：true
-2020-09-10 18:11:07.383 [http-nio-8081-exec-6] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:07.675 [http-nio-8081-exec-9] INFO  com.yang.test.service.impl.UserServiceImpl - selectAll 的结果：3
-2020-09-10 18:11:07.687 [http-nio-8081-exec-9] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：40057451-e1a5-40e3-bd13-b0a218f73ff7;新增结果：true
-2020-09-10 18:11:07.687 [http-nio-8081-exec-9] INFO  com.yang.test.controller.UserController - 查出来的结果数量：3
-2020-09-10 18:11:10.573 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：37390d95-c7ff-4a75-a85a-9b2827cacb2c;新增结果：true
-2020-09-10 18:11:10.573 [http-nio-8081-exec-1] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:11.885 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：0d86f85c-e444-45d0-a889-af5acd27587a;新增结果：true
-2020-09-10 18:11:11.947 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：a7fcedfd-cc60-40ed-aa23-efd2c24ed5c3;新增结果：true
-2020-09-10 18:11:11.948 [http-nio-8081-exec-4] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:12.570 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：f8478e61-3bb6-4f14-8aeb-d8d5cc1318f8;新增结果：true
-2020-09-10 18:11:12.810 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：0ab3af74-486a-4848-bc42-cb79c29df758;新增结果：true
-2020-09-10 18:11:12.811 [http-nio-8081-exec-5] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:12.927 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：c8164321-4c36-4945-88f1-3125cdb65007;新增结果：true
-2020-09-10 18:11:12.983 [http-nio-8081-exec-9] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：4225795a-acdd-4d22-8fb5-3dcae38e0c73;新增结果：true
-2020-09-10 18:11:12.983 [http-nio-8081-exec-9] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:13.818 [http-nio-8081-exec-7] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：3b4a53cf-6615-480e-9466-55bba6e0b082;新增结果：true
-2020-09-10 18:11:14.092 [http-nio-8081-exec-8] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：6b99dc8f-0dd8-4007-975d-9bf6dba0097c;新增结果：true
-2020-09-10 18:11:14.092 [http-nio-8081-exec-8] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:14.159 [http-nio-8081-exec-10] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：524724f9-f981-42ab-b16a-89f27988e097;新增结果：true
-2020-09-10 18:11:14.352 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：c9e1e89e-a15a-4be6-862d-b0233b53f78f;新增结果：true
-2020-09-10 18:11:14.352 [http-nio-8081-exec-1] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:15.195 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：6d2051c5-76b3-4422-9ac4-35c48ef56932;新增结果：true
-2020-09-10 18:11:15.544 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：03ebe128-addb-4e40-9602-de33b562a35e;新增结果：true
-2020-09-10 18:11:15.544 [http-nio-8081-exec-4] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:15.786 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：d86e87af-389e-4b39-ab1f-d3d1b49a1321;新增结果：true
-2020-09-10 18:11:15.918 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：790ddb16-bf51-466c-a157-ba528284b463;新增结果：true
-2020-09-10 18:11:15.918 [http-nio-8081-exec-5] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:16.128 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：e6df1325-c731-4cfa-a723-13c817b8d47b;新增结果：true
-2020-09-10 18:11:16.304 [http-nio-8081-exec-9] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：5d2c6a6b-cd1f-4d60-90dc-bc863743e2fa;新增结果：true
-2020-09-10 18:11:16.304 [http-nio-8081-exec-9] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:17.346 [http-nio-8081-exec-7] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：bc705c17-5cdc-4cbf-a035-136462d0e744;新增结果：true
-2020-09-10 18:11:17.697 [http-nio-8081-exec-8] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：993fc47d-79bb-48e4-b869-48db350eee10;新增结果：true
-2020-09-10 18:11:17.697 [http-nio-8081-exec-8] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:18.488 [http-nio-8081-exec-10] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：41a40acb-1873-4e90-95d3-ec5954c10f91;新增结果：true
-2020-09-10 18:11:18.824 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：bcacf25e-3f62-40c8-89d1-63578e1fda8a;新增结果：true
-2020-09-10 18:11:18.825 [http-nio-8081-exec-1] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:19.089 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：86f942e1-0d4d-4185-a08e-91f910485160;新增结果：true
-2020-09-10 18:11:19.147 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：f4dc3369-e582-423f-8da5-447b4ffb882b;新增结果：true
-2020-09-10 18:11:19.451 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：dd32c3a7-c2b0-4960-a8f0-59252e2a9b6e;新增结果：true
-2020-09-10 18:11:19.451 [http-nio-8081-exec-3] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:19.787 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：b0c75e31-fe77-4d8e-a384-a15c319716ab;新增结果：true
-2020-09-10 18:11:19.788 [http-nio-8081-exec-5] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:20.379 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：b160bb53-45cd-48b8-9ff9-796cb5461075;新增结果：true
-2020-09-10 18:11:20.630 [http-nio-8081-exec-9] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：8de2fc74-a4eb-4850-9e53-ae21b073bec9;新增结果：true
-2020-09-10 18:11:20.631 [http-nio-8081-exec-9] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:20.784 [http-nio-8081-exec-7] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：47ab58db-1e7a-44be-839e-9fc15a801c70;新增结果：true
-2020-09-10 18:11:21.134 [http-nio-8081-exec-8] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：c1ea34b2-9486-4572-ae51-8fd0b59e1935;新增结果：true
-2020-09-10 18:11:21.134 [http-nio-8081-exec-8] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:21.379 [http-nio-8081-exec-10] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：e6c145c7-c5c2-4b35-9764-4abc9b756d81;新增结果：true
-2020-09-10 18:11:21.406 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：716ef42b-caa3-45b4-991d-82116c9a788c;新增结果：true
-2020-09-10 18:11:21.678 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：7d4f687f-fafd-4377-a658-1b23cb4db9f9;新增结果：true
-2020-09-10 18:11:21.679 [http-nio-8081-exec-2] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:21.739 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：30ed9d7e-d9f1-4bf6-bf7c-a528207276f8;新增结果：true
-2020-09-10 18:11:21.945 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：3bc98346-0a39-4427-87d2-80a2314583fd;新增结果：true
-2020-09-10 18:11:21.946 [http-nio-8081-exec-3] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:22.052 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：712b484f-cc1d-4ab2-bff4-0fc41c6adfea;新增结果：true
-2020-09-10 18:11:22.244 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：5e5b1599-7133-460e-bf44-15968ab0fa53;新增结果：true
-2020-09-10 18:11:22.245 [http-nio-8081-exec-6] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:22.277 [http-nio-8081-exec-9] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：a49965e5-fcf3-43a2-89ab-fc18b6fd763b;新增结果：true
-2020-09-10 18:11:22.278 [http-nio-8081-exec-9] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:23.592 [http-nio-8081-exec-7] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：0ed56536-6b78-4607-a165-8ab657378e55;新增结果：true
-2020-09-10 18:11:23.932 [http-nio-8081-exec-8] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：5195e74e-e145-4dc3-8ae0-a31458d8fc36;新增结果：true
-2020-09-10 18:11:23.932 [http-nio-8081-exec-8] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
-2020-09-10 18:11:24.104 [http-nio-8081-exec-10] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：fa30d245-367b-44b0-840e-039e40cda8cc;新增结果：true
-2020-09-10 18:11:24.104 [http-nio-8081-exec-10] INFO  com.yang.test.controller.UserController - 查出来xiyao person的结果数量：14
-2020-09-10 18:11:25.158 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：1da65d55-f331-4914-ae42-bc192692f198;新增结果：true
-2020-09-10 18:11:25.516 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：e5dc15b6-fff6-4720-8e7c-c7df0143def7;新增结果：true
-2020-09-10 18:11:26.126 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：f54f5381-9b23-41ca-9c58-7a263c58bda4;新增结果：true
-2020-09-10 18:11:27.084 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：29bd67ca-1b12-43b0-aff0-e2749dcaf121;新增结果：true
-2020-09-10 18:11:27.670 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：86ad124f-de0a-48d5-ba5b-ea2e9acf821c;新增结果：true
-2020-09-10 18:11:27.929 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：3e7bef84-d032-4743-bb06-b15a0e665630;新增结果：true
-2020-09-10 18:11:29.008 [http-nio-8081-exec-9] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：05831220-88b8-4078-9ca8-27eaeb006600;新增结果：true
-2020-09-10 18:11:29.457 [http-nio-8081-exec-7] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：0f1c1f3d-b640-44d6-9091-1152979cb4bb;新增结果：true
-2020-09-10 18:11:29.458 [http-nio-8081-exec-7] INFO  com.yang.test.controller.PrintController - 查出来的结果数量：93
-2020-09-10 18:11:30.387 [http-nio-8081-exec-8] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：15dae020-0d49-4e78-b799-320c818c00f9;新增结果：true
-2020-09-10 18:11:30.792 [http-nio-8081-exec-10] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：0db96715-a4bd-4f6b-b01d-15929a6ada5c;新增结果：true
-2020-09-10 18:11:31.647 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：b446ed40-2ddb-4274-b912-d52fc775917b;新增结果：true
-2020-09-10 18:11:31.793 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：f688c86d-2a1e-4ef6-b701-40f80384a3d9;新增结果：true
-2020-09-10 18:11:31.793 [http-nio-8081-exec-2] INFO  com.yang.test.controller.OilController - 查出来 Oil Record 的结果数量：37
-2020-09-10 18:11:32.683 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：c5171128-0e35-475f-b273-0f2b44251ad9;新增结果：true
-2020-09-10 18:11:32.985 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：addae1e4-6e39-4f47-a405-825dfb1172e5;新增结果：true
-2020-09-10 18:11:34.468 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：9a119ab2-2b61-4ac4-babb-30f345baf530;新增结果：true
-2020-09-10 18:11:34.468 [http-nio-8081-exec-5] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
+2020-09-11 00:07:37.579 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectAll Life Records 的结果：24
+2020-09-11 00:07:37.597 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：690afaee-e78c-4240-9c32-a9dce23e1113;新增结果：true
+2020-09-11 00:07:37.598 [http-nio-8081-exec-4] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：24
+2020-09-11 00:08:29.248 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.XiYaoPersonSerivceImpl - selectAll 的结果：14
+2020-09-11 00:08:29.264 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：027d73ba-20b6-4e33-a2ff-8542a82adbc7;新增结果：true
+2020-09-11 00:08:29.265 [http-nio-8081-exec-2] INFO  com.yang.test.controller.UserController - 查出来xiyao person的结果数量：14
+2020-09-11 00:08:30.743 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.PrintIncomeSerivceImpl - selectAll 的结果：93
+2020-09-11 00:08:30.744 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.PrintIncomeSerivceImpl - printIncome 总收入:93
+2020-09-11 00:08:30.752 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：df3370b6-e4fd-4f5a-b6ef-3bdbd35281c3;新增结果：true
+2020-09-11 00:08:30.753 [http-nio-8081-exec-5] INFO  com.yang.test.controller.PrintController - 查出来的结果数量：93
+2020-09-11 00:08:32.065 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.OilRecordSerivceImpl - SelectAll Oil Record 的结果：37
+2020-09-11 00:08:32.073 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：978c9535-a546-4638-a8cc-82d01a28f1c3;新增结果：true
+2020-09-11 00:08:32.074 [http-nio-8081-exec-6] INFO  com.yang.test.controller.OilController - 查出来 Oil Record 的结果数量：37
+2020-09-11 00:08:33.961 [http-nio-8081-exec-7] INFO  com.yang.test.service.impl.PrintIncomeSerivceImpl - selectAll 的结果：93
+2020-09-11 00:08:33.961 [http-nio-8081-exec-7] INFO  com.yang.test.service.impl.PrintIncomeSerivceImpl - printIncome 总收入:93
+2020-09-11 00:08:33.971 [http-nio-8081-exec-7] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：ca96998c-dd68-4c75-aeb7-dac9e411ed5e;新增结果：true
+2020-09-11 00:08:33.972 [http-nio-8081-exec-7] INFO  com.yang.test.controller.PrintController - 查出来的结果数量：93
+2020-09-11 00:08:34.690 [http-nio-8081-exec-8] INFO  com.yang.test.service.impl.XiYaoPersonSerivceImpl - selectAll 的结果：14
+2020-09-11 00:08:34.700 [http-nio-8081-exec-8] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：a6ceed08-d848-428e-a13c-393e01123d13;新增结果：true
+2020-09-11 00:08:34.701 [http-nio-8081-exec-8] INFO  com.yang.test.controller.UserController - 查出来xiyao person的结果数量：14
+2020-09-11 00:08:35.554 [http-nio-8081-exec-9] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectAll Life Records 的结果：24
+2020-09-11 00:08:35.566 [http-nio-8081-exec-9] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：ae038ae7-7a0b-4ac2-b854-debbd875d416;新增结果：true
+2020-09-11 00:08:35.566 [http-nio-8081-exec-9] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：24
+2020-09-11 00:08:36.367 [http-nio-8081-exec-10] INFO  com.yang.test.service.impl.UserServiceImpl -  select All 的结果：3
+2020-09-11 00:08:36.384 [http-nio-8081-exec-10] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：64df1003-30a3-4bf1-ace4-1ded54784883;新增结果：true
+2020-09-11 00:08:36.385 [http-nio-8081-exec-10] INFO  com.yang.test.controller.UserController - 查出来的结果数量：3
+2020-09-11 00:08:37.361 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectAll Life Records 的结果：24
+2020-09-11 00:08:37.373 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：7df63884-de84-494f-a11a-f1c7d1f4c9dd;新增结果：true
+2020-09-11 00:08:37.373 [http-nio-8081-exec-1] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：24
+2020-09-11 00:09:41.626 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectLifeRecordByCategoryID：1 的结果：3
+2020-09-11 00:09:41.634 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：1495392a-2d16-421a-9b8b-ccb21a3303d9;新增结果：true
+2020-09-11 00:09:41.634 [http-nio-8081-exec-3] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：3
+2020-09-11 00:09:43.542 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectLifeRecordByCategoryID：2 的结果：10
+2020-09-11 00:09:43.552 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：d890053b-82aa-4fa7-9f28-34dfb9cea95b;新增结果：true
+2020-09-11 00:09:43.552 [http-nio-8081-exec-4] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：10
+2020-09-11 00:09:47.363 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectLifeRecordByCategoryID：3 的结果：1
+2020-09-11 00:09:47.374 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：777af198-b513-4c54-a0d9-779e625d1e94;新增结果：true
+2020-09-11 00:09:47.374 [http-nio-8081-exec-2] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：1
+2020-09-11 00:09:50.151 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectLifeRecordByCategoryID：4 的结果：1
+2020-09-11 00:09:50.221 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：3d646483-2444-454e-9547-84eb1d940534;新增结果：true
+2020-09-11 00:09:50.222 [http-nio-8081-exec-5] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：1
+2020-09-11 00:09:53.470 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectLifeRecordByCategoryID：5 的结果：6
+2020-09-11 00:09:53.531 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：f3708d40-7914-400e-ae18-e35f5aceb695;新增结果：true
+2020-09-11 00:09:53.531 [http-nio-8081-exec-6] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：6
+2020-09-11 00:10:00.158 [http-nio-8081-exec-7] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectLifeRecordByCategoryID：6 的结果：2
+2020-09-11 00:10:00.171 [http-nio-8081-exec-7] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：be7ade37-cea9-4b7f-bec5-b98dafb4afdf;新增结果：true
+2020-09-11 00:10:00.172 [http-nio-8081-exec-7] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：2
+2020-09-11 00:10:03.762 [http-nio-8081-exec-8] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectLifeRecordByCategoryID : 查回来，没有记录
+2020-09-11 00:10:03.763 [http-nio-8081-exec-8] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectLifeRecordByCategoryID：7 的结果：0
+2020-09-11 00:10:08.395 [http-nio-8081-exec-9] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectLifeRecordByCategoryID：1 的结果：3
+2020-09-11 00:10:08.403 [http-nio-8081-exec-9] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：61ae62f9-8ddb-474d-ba68-6d40bf978f5c;新增结果：true
+2020-09-11 00:10:08.403 [http-nio-8081-exec-9] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：3
+2020-09-11 00:10:30.048 [http-nio-8081-exec-10] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectLifeRecordByCategoryID：1 的结果：3
+2020-09-11 00:10:30.060 [http-nio-8081-exec-10] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：6083ab72-77b1-4147-821a-1da517644c38;新增结果：true
+2020-09-11 00:10:30.060 [http-nio-8081-exec-10] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：3
+2020-09-11 00:10:36.341 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.PrintIncomeSerivceImpl - selectAll 的结果：93
+2020-09-11 00:10:36.341 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.PrintIncomeSerivceImpl - printIncome 总收入:93
+2020-09-11 00:10:36.355 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：88dc8330-1167-4792-9926-cec48089a279;新增结果：true
+2020-09-11 00:10:36.356 [http-nio-8081-exec-1] INFO  com.yang.test.controller.PrintController - 查出来的结果数量：93
+2020-09-11 00:10:40.521 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.XiYaoPersonSerivceImpl - selectAll 的结果：14
+2020-09-11 00:10:40.529 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：9910fb5e-cadb-4b4a-bfec-2a96665ce436;新增结果：true
+2020-09-11 00:10:40.529 [http-nio-8081-exec-3] INFO  com.yang.test.controller.UserController - 查出来xiyao person的结果数量：14
+2020-09-11 00:12:39.146 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.XiYaoPersonSerivceImpl - updateXiYaoPersonByID  --> ：5 impact num:1
+2020-09-11 00:12:39.158 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：d12cde84-705c-4b70-884f-c3d83e8e72ec;新增结果：true
+2020-09-11 00:12:39.309 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.XiYaoPersonSerivceImpl - updateXiYaoPersonByID  --> ：5 impact num:1
+2020-09-11 00:12:39.318 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：3a405f88-37ed-4590-9fd2-ff16a6d70e83;新增结果：true
+2020-09-11 00:12:39.766 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.XiYaoPersonSerivceImpl - updateXiYaoPersonByID  --> ：4 impact num:1
+2020-09-11 00:12:39.775 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：a0cfe10d-1338-45ea-af0c-f1d8bb61bd93;新增结果：true
+2020-09-11 00:14:10.482 [http-nio-8081-exec-10] INFO  com.yang.test.service.impl.UserServiceImpl -  select All 的结果：3
+2020-09-11 00:14:10.501 [http-nio-8081-exec-10] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：d9bcfbbd-44c9-45e1-a8ba-cdff231864d9;新增结果：true
+2020-09-11 00:14:10.502 [http-nio-8081-exec-10] INFO  com.yang.test.controller.UserController - 登录成功，用户：a
+2020-09-11 00:14:10.645 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.OilRecordSerivceImpl - SelectAll Oil Record 的结果：37
+2020-09-11 00:14:10.653 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：f7c1de7c-be77-4d4a-b748-6435b46ce452;新增结果：true
+2020-09-11 00:14:10.653 [http-nio-8081-exec-2] INFO  com.yang.test.controller.OilController - 查出来 Oil Record 的结果数量：37
+2020-09-11 00:14:12.382 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.OilRecordSerivceImpl - Update Oil RecordByID  --> ：305d32e8-82c5-4d14-92ce-fd3d74dd1534: impact num:1
+2020-09-11 00:14:12.393 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：4dc41fff-49ef-47b6-bf02-cb508b52b58a;新增结果：true
+2020-09-11 00:14:13.015 [http-nio-8081-exec-8] INFO  com.yang.test.service.impl.OilRecordSerivceImpl - Update Oil RecordByID  --> ：abf52dee-c659-4639-9e53-c92773ceb631: impact num:1
+2020-09-11 00:14:13.024 [http-nio-8081-exec-8] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：31e63d8f-6cee-49b7-9704-75f99ff04ff7;新增结果：true
+2020-09-11 00:14:31.822 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.OilRecordSerivceImpl - Update Oil RecordByID  --> ：abf52dee-c659-4639-9e53-c92773ceb631: impact num:1
+2020-09-11 00:14:31.831 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：6b0694bb-6f94-4107-92f7-08f02e67fa03;新增结果：true
+2020-09-11 00:50:27.632 [main] INFO  com.yang.test.SpringApplicationLyon - Starting SpringApplicationLyon on PC-20181113GGDD with PID 2356 (D:\Program Files\ProjectManage\target\classes started by Administrator in D:\Program Files\JavaProject\h2)
+2020-09-11 00:50:27.658 [main] INFO  com.yang.test.SpringApplicationLyon - The following profiles are active: dev
+2020-09-11 00:50:30.570 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-09-11 00:50:30.624 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2020-09-11 00:50:30.626 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-11 00:50:30.627 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 00:50:30.631 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.24] using APR version [1.7.0].
+2020-09-11 00:50:30.638 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-09-11 00:50:30.638 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-09-11 00:50:30.668 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2020-09-11 00:50:30.943 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-11 00:50:30.943 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3133 ms
+2020-09-11 00:50:31.132 [main] INFO  com.yang.test.config.DruidConfig - loginUsername:admin
+2020-09-11 00:50:31.133 [main] INFO  com.yang.test.config.DruidConfig - loginPassword:123456
+2020-09-11 00:50:32.462 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 00:50:32.824 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2020-09-11 00:50:33.020 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-11 00:50:33.043 [main] INFO  com.yang.test.SpringApplicationLyon - Started SpringApplicationLyon in 6.944 seconds (JVM running for 9.23)
+2020-09-11 00:50:47.181 [http-nio-8081-exec-2] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1599658921,1599701840,1599752723; JSESSIONID=514CC305B174E887BE099D514DDA2FA2; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1599754346] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-09-11 00:50:47.196 [http-nio-8081-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-11 00:50:47.196 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-11 00:50:47.208 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2020-09-11 00:50:48.766 [http-nio-8081-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-11 00:50:49.001 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.UserServiceImpl -  select All 的结果：3
+2020-09-11 00:50:49.228 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：328c3755-a6af-4ba8-8bdc-016a20436da8;新增结果：true
+2020-09-11 00:50:49.229 [http-nio-8081-exec-2] INFO  com.yang.test.controller.UserController - 登录成功，用户：a
+2020-09-11 00:50:49.679 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.OilRecordSerivceImpl - SelectAll Oil Record 的结果：37
+2020-09-11 00:50:49.720 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：5fc59323-bfc8-4746-a5a7-a2699f6ba9eb;新增结果：true
+2020-09-11 00:50:49.721 [http-nio-8081-exec-1] INFO  com.yang.test.controller.OilController - 查出来 Oil Record 的结果数量：37
+2020-09-11 00:50:52.468 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.XiYaoPersonSerivceImpl - selectAll 的结果：14
+2020-09-11 00:50:52.522 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：dd306ae9-e7f8-4b1f-8ae6-d1945027515b;新增结果：true
+2020-09-11 00:50:52.523 [http-nio-8081-exec-3] INFO  com.yang.test.controller.UserController - 查出来xiyao person的结果数量：14
+2020-09-11 01:38:26.642 [main] INFO  com.yang.test.SpringApplicationLyon - Starting SpringApplicationLyon on PC-20181113GGDD with PID 12216 (D:\Program Files\ProjectManage\target\classes started by Administrator in D:\Program Files\JavaProject\h2)
+2020-09-11 01:38:26.649 [main] INFO  com.yang.test.SpringApplicationLyon - The following profiles are active: dev
+2020-09-11 01:38:28.834 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-09-11 01:38:28.854 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2020-09-11 01:38:28.856 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-11 01:38:28.856 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-11 01:38:28.859 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.24] using APR version [1.7.0].
+2020-09-11 01:38:28.859 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-09-11 01:38:28.859 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-09-11 01:38:28.879 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2020-09-11 01:38:29.041 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-11 01:38:29.041 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2293 ms
+2020-09-11 01:38:29.129 [main] INFO  com.yang.test.config.DruidConfig - loginUsername:admin
+2020-09-11 01:38:29.129 [main] INFO  com.yang.test.config.DruidConfig - loginPassword:123456
+2020-09-11 01:38:30.098 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-11 01:38:30.546 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2020-09-11 01:38:30.604 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-11 01:38:30.621 [main] INFO  com.yang.test.SpringApplicationLyon - Started SpringApplicationLyon in 5.084 seconds (JVM running for 6.546)
+2020-09-11 01:38:42.078 [http-nio-8081-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1599658921,1599701840,1599752723; JSESSIONID=9303BA958D8370090399B9CFB9654011; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1599759336] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-09-11 01:38:42.088 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-11 01:38:42.089 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-11 01:38:42.101 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2020-09-11 01:38:43.249 [http-nio-8081-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-09-11 01:38:43.462 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.UserServiceImpl -  select All 的结果：3
+2020-09-11 01:38:43.565 [http-nio-8081-exec-1] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：6869eabb-d5a1-4620-9e8b-ec6a2f53dedd;新增结果：true
+2020-09-11 01:38:43.565 [http-nio-8081-exec-1] INFO  com.yang.test.controller.UserController - 登录成功，用户：a
+2020-09-11 01:38:43.975 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.OilRecordSerivceImpl - SelectAll Oil Record 的结果：37
+2020-09-11 01:38:43.993 [http-nio-8081-exec-2] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：eaeb912a-8500-490d-8e46-d6b4dd5bf3cc;新增结果：true
+2020-09-11 01:38:43.994 [http-nio-8081-exec-2] INFO  com.yang.test.controller.OilController - 查出来 Oil Record 的结果数量：37
+2020-09-11 01:38:45.494 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.XiYaoPersonSerivceImpl - selectAll 的结果：14
+2020-09-11 01:38:45.512 [http-nio-8081-exec-3] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：6bd25e91-a424-438c-8a0b-ce71db24f7b0;新增结果：true
+2020-09-11 01:38:45.513 [http-nio-8081-exec-3] INFO  com.yang.test.controller.UserController - 查出来xiyao person的结果数量：14
+2020-09-11 01:38:45.970 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectAll Life Records 的结果：23
+2020-09-11 01:38:45.984 [http-nio-8081-exec-4] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：96c682d9-dcda-4e46-894f-c12a741272d6;新增结果：true
+2020-09-11 01:38:45.985 [http-nio-8081-exec-4] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23
+2020-09-11 01:38:47.325 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - updateLifeRecordByID  --> ：7abfddb9-0674-499b-8591-3117673f9015 impact num:1
+2020-09-11 01:38:47.336 [http-nio-8081-exec-5] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：ed3fd17f-2b62-481d-83e9-4c7d6713082d;新增结果：true
+2020-09-11 01:38:47.526 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.LifeRecordSerivceImpl - selectAll Life Records 的结果：23
+2020-09-11 01:38:47.540 [http-nio-8081-exec-6] INFO  com.yang.test.service.impl.ActionRecordServiceImpl - 当前新增 action record 为：3567e7d0-c7c6-4fff-bc9d-04998f61d3cd;新增结果：true
+2020-09-11 01:38:47.540 [http-nio-8081-exec-6] INFO  com.yang.test.controller.LifeRecordController - 查出来 life Record 的结果数量：23

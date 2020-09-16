@@ -5,12 +5,10 @@ import com.yang.test.constants.AcitonConstants;
 import com.yang.test.constants.Constants;
 import com.yang.test.po.ActionRecord;
 import com.yang.test.po.OilRecord;
-import com.yang.test.po.PrintIncome;
 import com.yang.test.service.IActionRecordService;
 import com.yang.test.service.impl.OilRecordSerivceImpl;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
-import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -272,7 +269,7 @@ public class OilController {
                 response.setMessage(Constants.DELETE_FAILED_MESSAGE_NO_COULD_DELETE_ID);
                 response.setErroCode(Constants.DELETE_FAILED_CODE);
                 response.setStatus(Constants.FAILED_CODE);
-                System.out.println(Constants.DELETE_FAILED_MESSAGE_NO_COULD_DELETE_ID);
+                logger.info(Constants.DELETE_FAILED_MESSAGE_NO_COULD_DELETE_ID);
                 return response;
             }
         } else {
@@ -280,7 +277,7 @@ public class OilController {
             response.setMessage(Constants.DELETE_FAILED_MESSAGE_NO_ID_FORM_RECEPTION);
             response.setErroCode(Constants.DELETE_FAILED_CODE);
             response.setStatus(Constants.FAILED_CODE);
-            System.out.println(Constants.DELETE_FAILED_MESSAGE_NO_ID_FORM_RECEPTION);
+            logger.info(Constants.DELETE_FAILED_MESSAGE_NO_ID_FORM_RECEPTION);
             return response;
         }
 

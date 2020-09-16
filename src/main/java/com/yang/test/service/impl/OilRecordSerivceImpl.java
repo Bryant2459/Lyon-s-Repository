@@ -3,6 +3,8 @@ package com.yang.test.service.impl;
 import com.yang.test.mapper.OilRecordMapper;
 import com.yang.test.po.OilRecord;
 import com.yang.test.service.IOilRecordService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -21,6 +23,7 @@ import java.util.List;
  */
 @Service
 public class OilRecordSerivceImpl implements IOilRecordService {
+    Logger logger= LoggerFactory.getLogger(OilRecordSerivceImpl.class);
 
     @Autowired(required = true)
     private OilRecordMapper oilRecordMapper;
@@ -30,7 +33,7 @@ public class OilRecordSerivceImpl implements IOilRecordService {
 
         List<OilRecord> recordList = oilRecordMapper.selectAllOilRecords();
         if (CollectionUtils.isEmpty(recordList)) {
-            System.out.println("查回来，没有记录");
+            logger.info("select All Oil Records 查回来，没有记录");
         }
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Collections.sort(recordList,
@@ -56,7 +59,7 @@ public class OilRecordSerivceImpl implements IOilRecordService {
                         return 0;
                     }
                 });
-        System.out.println("SelectAll Oil Record 的结果：" + recordList.size());
+        logger.info("SelectAll Oil Record 的结果：" + recordList.size());
         return recordList;
     }
 
@@ -69,7 +72,7 @@ public class OilRecordSerivceImpl implements IOilRecordService {
             updateResult = false;
             return updateResult;
         }
-        System.out.println("Update Oil RecordByID  --> ：" + oilRecord.getId() + ": impact num:" + impactNum);
+        logger.info("Update Oil RecordByID  --> ：" + oilRecord.getId() + ": impact num:" + impactNum);
         return updateResult;
     }
 
@@ -81,7 +84,7 @@ public class OilRecordSerivceImpl implements IOilRecordService {
             addresult = false;
             return addresult;
         }
-        System.out.println("Add Oil Record --> " + oilRecord.getId() + " : impact num：" + impactNum);
+        logger.info("Add Oil Record --> " + oilRecord.getId() + " : impact num：" + impactNum);
         return addresult;
     }
 
@@ -93,7 +96,7 @@ public class OilRecordSerivceImpl implements IOilRecordService {
             delResult = false;
             return delResult;
         }
-        System.out.println("Del Oil Record id --> " + id + ": 的结果：" + impactNum);
+        logger.info("Del Oil Record id --> " + id + ": 的结果：" + impactNum);
         return delResult;
     }
 

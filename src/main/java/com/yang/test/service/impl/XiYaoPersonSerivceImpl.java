@@ -1,20 +1,14 @@
 package com.yang.test.service.impl;
 
-import com.yang.test.mapper.PrintIncomeMapper;
 import com.yang.test.mapper.XiYaoPersonMapper;
-import com.yang.test.po.PrintIncome;
 import com.yang.test.po.XiYaoPerson;
-import com.yang.test.service.IPrintIncomeService;
 import com.yang.test.service.IXiYaoPersonService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,6 +19,8 @@ import java.util.List;
 @Service
 public class XiYaoPersonSerivceImpl implements IXiYaoPersonService {
 
+    Logger logger = LoggerFactory.getLogger(XiYaoPersonSerivceImpl.class);
+
     @Autowired(required = true)
     private XiYaoPersonMapper xiYaoPersonMapper;
 
@@ -34,10 +30,9 @@ public class XiYaoPersonSerivceImpl implements IXiYaoPersonService {
 
         List<XiYaoPerson> recordList = xiYaoPersonMapper.selectAllXiYaoPerson();
         if (CollectionUtils.isEmpty(recordList)) {
-            System.out.println("查回来，没有记录");
+            logger.info("select All XiYao Person 查回来，没有记录");
         }
-        System.out.println("selectAll 的结果：" + recordList.size());
-
+        logger.info("selectAll 的结果：" + recordList.size());
         return recordList;
     }
 
@@ -50,7 +45,7 @@ public class XiYaoPersonSerivceImpl implements IXiYaoPersonService {
             updateResult = false;
             return updateResult;
         }
-        System.out.println("updateXiYaoPersonByID  --> ：" + xiYaoPerson.getId() + " impact num:" + impactNum);
+        logger.info("updateXiYaoPersonByID  --> ：" + xiYaoPerson.getId() + " impact num:" + impactNum);
         return updateResult;
     }
 
@@ -62,7 +57,7 @@ public class XiYaoPersonSerivceImpl implements IXiYaoPersonService {
             addresult = false;
             return addresult;
         }
-        System.out.println("add XiYaoPerson --> " + xiYaoPerson.getId() + " impact num：" + impactNum);
+        logger.info("add XiYaoPerson --> " + xiYaoPerson.getId() + " impact num：" + impactNum);
         return addresult;
     }
 
@@ -74,7 +69,7 @@ public class XiYaoPersonSerivceImpl implements IXiYaoPersonService {
             delResult = false;
             return delResult;
         }
-        System.out.println("del deleteXiYaoPersonByID  --> " + id + " 的结果：" + impactNum);
+        logger.info("del deleteXiYaoPersonByID  --> " + id + " 的结果：" + impactNum);
         return delResult;
     }
 
