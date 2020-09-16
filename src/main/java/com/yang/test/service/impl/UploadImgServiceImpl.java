@@ -43,7 +43,8 @@ public class UploadImgServiceImpl implements IUploadImgService {
     private UploadImageMapper uploadImageMapper;
 
 
-    public String uploadImage(@RequestParam("file") MultipartFile file) {
+    public Boolean uploadImage(@RequestParam("file") MultipartFile file) {
+       Boolean result=true;
         if (!file.isEmpty()) {
             // 获取文件名称,包含后缀
             String fileName = file.getOriginalFilename();
@@ -75,16 +76,18 @@ public class UploadImgServiceImpl implements IUploadImgService {
             image.setId(UUID.randomUUID().toString());
             image.setFirstAddTime(df.format(new Date()));
             image.setRecordId("");
-            image.setImgName("");
+            image.setImgName(fileName);
             image.setUrl(host + ":" + POST + path);
             int uploadResult = uploadImageMapper.uploadImage(image);
             if (uploadResult < 0) {
                 logger.info("上传图片失败，Imgae name：" + image.getImgName());
-                return "upload fail";
+                result=false;
+                return result;
             }
-            return "upload successfully";
+            logger.info("上传图片成功，Imgae name：" + image.getImgName());
+            return result;
 
         }
-        return "upload fail";
+        return result;
     }
 }

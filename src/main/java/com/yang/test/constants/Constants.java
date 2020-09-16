@@ -54,6 +54,13 @@ public interface Constants {
     public static final String REGISTER_FAILED_MESSAGE_PASSWORD_NULL = "注册失败-前台没有传过来需要注册的密码";
     public static final String REGISTER_FAILED_MESSAGE_USERNAME_REPEAT = "注册失败-用户名已被占用";
 
+    public static final String UPLOAD_SUCCESS_CODE = "00";
+    public static final String UPLOAD_SUCCESS_MESSAGE = "上传成功";
+    public static final String UPLOAD_FAILED_CODE = "77";
+    public static final String UPLOAD_FAILED_MESSAGE = "上传失败";
+
+
+
     public static final int LIFE_RECORD_SUPERMARKET = 1;
     public static final int LIFE_RECORD_SALARY = 2;
     public static final int LIFE_RECORD_ABOUT_CAR = 3;
@@ -83,6 +90,7 @@ public interface Constants {
     public static final String LIFE_RECORD_PERSON_LYON_CH = "李阳";
     public static final String LIFE_RECORD_PERSON_YUYING_CH = "党玉莹";
     public static final String LIFE_RECORD_ABOUT_OTHER_CH = "其他";
+
 
 
 }
