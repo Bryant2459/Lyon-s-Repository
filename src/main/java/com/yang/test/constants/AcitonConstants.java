@@ -22,4 +22,7 @@ public interface AcitonConstants {
     public static final String SERVICE_USER_RECORD = "用户记录表";
     public static final String SERVICE_UPLOAD_RECORD = "上传文件记录表";
     public static final String SERVICE_MQ = "MQ";
+
+    public static final String MQ_IDENTITY_PRODUCER = "PRODUCER";
+    public static final String MQ_IDENTITY_CONSUMER = "CONSUMER";
 }

@@ -66,14 +66,25 @@ public class UserController {
         List<User> listRecord = null;
 
         if (redisUtils.get(UsersAllRecord) == null) {
+            long inquireDBstartTime=System.currentTimeMillis();
+            logger.info("inquireDBstartTime：" +inquireDBstartTime);
             listRecord = userService.findAllUsers();
+            long inquireDBendTime=System.currentTimeMillis(); //获取结束时间
+            logger.info("inquireDBendTime：" +inquireDBendTime);
+            long time=inquireDBendTime-inquireDBstartTime;
+           // logger.info("从DB 中查询users 用时：" +(inquireDBendTime/1000-inquireDBstartTime/1000)+"s");
             logger.info("数据库中查的users" + JSON.toJSONString(listRecord));
             redisUtils.set(UsersAllRecord, listRecord);
             redisUtils.expire(UsersAllRecord,60);
             logger.info("设置 redis users的过期时间:" + "60s");
 
         }else{
+            long inquireRedisStartTime=System.currentTimeMillis();
+            logger.info("inquireRedisStartTime：" +inquireRedisStartTime);
             listRecord= (List<User>) redisUtils.get(UsersAllRecord);
+            long inquireRedisEndTime=System.currentTimeMillis(); //获取结束时间
+            logger.info("inquireRedisEndTime：" +inquireRedisEndTime);
+           // logger.info("从Redis 中查询users 用时：" +(inquireRedisEndTime/1000-inquireRedisStartTime/1000)+"s");
             logger.info("redis中查的users"+ JSON.toJSONString(listRecord));
 
         }

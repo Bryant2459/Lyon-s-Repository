@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yang.test.mapper.MQDataRecordMapper">
+
+
+    <!--新增MQDataRecord   -->
+    <insert id="addMQDataRecord" parameterType="com.yang.test.po.MQDataRecord">
+        insert into mq_data_record (id, messageid, createtime, currentime,identity, messagedata)
+        values (#{id}, #{messageId}, #{createTime}, #{currenTime}, #{identity}, #{messageData})
+    </insert>
+
+</mapper>
