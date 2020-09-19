@@ -29,7 +29,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/file")
 public class UploadImgController {
-    private static final String ROOT ="D:/Program Files/ProjectManage/src/main/resources/static/img/" ;
+    private static final String ROOT = "D:/Program Files/ProjectManage/src/main/resources/static/img/";
     Logger logger = LoggerFactory.getLogger(UploadImgController.class);
 
     @Autowired
@@ -37,7 +37,6 @@ public class UploadImgController {
 
     @Autowired
     private IActionRecordService actionRecordService;
-
 
 
     // 传入的参数file是我们指定的文件
@@ -71,7 +70,9 @@ public class UploadImgController {
         response.setMessage(Constants.UPLOAD_SUCCESS_MESSAGE);
         return response;
     }
+
     private final ResourceLoader resourceLoader;
+
     @Autowired
     public UploadImgController(ResourceLoader resourceLoader) {
         this.resourceLoader = resourceLoader;

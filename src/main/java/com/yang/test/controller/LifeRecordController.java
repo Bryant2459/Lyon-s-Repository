@@ -45,22 +45,9 @@ public class LifeRecordController {
     public Response selectAllLifeRecord(HttpSession session) {
         //设置日期格式   df.format(new Date())
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-
-        String userName = (String) session.getAttribute("currentUser");
-        String password = (String) session.getAttribute("passWord");
         String realname = (String) session.getAttribute("realName");
-
-        String redisID = "LifeAllRecord";
-        List<LifeRecord> listRecord=null;
-        if (redisUtils.get(redisID)==null) {
-            listRecord = lifeRecordService.selectAllLifeRecord();
-            logger.info("数据库中查的"+ JSON.toJSONString(listRecord));
-            redisUtils.set(redisID,listRecord);
-        }else {
-            listRecord= (List<LifeRecord>) redisUtils.get(redisID);
-            logger.info("redis中查的"+ JSON.toJSONString(listRecord));
-        }
+        List<LifeRecord> listRecord = lifeRecordService.selectAllLifeRecord();
+        logger.info("数据库中查的"+ JSON.toJSONString(listRecord));
         Response response = new Response();
         if (CollectionUtils.isEmpty(listRecord)) {
             response.setStatus(Constants.FAILED_CODE);
@@ -182,17 +169,6 @@ public class LifeRecordController {
 
             return response;
         }
-        String redisID = "LifeAllRecord";
-        List<LifeRecord> listRecord=null;
-        if (redisUtils.get(redisID)!=null) {
-            listRecord = lifeRecordService.selectAllLifeRecord();
-            logger.info("更新完数据，从数据库中重新查的数据"+ JSON.toJSONString(listRecord));
-            redisUtils.del(redisID);
-            logger.info("删除掉原有的缓存"+ redisID);
-            redisUtils.set(redisID,listRecord);
-            logger.info("更新redis缓存"+ redisID);
-        }
-
 
         ActionRecord actionRecord = new ActionRecord();
         actionRecord.setId(UUID.randomUUID().toString());
@@ -251,6 +227,9 @@ public class LifeRecordController {
                     break;
                 case Constants.LIFE_RECORD_MEDICAL:
                     record.setCategory(Constants.LIFE_RECORD_MEDICAL_CH);
+                    break;
+                case Constants.LIFE_RECORD_INSURANCE:
+                    record.setCategory(Constants.LIFE_RECORD_INSURANCE_CH);
                     break;
                 default:
                     record.setCategory(Constants.LIFE_RECORD_OTHER_CH);

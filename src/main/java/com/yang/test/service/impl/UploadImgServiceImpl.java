@@ -52,7 +52,7 @@ public class UploadImgServiceImpl implements IUploadImgService {
             // 放在static下的原因是，存放的是静态文件资源，即通过浏览器输入本地服务器地址，加文件名时是可以访问到的+"static/img/"
             String path = null;
             //path = ClassUtils.getDefaultClassLoader().getResource("").getPath() + "static/img/";
-            path="D:/Program Files/ProjectManage/src/main/resources/static/img/";
+            path = "D:/Program Files/ProjectManage/src/main/resources/static/img/";
             //path=ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/";
             path = path.replaceAll("%20", " ");
 

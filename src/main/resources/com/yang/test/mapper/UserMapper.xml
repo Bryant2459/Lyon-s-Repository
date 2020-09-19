@@ -12,6 +12,7 @@
         <result column="realname" property="realName"/>
         <result column="identitycard" property="identityCard"/>
         <result column="registerdate" property="registerDate"/>
+        <result column="role" property="role"/>
     </resultMap>
     <!--返回所有用户信息-->
     <select id="findAllUsers" resultMap="BaseResultMap">
@@ -27,9 +28,9 @@
     </select>
     <!--新增user   register-->
     <insert id="register" parameterType="com.yang.test.po.User">
-        insert into user (id, username, userpassword, gender, phone, address, realname, identitycard, registerdate)
+        insert into user (id, username, userpassword, gender, phone, address, realname, identitycard, registerdate,role)
         values (#{id}, #{userName}, #{userPassword}, #{gender}, #{phone}, #{address}, #{realName}, #{identityCard},
-                #{registerDate})
+                #{registerDate},#{role})
     </insert>
     <!--删除-->
     <delete id="deleteUser" parameterType="java.lang.String">
@@ -38,24 +39,6 @@
         where id = #{id}
     </delete>
 
-
-    <!--根据id更改用户信息
-    <update id="updateRecordByID" parameterType="com.yang.test.po.PrintIncome">
-        update printincome
-        <set >
-            <if test="date != null" >
-                Date = #{date,jdbcType=VARCHAR},
-            </if>
-            <if test="money != null" >
-                Money = #{money,jdbcType=DOUBLE},
-            </if>
-            <if test="remark != null" >
-                Remark = #{remark,jdbcType=VARCHAR},
-            </if>
-        </set>
-        where ID = #{id,jdbcType=VARCHAR}
-    </update>
--->
 
 
 </mapper>

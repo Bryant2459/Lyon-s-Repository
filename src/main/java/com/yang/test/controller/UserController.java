@@ -217,6 +217,7 @@ public class UserController {
         if (StringUtils.isNotBlank(user.getRealName()) && StringUtils.isNotEmpty(user.getRealName())) {
             userBack.setRealName(user.getRealName());
         }
+
         List<User> allUser = userService.findAllUsers();
         for (User tempUser : allUser) {
             if (StringUtils.equals(user.getUserName(), tempUser.getUserName())) {
@@ -228,6 +229,7 @@ public class UserController {
                 return response;
             }
         }
+        userBack.setRole("ADMIN");
         Boolean registerResult = userService.register(userBack);
 
         if (!registerResult) {

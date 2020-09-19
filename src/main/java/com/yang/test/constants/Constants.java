@@ -71,6 +71,7 @@ public interface Constants {
     public static final int LIFE_RECORD_WATER = 8;
     public static final int LIFE_RECORD_ELECTRICITY = 9;
     public static final int LIFE_RECORD_MEDICAL = 10;
+    public static final int LIFE_RECORD_INSURANCE = 11;
 
     public static final String LIFE_RECORD_SUPERMARKET_CH = "超市";
     public static final String LIFE_RECORD_SALARY_CH = "工资";
@@ -82,6 +83,7 @@ public interface Constants {
     public static final String LIFE_RECORD_WATER_CH = "水费";
     public static final String LIFE_RECORD_ELECTRICITY_CH = "电费";
     public static final String LIFE_RECORD_MEDICAL_CH = "医药费";
+    public static final String LIFE_RECORD_INSURANCE_CH = "保险";
 
     public static final String LIFE_RECORD_PERSON_LYON = "1";
     public static final String LIFE_RECORD_PERSON_YUYING = "2";
