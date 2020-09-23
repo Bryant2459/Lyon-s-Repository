@@ -127,6 +127,7 @@ public class LifeRecordControllerTest {
 
     @Test
     public void updateLifeRecordByID() {
+
     }
 
     @Test
