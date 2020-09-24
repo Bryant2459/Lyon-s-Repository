@@ -1,3 +1,1 @@
-2020-09-11 00:06:55.479 [main] ERROR com.alibaba.druid.pool.DruidAbstractDataSource - maxIdle is deprecated
-2020-09-11 00:50:31.559 [main] ERROR com.alibaba.druid.pool.DruidAbstractDataSource - maxIdle is deprecated
-2020-09-11 01:38:29.419 [main] ERROR com.alibaba.druid.pool.DruidAbstractDataSource - maxIdle is deprecated
+2020-09-24 18:02:13.262 [main] ERROR com.alibaba.druid.pool.DruidAbstractDataSource - maxIdle is deprecated
