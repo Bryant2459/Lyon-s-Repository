@@ -197,6 +197,12 @@ public class OilController {
         } else {
             record.setOilUnitPrice(new Double(0.0));
         }
+        if(null !=oilRecord.getRealOilUnitPrice()){
+            record.setRealOilUnitPrice(oilRecord.getRealOilUnitPrice());
+        }else{
+            record.setRealOilUnitPrice(new Double(0.0));
+        }
+
         if (StringUtils.isNotBlank(oilRecord.getRemark())) {
             record.setRemark(oilRecord.getRemark());
         } else {

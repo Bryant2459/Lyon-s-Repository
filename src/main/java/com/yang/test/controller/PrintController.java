@@ -70,7 +70,7 @@ public class PrintController {
 
     //修改数据
     @RequestMapping(value = "/updatePrintRecordById", method = RequestMethod.POST)
-    public Response updatePerson(PrintIncome printIncome, HttpSession session) {
+    public Response updatePrintRecordById(PrintIncome printIncome, HttpSession session) {
         String realname = (String) session.getAttribute("realName");
         //设置日期格式   df.format(new Date())
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -156,7 +156,7 @@ public class PrintController {
         actionRecord.setActionTime(df.format(new Date()));
         actionRecord.setOperator(realname);
         actionRecord.setService(AcitonConstants.SERVICE_PRINT_RECORD);
-        actionRecord.setRecordId(printIncome.getId());
+        actionRecord.setRecordId(addPrintIncome.getId());
         actionRecordService.addActionRecord(actionRecord);
 
         response.setData(null);
