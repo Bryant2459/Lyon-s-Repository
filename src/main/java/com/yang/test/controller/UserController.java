@@ -9,6 +9,8 @@ import com.yang.test.po.User;
 import com.yang.test.service.IActionRecordService;
 import com.yang.test.service.IUserService;
 import com.yang.test.utils.RedisUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -30,6 +32,7 @@ import java.util.UUID;
  * @Description:
  */
 @RestController
+@Api(tags = "用户接口")
 @RequestMapping(value = "/user")
 public class UserController {
     Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -46,6 +49,7 @@ public class UserController {
     private RedisUtils redisUtils;
 
     //查询所有
+    @ApiOperation("查询所有用户接口")
     @RequestMapping("/findAllUser")
     public Response findAll(HttpSession session) {
         String realname = (String) session.getAttribute("realName");
@@ -116,6 +120,7 @@ public class UserController {
     }
 
     //登录
+    @ApiOperation("用户登录接口")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Response login(User user, HttpSession session) throws Exception {
         User loginUser = new User();
@@ -180,6 +185,7 @@ public class UserController {
     }
 
     //新增
+    @ApiOperation("用户注册接口")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public Response addRecord(User user, HttpSession session) {
         String realname = (String) session.getAttribute("realName");
@@ -267,6 +273,7 @@ public class UserController {
     }
 
     //删除
+    @ApiOperation("删除用户接口")
     @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
     public Response deleteRecord(User user, HttpSession session) {
         String realname = (String) session.getAttribute("realName");
