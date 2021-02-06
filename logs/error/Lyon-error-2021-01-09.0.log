@@ -1,0 +1,1 @@
+2021-01-09 13:30:17.581 [main] ERROR com.alibaba.druid.pool.DruidAbstractDataSource - maxIdle is deprecated

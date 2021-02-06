@@ -25,11 +25,11 @@ public class MQDataRecordService implements IMQDataRecordService {
         Boolean addResult = true;
         int result = mqDataRecordMapper.addMQDataRecord(mqDataRecord);
         if (result <= 0) {
-            logger.info("MessageId ："+mqDataRecord.getMessageId()+"新增 失败");
+            logger.info("MessageId ："+mqDataRecord.getMessageId()+"：新增 失败");
          return addResult=false;
 
         }
-        logger.info("MessageId ："+mqDataRecord.getMessageId()+"新增 成功");
+        logger.info("MessageId ："+mqDataRecord.getMessageId()+"：新增 成功");
         return addResult;
     }
 }
