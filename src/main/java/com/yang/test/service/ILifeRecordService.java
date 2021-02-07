@@ -13,19 +13,19 @@ import java.util.List;
 public interface ILifeRecordService {
 
     //查询所有 selectLifeRecordByCategoryID
-     public List<LifeRecord> selectAllLifeRecord();
+    List<LifeRecord> selectAllLifeRecord();
 
     //根据分类id
-    public List<LifeRecord> selectLifeRecordByCategoryID(Integer categoryId);
+    List<LifeRecord> selectLifeRecordByCategoryID(Integer categoryId);
 
      //修改
-    public Boolean updateLifeRecordByID(LifeRecord lifeRecord);
+    Boolean updateLifeRecordByID(LifeRecord lifeRecord);
 
     //新增
-    public Boolean addLifeRecord(LifeRecord lifeRecord);
+    Boolean addLifeRecord(LifeRecord lifeRecord);
 
     //删除
 
-    public Boolean deleteLifeRecordByID(String id);
+    Boolean deleteLifeRecordByID(String id);
 
 }

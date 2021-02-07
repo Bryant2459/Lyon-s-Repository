@@ -13,16 +13,16 @@ import java.util.List;
 public interface IOilRecordService {
 
     //查询所有
-     public List<OilRecord> selectAllOilRecords();
+    List<OilRecord> selectAllOilRecords();
 
      //修改
-    public Boolean updateOilRecordByID(OilRecord oilRecord);
+    Boolean updateOilRecordByID(OilRecord oilRecord);
 
     //新增
-    public Boolean addOilRecord(OilRecord oilRecord);
+    Boolean addOilRecord(OilRecord oilRecord);
 
     //删除
 
-    public Boolean deleteOilRecordByID(String id);
+    Boolean deleteOilRecordByID(String id);
 
 }

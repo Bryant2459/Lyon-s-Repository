@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface IActionRecordService {
 
-    public Boolean addActionRecord(ActionRecord actionRecord);
+   Boolean addActionRecord(ActionRecord actionRecord);
 
 
 }

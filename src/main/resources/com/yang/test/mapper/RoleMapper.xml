@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yang.test.mapper.RoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.yang.test.po.Role">
+        <result column="ROLE" property="role"/>
+        <result column="ROLEID" property="roleId"/>
+    </resultMap>
+    <!--角色查询-->
+    <select id="selectRoles" resultMap="BaseResultMap">
+        select *
+        from role_mapping_roleid
+    </select>
+
+</mapper>

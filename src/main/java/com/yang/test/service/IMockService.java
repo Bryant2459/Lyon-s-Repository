@@ -13,7 +13,7 @@ import java.util.List;
 public interface IMockService {
 
     //查询所有
-    public List<MockData> findAllMockDatas();
+    List<MockData> findAllMockDatas();
 
 
 }

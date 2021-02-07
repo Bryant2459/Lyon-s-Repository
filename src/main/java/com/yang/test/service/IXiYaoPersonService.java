@@ -13,16 +13,16 @@ import java.util.List;
 public interface IXiYaoPersonService {
 
     //查询所有
-     public List<XiYaoPerson> selectAllXiYaoPerson();
+    List<XiYaoPerson> selectAllXiYaoPerson();
 
      //修改
-    public Boolean updateXiYaoPersonByID(XiYaoPerson xiYaoPerson);
+    Boolean updateXiYaoPersonByID(XiYaoPerson xiYaoPerson);
 
     //新增
-    public Boolean addXiYaoPerson(XiYaoPerson xiYaoPerson);
+    Boolean addXiYaoPerson(XiYaoPerson xiYaoPerson);
 
     //删除
 
-    public Boolean deleteXiYaoPersonByID(String id);
+    Boolean deleteXiYaoPersonByID(String id);
 
 }

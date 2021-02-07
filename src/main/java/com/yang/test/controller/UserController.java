@@ -5,8 +5,10 @@ import com.yang.test.common.Response;
 import com.yang.test.constants.AcitonConstants;
 import com.yang.test.constants.Constants;
 import com.yang.test.po.ActionRecord;
+import com.yang.test.po.Role;
 import com.yang.test.po.User;
 import com.yang.test.service.IActionRecordService;
+import com.yang.test.service.IRoleService;
 import com.yang.test.service.IUserService;
 import com.yang.test.utils.RedisUtils;
 import io.swagger.annotations.Api;
@@ -40,6 +42,9 @@ public class UserController {
     @Autowired(required = true)
     private IUserService userService;
 
+    @Autowired(required = true)
+    private IRoleService roleService;
+
 
     @Autowired(required = true)
     private IActionRecordService actionRecordService;
@@ -70,26 +75,26 @@ public class UserController {
         List<User> listRecord = null;
 
         if (redisUtils.get(UsersAllRecord) == null) {
-            long inquireDBstartTime=System.currentTimeMillis();
-            logger.info("inquireDBstartTime：" +inquireDBstartTime);
+            long inquireDBstartTime = System.currentTimeMillis();
+            logger.info("inquireDBstartTime：" + inquireDBstartTime);
             listRecord = userService.findAllUsers();
-            long inquireDBendTime=System.currentTimeMillis(); //获取结束时间
-            logger.info("inquireDBendTime：" +inquireDBendTime);
-            long time=inquireDBendTime-inquireDBstartTime;
-           // logger.info("从DB 中查询users 用时：" +(inquireDBendTime/1000-inquireDBstartTime/1000)+"s");
+            long inquireDBendTime = System.currentTimeMillis(); //获取结束时间
+            logger.info("inquireDBendTime：" + inquireDBendTime);
+            long time = inquireDBendTime - inquireDBstartTime;
+            // logger.info("从DB 中查询users 用时：" +(inquireDBendTime/1000-inquireDBstartTime/1000)+"s");
             logger.info("数据库中查的users" + JSON.toJSONString(listRecord));
             redisUtils.set(UsersAllRecord, listRecord);
-            redisUtils.expire(UsersAllRecord,60);
+            redisUtils.expire(UsersAllRecord, 60);
             logger.info("设置 redis users的过期时间:" + "60s");
 
-        }else{
-            long inquireRedisStartTime=System.currentTimeMillis();
-            logger.info("inquireRedisStartTime：" +inquireRedisStartTime);
-            listRecord= (List<User>) redisUtils.get(UsersAllRecord);
-            long inquireRedisEndTime=System.currentTimeMillis(); //获取结束时间
-            logger.info("inquireRedisEndTime：" +inquireRedisEndTime);
-           // logger.info("从Redis 中查询users 用时：" +(inquireRedisEndTime/1000-inquireRedisStartTime/1000)+"s");
-            logger.info("redis中查的users"+ JSON.toJSONString(listRecord));
+        } else {
+            long inquireRedisStartTime = System.currentTimeMillis();
+            logger.info("inquireRedisStartTime：" + inquireRedisStartTime);
+            listRecord = (List<User>) redisUtils.get(UsersAllRecord);
+            long inquireRedisEndTime = System.currentTimeMillis(); //获取结束时间
+            logger.info("inquireRedisEndTime：" + inquireRedisEndTime);
+            // logger.info("从Redis 中查询users 用时：" +(inquireRedisEndTime/1000-inquireRedisStartTime/1000)+"s");
+            logger.info("redis中查的users" + JSON.toJSONString(listRecord));
 
         }
 
@@ -246,7 +251,19 @@ public class UserController {
                 return response;
             }
         }
-        userBack.setRole("ADMIN");
+        List<Role> roleList = roleService.selectRoles();
+        if (CollectionUtils.isNotEmpty(roleList)) {
+            if (StringUtils.isNoneBlank(user.getRole())) {
+                for (Role role : roleList) {
+                    if (StringUtils.equals(role.getRoleId(), user.getRole())) {
+                        userBack.setRole(role.getRole());
+                        logger.info("The user role was Added that is : " + role.getRole());
+                        break;
+                    }
+                }
+            }
+        }
+
         Boolean registerResult = userService.register(userBack);
 
         if (!registerResult) {

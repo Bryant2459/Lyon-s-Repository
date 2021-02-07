@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yang.test.mapper.StudentMapper">
+
+    <resultMap id="BaseResultMap" type="com.yang.test.po.Student">
+        <id column="ID" property="id"/>
+        <result column="NAME" property="name"/>
+        <result column="SID" property="sId"/>
+        <result column="CLASSES" property="classes"/>
+        <result column="GRADE" property="grade"/>
+        <result column="ROLEID" property="roldId"/>
+        <result column="FIRSTDATE" property="firstDate"/>
+        <result column="LASTDATE" property="lastDate"/>
+
+    </resultMap>
+    <!--返回所有用户信息-->
+    <select id="selectStudents" resultMap="BaseResultMap">
+        select *
+        from record.student_record
+    </select>
+
+    <!--根据id更改用户信息-->
+    <update id="updateStudentByID" parameterType="com.yang.test.po.Student">
+        update record.student_record
+        <trim prefix="set" suffixOverrides=",">
+            <if test="name != null">NAME = #{name},</if>
+            <if test="sId != null">SID = #{sId},</if>
+            <if test="classes != null">CLASSES = #{classes},</if>
+            <if test="grade != null">GRADE = #{grade},</if>
+            <if test="roldId != null">ROLEID = #{roldId},</if>
+            <if test="firstDate != null">FIRSTDATE = #{firstDate},</if>
+            <if test="lastDate != null">LASTDATE = #{lastDate},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <!--新增record-->
+    <insert id="addStudent" parameterType="com.yang.test.po.Student">
+        insert into record.student_record
+         (ID, NAME, SID, CLASSES, GRADE, ROLEID, FIRSTDATE, LASTDATE )
+        values (#{id}, #{name}, #{sId}, #{classes}, #{grade}, #{roldId}, #{firstDate}, #{lastDate},
+            )
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteStudentByID" parameterType="java.lang.String">
+        delete
+        from record.student_record
+        where id = #{id}
+    </delete>
+
+</mapper>
