@@ -38,7 +38,7 @@
     <insert id="addStudent" parameterType="com.yang.test.po.Student">
         insert into record.student_record
          (ID, NAME, SID, CLASSES, GRADE, ROLEID, FIRSTDATE, LASTDATE )
-        values (#{id}, #{name}, #{sId}, #{classes}, #{grade}, #{roldId}, #{firstDate}, #{lastDate},
+        values (#{id}, #{name}, #{sId}, #{classes}, #{grade}, #{roldId}, #{firstDate}, #{lastDate}
             )
     </insert>
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yang.test.mapper.ScoreMapper">
+
+    <resultMap id="BaseResultMap" type="com.yang.test.po.Score">
+        <id column="ID" property="id"/>
+        <result column="CHINESE" property="chinese"/>
+        <result column="MATHEMATIC" property="mathematic"/>
+        <result column="ENGLISH" property="english"/>
+        <result column="PHYSIC" property="physic"/>
+        <result column="CHEMISTRY" property="chemistry"/>
+        <result column="HISTORY" property="history"/>
+        <result column="POLITICAL" property="political"/>
+        <result column="SPORT" property="sport"/>
+        <result column="BIOLOGICAL" property="biological"/>
+        <result column="GEOGRAPHY" property="geography"/>
+        <result column="EXAMINATION_TIME" property="examinationTime"/>
+        <result column="FIRST_ADD_TIME" property="firstAddTime"/>
+        <result column="LAST_MODIFIED_TIME" property="lastModifiedTime"/>
+        <result column="OPERATOR" property="operator"/>
+
+    </resultMap>
+    <!--返回所有用户信息-->
+    <select id="selectScores" resultMap="BaseResultMap">
+        select *
+        from record.score_record
+    </select>
+
+    <!--根据id更改用户信息-->
+    <update id="updateScoreByID" parameterType="com.yang.test.po.Score">
+        update record.score_record
+        <trim prefix="set" suffixOverrides=",">
+            <if test="chinese != null">CHINESE = #{chinese},</if>
+            <if test="mathematic != null">MATHEMATIC = #{mathematic},</if>
+            <if test="english != null">ENGLISH = #{english},</if>
+            <if test="physic != null">PHYSIC = #{physic},</if>
+            <if test="chemistry != null">CHEMISTRY = #{chemistry},</if>
+            <if test="history != null">HISTORY = #{history},</if>
+            <if test="political != null">POLITICAL = #{political},</if>
+            <if test="sport != null">SPORT = #{sport},</if>
+            <if test="biological != null">BIOLOGICAL = #{biological},</if>
+            <if test="geography != null">GEOGRAPHY = #{geography},</if>
+            <if test="examinationTime != null">EXAMINATION_TIME = #{examinationTime},</if>
+            <if test="firstAddTime != null">FIRST_ADD_TIME = #{firstAddTime},</if>
+            <if test="lastModifiedTime != null">LAST_MODIFIED_TIME = #{lastModifiedTime},</if>
+            <if test="operator != null">OPERATOR = #{operator},</if>
+        </trim>
+        where ID = #{id}
+    </update>
+
+    <!--新增record-->
+    <insert id="addScore" parameterType="com.yang.test.po.Score">
+        insert into record.score_record
+         (ID,CHINESE,MATHEMATIC,ENGLISH,PHYSIC,CHEMISTRY,HISTORY,POLITICAL,SPORT,BIOLOGICAL,GEOGRAPHY,EXAMINATION_TIME,FIRST_ADD_TIME,LAST_MODIFIED_TIME,OPERATOR )
+        values (#{id}, #{chinese}, #{mathematic}, #{english}, #{physic}, #{chemistry}, #{history}, #{political},
+        #{sport}, #{biological}, #{geography}, #{examinationTime}, #{firstAddTime}, #{lastModifiedTime}, #{operator}
+            )
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteScoreByID" parameterType="java.lang.String">
+        delete
+        from record.score_record
+        where ID = #{id}
+    </delete>
+
+</mapper>

@@ -4,11 +4,10 @@ import com.yang.test.common.Response;
 import com.yang.test.constants.AcitonConstants;
 import com.yang.test.constants.Constants;
 import com.yang.test.po.ActionRecord;
-import com.yang.test.po.Student;
-import com.yang.test.po.XiYaoPerson;
+import com.yang.test.po.Score;
 import com.yang.test.service.IActionRecordService;
-import com.yang.test.service.IStudentService;
-import com.yang.test.service.IXiYaoPersonService;
+import com.yang.test.service.IScoreService;
+import com.yang.test.service.IScoreService;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -31,24 +30,24 @@ import java.util.UUID;
  * Time: 21:45
  */
 @RestController
-@RequestMapping(value = "/student")
-public class StudentController {
-    Logger logger= LoggerFactory.getLogger(StudentController.class);
+@RequestMapping(value = "/score")
+public class ScoreController {
+    Logger logger = LoggerFactory.getLogger(ScoreController.class);
 
     @Autowired(required = true)
-    private IStudentService studentService;
+    private IScoreService scoreService;
 
     @Autowired(required = true)
     private IActionRecordService actionRecordService;
 
     //查询所有
-    @RequestMapping("/selectStudents")
-    public Response selectStudents(HttpSession session) {
+    @RequestMapping("/selectScores")
+    public Response selectScores(HttpSession session) {
         String realname = (String) session.getAttribute("realName");
         //设置日期格式   df.format(new Date())
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        List<Student> listRecord = studentService.selectStudents();
+        List<Score> listRecord = scoreService.selectScores();
         Response response = new Response();
         if (CollectionUtils.isEmpty(listRecord)) {
             response.setStatus(Constants.FAILED_CODE);
@@ -63,7 +62,7 @@ public class StudentController {
         actionRecord.setAction(AcitonConstants.ACTION_SELECT);
         actionRecord.setActionTime(df.format(new Date()));
         actionRecord.setOperator(realname);
-        actionRecord.setService(AcitonConstants.SERVICE_STUDENT_RECORD);
+        actionRecord.setService(AcitonConstants.SERVICE_SCORE_RECORD);
         actionRecord.setRecordId(null);
         actionRecordService.addActionRecord(actionRecord);
 
@@ -73,53 +72,90 @@ public class StudentController {
         response.setErroCode(Constants.SELECT_SUCCESS_CODE);
         response.setData(listRecord);
         //String ResStr= JSON.toJSONString(response);
-        logger.info("查出来 Student 的结果数量：" + listRecord.size());
+        logger.info("查出来 Score 的结果数量：" + listRecord.size());
         return response;
     }
 
     //修改数据
-    @RequestMapping(value = "/updateStudentByID", method = RequestMethod.POST)
-    public Response updateStudentByID(Student student, HttpSession session) {
+    @RequestMapping(value = "/updateScoreByID", method = RequestMethod.POST)
+    public Response updateScoreByID(Score Score, HttpSession session) {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String realname = (String) session.getAttribute("realName");
-        Student record=new Student();
+        Score record = new Score();
         Response response = new Response();
-        if (StringUtils.isNotBlank(student.getId())) {
-            record.setId(student.getId());
+        if (StringUtils.isNotBlank(Score.getId())) {
+            record.setId(Score.getId());
         }
-        if (StringUtils.isNotBlank(student.getName())) {
-            record.setName(student.getName());
+        if (Score.getChinese() != null) {
+            record.setChinese(Score.getChinese());
         } else {
-            record.setName("");
+            record.setChinese(null);
         }
-        if (StringUtils.isNotBlank(student.getSId())) {
-            record.setSId(student.getSId());
+        if (Score.getMathematic() != null) {
+            record.setMathematic(Score.getMathematic());
         } else {
-            record.setSId("");
+            record.setMathematic(null);
         }
-        if (StringUtils.isNotBlank(student.getClasses())) {
-            record.setClasses(student.getClasses());
+        if (Score.getEnglish() != null) {
+            record.setEnglish(Score.getEnglish());
         } else {
-            record.setClasses("");
+            record.setEnglish(null);
         }
-        if (StringUtils.isNotBlank(student.getGrade())) {
-            record.setGrade(student.getGrade());
+        if (Score.getPhysic() != null) {
+            record.setPhysic(Score.getPhysic());
         } else {
-            record.setGrade("");
+            record.setPhysic(null);
         }
-        if (StringUtils.isNotBlank(student.getRoldId())) {
-            record.setRoldId(student.getRoldId());
+        if (Score.getChemistry() != null) {
+            record.setChemistry(Score.getChemistry());
         } else {
-            record.setRoldId("");
+            record.setChemistry(null);
         }
-        if (StringUtils.isNotBlank(student.getFirstDate())) {
-            record.setFirstDate(student.getFirstDate());
+        if (Score.getHistory() != null) {
+            record.setHistory(Score.getHistory());
         } else {
-            record.setFirstDate(df.format(new Date()));
+            record.setHistory(null);
         }
-         record.setLastDate(df.format(new Date()));
+        if (Score.getPolitical() != null) {
+            record.setPolitical(Score.getPolitical());
+        } else {
+            record.setPolitical(null);
+        }
+        if (Score.getSport() != null) {
+            record.setSport(Score.getSport());
+        } else {
+            record.setSport(null);
+        }
 
-        Boolean updateResult = studentService.updateStudentByID(record);
+        if (Score.getBiological() != null) {
+            record.setBiological(Score.getBiological());
+        } else {
+            record.setBiological(null);
+        }
+        if (Score.getGeography() != null) {
+            record.setGeography(Score.getGeography());
+        } else {
+            record.setGeography(null);
+        }
+        if (StringUtils.isNoneBlank(Score.getExaminationTime())) {
+            record.setExaminationTime(Score.getExaminationTime());
+        } else {
+            record.setExaminationTime("");
+        }
+        if (StringUtils.isNoneBlank(Score.getFirstAddTime())) {
+            record.setFirstAddTime(Score.getFirstAddTime());
+        } else {
+            record.setFirstAddTime("");
+        }
+
+        record.setLastModifiedTime(df.format(new Date()));
+        if (StringUtils.isNoneBlank(Score.getOperator())) {
+            record.setOperator(Score.getOperator());
+        } else {
+            record.setOperator("");
+        }
+
+        Boolean updateResult = scoreService.updateScoreByID(record);
         if (!updateResult) {
             response.setData(null);
             response.setMessage(Constants.UPDATE_FAILED_MESSAGE);
@@ -133,7 +169,7 @@ public class StudentController {
         actionRecord.setAction(AcitonConstants.ACTION_UPDATE);
         actionRecord.setActionTime(df.format(new Date()));
         actionRecord.setOperator(realname);
-        actionRecord.setService(AcitonConstants.SERVICE_STUDENT_RECORD);
+        actionRecord.setService(AcitonConstants.SERVICE_SCORE_RECORD);
         actionRecord.setRecordId(record.getId());
         actionRecordService.addActionRecord(actionRecord);
         response.setData(null);
@@ -144,42 +180,84 @@ public class StudentController {
     }
 
     //新增
-    @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
-    public Response addStudent(Student student, HttpSession session) {
+    @RequestMapping(value = "/addScore", method = RequestMethod.POST)
+    public Response addScore(Score score, HttpSession session) {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String realname = (String) session.getAttribute("realName");
         Response response = new Response();
-        Student addStudent=new Student();
-        addStudent.setId(UUID.randomUUID().toString());
-        if (StringUtils.isNotBlank(student.getName())) {
-            addStudent.setName(student.getName());
-        } else {
-            addStudent.setName("");
-        }
-        if (StringUtils.isNotBlank(student.getSId())) {
-            addStudent.setSId(student.getSId());
-        } else {
-            addStudent.setSId("");
-        }
-        if (StringUtils.isNotBlank(student.getClasses())) {
-            addStudent.setClasses(student.getClasses());
-        } else {
-            addStudent.setClasses("");
-        }
-        if (StringUtils.isNotBlank(student.getGrade())) {
-            addStudent.setGrade(student.getGrade());
-        } else {
-            addStudent.setGrade("");
-        }
-        if (StringUtils.isNotBlank(student.getRoldId())) {
-            addStudent.setRoldId(student.getRoldId());
-        } else {
-            addStudent.setRoldId("");
-        }
-        addStudent.setFirstDate(df.format(new Date()));
-        addStudent.setLastDate("");
+        Score record = new Score();
 
-        Boolean addResult = studentService.addStudent(addStudent);
+        record.setId(UUID.randomUUID().toString());
+        if (score.getChinese() != null) {
+            record.setChinese(score.getChinese());
+        } else {
+            record.setChinese(null);
+        }
+        if (score.getMathematic() != null) {
+            record.setMathematic(score.getMathematic());
+        } else {
+            record.setMathematic(null);
+        }
+        if (score.getEnglish() != null) {
+            record.setEnglish(score.getEnglish());
+        } else {
+            record.setEnglish(null);
+        }
+        if (score.getPhysic() != null) {
+            record.setPhysic(score.getPhysic());
+        } else {
+            record.setPhysic(null);
+        }
+        if (score.getChemistry() != null) {
+            record.setChemistry(score.getChemistry());
+        } else {
+            record.setChemistry(null);
+        }
+        if (score.getHistory() != null) {
+            record.setHistory(score.getHistory());
+        } else {
+            record.setHistory(null);
+        }
+        if (score.getPolitical() != null) {
+            record.setPolitical(score.getPolitical());
+        } else {
+            record.setPolitical(null);
+        }
+        if (score.getSport() != null) {
+            record.setSport(score.getSport());
+        } else {
+            record.setSport(null);
+        }
+
+        if (score.getBiological() != null) {
+            record.setBiological(score.getBiological());
+        } else {
+            record.setBiological(null);
+        }
+        if (score.getGeography() != null) {
+            record.setGeography(score.getGeography());
+        } else {
+            record.setGeography(null);
+        }
+        if (StringUtils.isNoneBlank(score.getExaminationTime())) {
+            record.setExaminationTime(score.getExaminationTime());
+        } else {
+            record.setExaminationTime("");
+        }
+        if (StringUtils.isNoneBlank(score.getFirstAddTime())) {
+            record.setFirstAddTime(score.getFirstAddTime());
+        } else {
+            record.setFirstAddTime("");
+        }
+
+        record.setLastModifiedTime(df.format(new Date()));
+        if (StringUtils.isNoneBlank(score.getOperator())) {
+            record.setOperator(score.getOperator());
+        } else {
+            record.setOperator("");
+        }
+
+        Boolean addResult = scoreService.addScore(record);
 
         if (!addResult) {
             response.setData(null);
@@ -193,8 +271,8 @@ public class StudentController {
         actionRecord.setAction(AcitonConstants.ACTION_ADD);
         actionRecord.setActionTime(df.format(new Date()));
         actionRecord.setOperator(realname);
-        actionRecord.setService(AcitonConstants.SERVICE_STUDENT_RECORD);
-        actionRecord.setRecordId(student.getId());
+        actionRecord.setService(AcitonConstants.SERVICE_SCORE_RECORD);
+        actionRecord.setRecordId(score.getId());
         actionRecordService.addActionRecord(actionRecord);
         response.setData(null);
         response.setMessage(Constants.ADD_SUCCESS_MESSAGE);
@@ -204,26 +282,25 @@ public class StudentController {
     }
 
     //删除
-    @RequestMapping(value = "/deleteStudentByID", method = RequestMethod.POST)
-    public Response deleteStudentByID(Student student, HttpSession session) {
+    @RequestMapping(value = "/deleteScoreByID", method = RequestMethod.POST)
+    public Response deleteScoreByID(Score score, HttpSession session) {
         String realname = (String) session.getAttribute("realName");
         //设置日期格式   df.format(new Date())
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
         Response response = new Response();
         Boolean deleteResult = false;
         Boolean confirm = false;
-        String id = student.getId();
+        String id = score.getId();
         if (StringUtils.isNotBlank(id) && StringUtils.isNotEmpty(id)) {
             //确保传来的id 数据库中存在
-            List<Student> allRecord = studentService.selectStudents();
-            for (Student tempStudent : allRecord) {
-                if (StringUtils.equals(tempStudent.getId(), id)) {
+            List<Score> allRecord = scoreService.selectScores();
+            for (Score tempScore : allRecord) {
+                if (StringUtils.equals(tempScore.getId(), id)) {
                     confirm = true;
                 }
             }
             if (confirm) {
-                deleteResult = studentService.deleteStudentByID(id);
+                deleteResult = scoreService.deleteScoreByID(id);
             } else {
                 response.setData(null);
                 response.setMessage(Constants.DELETE_FAILED_MESSAGE_NO_COULD_DELETE_ID);
@@ -254,7 +331,7 @@ public class StudentController {
         actionRecord.setAction(AcitonConstants.ACTION_DELETE);
         actionRecord.setActionTime(df.format(new Date()));
         actionRecord.setOperator(realname);
-        actionRecord.setService(AcitonConstants.SERVICE_STUDENT_RECORD);
+        actionRecord.setService(AcitonConstants.SERVICE_SCORE_RECORD);
         actionRecord.setRecordId(id);
         actionRecordService.addActionRecord(actionRecord);
 

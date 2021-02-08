@@ -20,6 +20,7 @@ public interface AcitonConstants {
     public static final String SERVICE_PRINT_RECORD = "打印收入记录表";
     public static final String SERVICE_XIYAO_PERSON_RECORD = "西姚花名册记录表";
     public static final String SERVICE_STUDENT_RECORD = "学生记录表";
+    public static final String SERVICE_SCORE_RECORD = "成绩记录表";
     public static final String SERVICE_USER_RECORD = "用户记录表";
     public static final String SERVICE_UPLOAD_RECORD = "上传文件记录表";
     public static final String SERVICE_MQ = "MQ";
