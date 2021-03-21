@@ -25,15 +25,14 @@ import java.util.Map;
 
 /**
  * http客户端
- *
  */
 public class HttpClient {
 
     /**
      * post请求传输map数据
      *
-     * @param url url地址
-     * @param map map数据
+     * @param url      url地址
+     * @param map      map数据
      * @param encoding 编码方式
      * @return
      * @throws ClientProtocolException
@@ -77,8 +76,8 @@ public class HttpClient {
     /**
      * post请求传输json数据
      *
-     * @param url url地址
-     * @param json json数据
+     * @param url      url地址
+     * @param json     json数据
      * @param encoding 编码方式
      * @return
      * @throws ClientProtocolException
@@ -119,7 +118,7 @@ public class HttpClient {
      * @throws ClientProtocolException
      * @throws IOException
      */
-    public static String  sendGetData(String url, String encoding) throws ClientProtocolException, IOException {
+    public static String sendGetData(String url, String encoding) throws ClientProtocolException, IOException {
         String result = "";
 
         // 创建httpclient对象

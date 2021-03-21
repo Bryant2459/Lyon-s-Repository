@@ -46,9 +46,9 @@
     <!--新增record-->
     <insert id="addOilRecord" parameterType="com.yang.test.po.OilRecord">
         insert into oil_record(id, add_oil_date, oil_volume, dashboard_mileage, cost, real_cost, oil_unit_price,
-                               real_oil_unit_price, remark, record_first_date, record_last_update_date, operator)
+        real_oil_unit_price, remark, record_first_date, record_last_update_date, operator)
         values (#{id}, #{addOilDate}, #{oilVolume}, #{dashboardMileage}, #{cost}, #{realCost}, #{oilUnitPrice},
-                #{realOilUnitPrice}, #{remark}, #{recordFirstDate}, #{recordLastUpdateDate}, #{operator})
+        #{realOilUnitPrice}, #{remark}, #{recordFirstDate}, #{recordLastUpdateDate}, #{operator})
     </insert>
 
     <!--删除-->

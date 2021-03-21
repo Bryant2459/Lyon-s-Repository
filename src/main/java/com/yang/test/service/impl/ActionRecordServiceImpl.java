@@ -16,22 +16,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class ActionRecordServiceImpl implements IActionRecordService {
 
-    Logger logger= LoggerFactory.getLogger(ActionRecordServiceImpl.class);
+    Logger logger = LoggerFactory.getLogger(ActionRecordServiceImpl.class);
 
-    @Autowired(required=true)
+    @Autowired(required = true)
     private ActionRecordMapper actionRecordMapper;
 
 
     @Override
     public Boolean addActionRecord(ActionRecord actionRecord) {
-        Boolean booleanResult= true;
+        Boolean booleanResult = true;
         int registerResult = actionRecordMapper.addActionRecord(actionRecord);
-        if(registerResult<=0) {
+        if (registerResult <= 0) {
             booleanResult = false;
             logger.info("当前新增 action record 为：" + actionRecord.getId() + ";新增结果：" + booleanResult);
             return booleanResult;
         }
-        logger.info("当前新增 action record 为："+actionRecord.getId()+";新增结果："+booleanResult);
+        logger.info("当前新增 action record 为：" + actionRecord.getId() + ";新增结果：" + booleanResult);
         return booleanResult;
     }
 

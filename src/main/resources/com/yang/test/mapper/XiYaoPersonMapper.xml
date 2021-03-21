@@ -45,9 +45,9 @@
     <!--新增record-->
     <insert id="addXiYaoPerson" parameterType="com.yang.test.po.PrintIncome">
         insert into xiyao_village_person(id, headhousehold, familymember, relation, age, identitycard, address, phone,
-                                         remark, firstaddtime, lastupdate, operator)
+        remark, firstaddtime, lastupdate, operator)
         values (#{id}, #{headHousHold}, #{familyMember}, #{relation}, #{age}, #{identityCard}, #{address}, #{phone},
-                #{remark}, #{firstAddtime}, #{lastUpdate}, #{operator})
+        #{remark}, #{firstAddtime}, #{lastUpdate}, #{operator})
     </insert>
 
     <!--删除-->

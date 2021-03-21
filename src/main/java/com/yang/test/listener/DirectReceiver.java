@@ -43,7 +43,7 @@ public class DirectReceiver {
         String messageId = (String) message.get("messageId");
         String createTime = (String) message.get("createTime");
         String messageData = (String) message.get("messageData");
-        Response response = JSON.parseObject(messageData,Response.class);
+        Response response = JSON.parseObject(messageData, Response.class);
         logger.info("从接到的消息中，拿到数据，createTime  : " + createTime);
         logger.info("从接到的消息中，拿到数据，messageData --> 转成对象  : " + response);
         logger.info("从接到的消息中，拿到数据，转成对象字符串  : " + response.toString());
@@ -56,7 +56,7 @@ public class DirectReceiver {
         actionRecord.setService(AcitonConstants.SERVICE_MQ);
         actionRecord.setRecordId(messageId);
         actionRecordService.addActionRecord(actionRecord);
-        MQDataRecord mqDataRecord=new MQDataRecord();
+        MQDataRecord mqDataRecord = new MQDataRecord();
         mqDataRecord.setId(UUID.randomUUID().toString());
         mqDataRecord.setCreateTime(createTime);
         mqDataRecord.setCurrenTime(df.format(new Date()));
@@ -64,10 +64,10 @@ public class DirectReceiver {
         mqDataRecord.setMessageId(messageId);
         mqDataRecord.setIdentity(AcitonConstants.MQ_IDENTITY_CONSUMER);
         Boolean addMQResult = mqDataRecordService.addMQDataRecord(mqDataRecord);
-       if(addMQResult){
-           logger.info("add mq data successed");
-       }else{
-           logger.info("add mq data failed");
-       }
+        if (addMQResult) {
+            logger.info("add mq data successed");
+        } else {
+            logger.info("add mq data failed");
+        }
     }
 }

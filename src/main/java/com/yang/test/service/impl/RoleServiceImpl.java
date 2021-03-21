@@ -19,13 +19,14 @@ import java.util.List;
  */
 @Service
 public class RoleServiceImpl implements IRoleService {
-    Logger logger= LoggerFactory.getLogger(RoleServiceImpl.class);
+    Logger logger = LoggerFactory.getLogger(RoleServiceImpl.class);
 
     @Autowired(required = true)
     private RoleMapper roleMapper;
+
     @Override
     public List<Role> selectRoles() {
-        logger.info("selectRoles :"+roleMapper.selectRoles().toString());
+        logger.info("selectRoles :" + roleMapper.selectRoles().toString());
         return roleMapper.selectRoles();
     }
 }

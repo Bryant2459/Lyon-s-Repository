@@ -23,7 +23,7 @@ import java.util.List;
  */
 @Service
 public class OilRecordSerivceImpl implements IOilRecordService {
-    Logger logger= LoggerFactory.getLogger(OilRecordSerivceImpl.class);
+    Logger logger = LoggerFactory.getLogger(OilRecordSerivceImpl.class);
 
     @Autowired(required = true)
     private OilRecordMapper oilRecordMapper;

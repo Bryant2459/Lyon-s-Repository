@@ -35,7 +35,7 @@ public class User implements Serializable {
     @ApiModelProperty(value = "身份证")
     private String identityCard;
     @ApiModelProperty(value = "注册日期")
-    private  String registerDate;
+    private String registerDate;
 
 
     public User() {

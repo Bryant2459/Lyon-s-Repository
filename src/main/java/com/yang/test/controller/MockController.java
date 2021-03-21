@@ -1,9 +1,6 @@
 package com.yang.test.controller;
 
 
-
-
-
 import com.alibaba.fastjson.JSONObject;
 import com.yang.test.common.Response;
 import com.yang.test.constants.Constants;
@@ -28,35 +25,35 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/mock")
 public class MockController {
-    Logger logger= LoggerFactory.getLogger(MockController.class);
+    Logger logger = LoggerFactory.getLogger(MockController.class);
 
-    @Autowired(required=true)
+    @Autowired(required = true)
     private IMockService mockService;
 
     //查询所有
     @RequestMapping("/findAllMockDatas")
-    public Response findAllMockDatas(){
-        List<MockData> listRecord= mockService.findAllMockDatas();
-        Response response=new Response();
-        if(CollectionUtils.isEmpty(listRecord)){
+    public Response findAllMockDatas() {
+        List<MockData> listRecord = mockService.findAllMockDatas();
+        Response response = new Response();
+        if (CollectionUtils.isEmpty(listRecord)) {
             response.setStatus(Constants.FAILED_CODE);
             response.setMessage(Constants.SELECT_REMARK_MESSAGE);
             response.setErroCode(Constants.SELECT_FAILED_CODE);
             response.setData(null);
             return response;
         }
-        for (MockData mock:listRecord) {
-           if(StringUtils.equals(mock.getId(), MockConstans.MOCK_OIL_ID)){
-               Object parse = JSONObject.parse(mock.getMessage());
-               response.setData(parse);
-           }
+        for (MockData mock : listRecord) {
+            if (StringUtils.equals(mock.getId(), MockConstans.MOCK_OIL_ID)) {
+                Object parse = JSONObject.parse(mock.getMessage());
+                response.setData(parse);
+            }
         }
 
         response.setStatus(Constants.SELECT_SUCCESS_CODE);
         response.setMessage(Constants.SELECT_SUCCESS_MESSAGE);
         response.setErroCode(Constants.SELECT_SUCCESS_CODE);
 
-        logger.info("查出来mock的结果数量："+listRecord.size());
+        logger.info("查出来mock的结果数量：" + listRecord.size());
         return response;
     }
 

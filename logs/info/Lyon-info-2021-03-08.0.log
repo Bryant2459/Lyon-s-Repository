@@ -1,0 +1,159 @@
+2021-03-08 14:58:34.734 [main] INFO  com.yang.test.SpringApplicationLyon - Starting SpringApplicationLyon on Bryant with PID 12156 (D:\Project\ProjectManage\target\classes started by Lyon Bryant 24 in D:\Project)
+2021-03-08 14:58:34.763 [main] INFO  com.yang.test.SpringApplicationLyon - The following profiles are active: dev
+2021-03-08 14:58:37.380 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-08 14:58:37.387 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-08 14:58:37.519 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94ms. Found 0 Redis repository interfaces.
+2021-03-08 14:58:38.793 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-03-08 14:58:38.813 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-08 14:58:38.814 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-03-08 14:58:38.815 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-03-08 14:58:39.162 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-03-08 14:58:39.163 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4229 ms
+2021-03-08 14:58:39.260 [main] INFO  com.yang.test.config.DruidConfig - loginUsername:admin
+2021-03-08 14:58:39.260 [main] INFO  com.yang.test.config.DruidConfig - loginPassword:123456
+2021-03-08 14:58:41.434 [main] INFO  com.yang.test.config.DirectRabbitConfig - Consumer -----> A new queue is generated : Lyon Direct Queue
+2021-03-08 14:58:41.437 [main] INFO  com.yang.test.config.DirectRabbitConfig - Consumer---> A new Direct Exchange is generated : Lyon Direct Exchange
+2021-03-08 14:58:41.443 [main] INFO  com.yang.test.config.DirectRabbitConfig - Consumer ---> Routing Key : Lyon Direct Routing
+2021-03-08 14:58:41.450 [main] INFO  com.yang.test.config.DirectRabbitConfig - Consumer --->A new lonely Exchange is generated : lonely Direct Exchange 
+2021-03-08 14:58:41.519 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-08 14:58:41.757 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-08 14:58:42.610 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2021-03-08 14:58:42.953 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2021-03-08 14:58:43.023 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-08 14:58:43.026 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-03-08 14:58:43.074 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-03-08 14:58:43.148 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-03-08 14:58:43.982 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addRecordUsingPOST_1
+2021-03-08 14:58:43.987 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteRecordUsingPOST_1
+2021-03-08 14:58:43.994 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingGET_1
+2021-03-08 14:58:43.999 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingHEAD_1
+2021-03-08 14:58:44.004 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingPOST_1
+2021-03-08 14:58:44.010 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingPUT_1
+2021-03-08 14:58:44.016 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingPATCH_1
+2021-03-08 14:58:44.021 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingDELETE_1
+2021-03-08 14:58:44.025 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingOPTIONS_1
+2021-03-08 14:58:44.030 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingTRACE_1
+2021-03-08 14:58:44.111 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 14:58:44.281 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#16e4db59:0/SimpleConnection@2f97e3de [delegate=amqp://Lyon@127.0.0.1:5672/, localPort= 51283]
+2021-03-08 14:58:44.457 [main] INFO  com.yang.test.SpringApplicationLyon - Started SpringApplicationLyon in 11.65 seconds (JVM running for 16.299)
+2021-03-08 14:58:56.943 [SpringContextShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2021-03-08 14:58:57.545 [SpringContextShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2021-03-08 14:58:58.350 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2021-03-08 14:58:58.351 [SpringContextShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Shutdown ignored - container is not active already
+2021-03-08 14:58:58.366 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-08 16:48:30.046 [main] INFO  com.yang.test.SpringApplicationLyon - Starting SpringApplicationLyon on Bryant with PID 1736 (D:\Project\ProjectManage\target\classes started by Lyon Bryant 24 in D:\Project)
+2021-03-08 16:48:30.053 [main] INFO  com.yang.test.SpringApplicationLyon - The following profiles are active: dev
+2021-03-08 16:48:32.652 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-08 16:48:32.689 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-08 16:48:32.834 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86ms. Found 0 Redis repository interfaces.
+2021-03-08 16:48:34.063 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-03-08 16:48:34.090 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-08 16:48:34.092 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-03-08 16:48:34.093 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-03-08 16:48:34.407 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-03-08 16:48:34.407 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4249 ms
+2021-03-08 16:48:34.499 [main] INFO  com.yang.test.config.DruidConfig - loginUsername:admin
+2021-03-08 16:48:34.499 [main] INFO  com.yang.test.config.DruidConfig - loginPassword:123456
+2021-03-08 16:48:36.487 [main] INFO  com.yang.test.config.DirectRabbitConfig - Consumer -----> A new queue is generated : Lyon Direct Queue
+2021-03-08 16:48:36.492 [main] INFO  com.yang.test.config.DirectRabbitConfig - Consumer---> A new Direct Exchange is generated : Lyon Direct Exchange
+2021-03-08 16:48:36.496 [main] INFO  com.yang.test.config.DirectRabbitConfig - Consumer ---> Routing Key : Lyon Direct Routing
+2021-03-08 16:48:36.505 [main] INFO  com.yang.test.config.DirectRabbitConfig - Consumer --->A new lonely Exchange is generated : lonely Direct Exchange 
+2021-03-08 16:48:36.579 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-08 16:48:36.801 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-08 16:48:37.595 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2021-03-08 16:48:37.797 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2021-03-08 16:48:37.860 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-08 16:48:37.862 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-03-08 16:48:37.904 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-03-08 16:48:37.969 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-03-08 16:48:38.677 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addRecordUsingPOST_1
+2021-03-08 16:48:38.682 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteRecordUsingPOST_1
+2021-03-08 16:48:38.688 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingGET_1
+2021-03-08 16:48:38.694 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingHEAD_1
+2021-03-08 16:48:38.700 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingPOST_1
+2021-03-08 16:48:38.705 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingPUT_1
+2021-03-08 16:48:38.710 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingPATCH_1
+2021-03-08 16:48:38.716 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingDELETE_1
+2021-03-08 16:48:38.720 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingOPTIONS_1
+2021-03-08 16:48:38.725 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findAllUsingTRACE_1
+2021-03-08 16:48:38.794 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 16:48:38.875 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#35554635:0/SimpleConnection@7a689979 [delegate=amqp://Lyon@127.0.0.1:5672/, localPort= 64538]
+2021-03-08 16:48:39.017 [main] INFO  com.yang.test.SpringApplicationLyon - Started SpringApplicationLyon in 10.668 seconds (JVM running for 15.266)
+2021-03-08 17:24:13.325 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@4c4be9d8: tags=[[amq.ctag-f0c2_GKK1546KFboHTa29g]], channel=Cached Rabbit Channel: AMQChannel(amqp://Lyon@127.0.0.1:5672/,1), conn: Proxy@75559cd9 Shared Rabbit Connection: SimpleConnection@7a689979 [delegate=amqp://Lyon@127.0.0.1:5672/, localPort= 64538], acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:24:13.361 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:24:15.423 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:24:22.584 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@5c1ce152: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:24:22.586 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:24:24.627 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:24:31.817 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@699dc56f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:24:31.819 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:24:33.857 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:24:41.040 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@4e53993c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:24:41.042 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:24:43.091 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:24:50.283 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@3a523a1f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:24:50.286 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:24:52.320 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:24:59.506 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@68e57d63: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:24:59.508 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:25:01.534 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:25:08.713 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@55a90134: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:25:08.715 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:25:10.745 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:25:17.930 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@7e6ac66b: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:25:17.931 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:25:19.975 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:25:27.172 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@61edc99e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:25:27.174 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-10] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:25:29.203 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-10] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:25:29.740 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-10] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#35554635:18/SimpleConnection@5b884139 [delegate=amqp://Lyon@127.0.0.1:5672/, localPort= 49217]
+2021-03-08 17:45:57.275 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-10] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@18ef3a96: tags=[[amq.ctag-1QFuS62POD3FZQIsPBsp4Q]], channel=Cached Rabbit Channel: AMQChannel(amqp://Lyon@127.0.0.1:5672/,1), conn: Proxy@75559cd9 Shared Rabbit Connection: SimpleConnection@5b884139 [delegate=amqp://Lyon@127.0.0.1:5672/, localPort= 49217], acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:45:57.281 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-11] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:45:59.318 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-11] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:06.469 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-11] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@1ab54b02: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:46:06.470 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-12] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:08.506 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-12] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:15.665 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-12] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@20177f9d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:46:15.668 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:17.697 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:24.883 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@767bb685: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:46:24.885 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-14] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:26.922 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-14] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:34.096 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-14] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@cf9f8e9: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:46:34.097 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-15] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:36.133 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-15] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:43.273 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-15] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@4c587ac7: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:46:43.275 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-16] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:45.308 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-16] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:52.465 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-16] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@1dc3c8c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:46:52.467 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-17] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:54.502 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-17] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:46:56.026 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-17] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#35554635:32/SimpleConnection@3b9a7adc [delegate=amqp://Lyon@127.0.0.1:5672/, localPort= 49629]
+2021-03-08 17:47:03.094 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-17] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@70bbbabb: tags=[[amq.ctag-O4Pjg8joh-D-ziciSgyA_w]], channel=Cached Rabbit Channel: AMQChannel(amqp://Lyon@127.0.0.1:5672/,1), conn: Proxy@75559cd9 Shared Rabbit Connection: SimpleConnection@3b9a7adc [delegate=amqp://Lyon@127.0.0.1:5672/, localPort= 49629], acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:47:03.099 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-18] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:47:05.136 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-18] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:47:12.312 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-18] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@7aa770e7: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:47:12.314 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-19] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:47:14.342 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-19] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:47:21.514 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-19] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@53aa459e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:47:21.516 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-20] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:47:23.556 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-20] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:47:30.734 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-20] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@49ab946a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:47:30.736 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-21] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:47:32.771 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-21] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:47:39.987 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-21] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@55c95c99: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:47:39.990 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-22] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:47:42.022 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-22] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:47:49.227 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-22] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@5c5adc63: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:47:49.229 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-23] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:47:51.262 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-23] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:47:58.474 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-23] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@3008b924: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:47:58.478 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-24] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:48:00.509 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-24] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:48:07.726 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-24] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@20830d02: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:48:07.729 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-25] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:48:09.768 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-25] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:48:16.978 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-25] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@5d0062c1: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-03-08 17:48:16.980 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-26] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:48:19.033 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-26] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2021-03-08 17:48:19.549 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-26] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#35554635:50/SimpleConnection@63447a2f [delegate=amqp://Lyon@127.0.0.1:5672/, localPort= 49680]

@@ -30,7 +30,7 @@ import java.util.UUID;
 @RequestMapping(value = "/xiyao")
 public class XiYaoPersonController {
 
-    Logger logger= LoggerFactory.getLogger(UserController.class);
+    Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired(required = true)
     private IXiYaoPersonService xiYaoPersonService;

@@ -15,7 +15,7 @@ public interface IXiYaoPersonService {
     //查询所有
     List<XiYaoPerson> selectAllXiYaoPerson();
 
-     //修改
+    //修改
     Boolean updateXiYaoPersonByID(XiYaoPerson xiYaoPerson);
 
     //新增

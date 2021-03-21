@@ -24,13 +24,13 @@
         select *
         from user
         where username = #{userName}
-          and userpassword = #{userPassword}
+        and userpassword = #{userPassword}
     </select>
     <!--新增user   register-->
     <insert id="register" parameterType="com.yang.test.po.User">
         insert into user (id, username, userpassword, gender, phone, address, realname, identitycard, registerdate,role)
         values (#{id}, #{userName}, #{userPassword}, #{gender}, #{phone}, #{address}, #{realName}, #{identityCard},
-                #{registerDate},#{role})
+        #{registerDate},#{role})
     </insert>
     <!--删除-->
     <delete id="deleteUser" parameterType="java.lang.String">
@@ -38,7 +38,6 @@
         from user
         where id = #{id}
     </delete>
-
 
 
 </mapper>

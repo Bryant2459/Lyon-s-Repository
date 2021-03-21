@@ -21,6 +21,7 @@ public class OilRecord implements Comparable<OilRecord> {
     private String recordFirstDate;
     private String recordLastUpdateDate;
     private String operator;
+
     @Override
     public int compareTo(OilRecord o) {
 

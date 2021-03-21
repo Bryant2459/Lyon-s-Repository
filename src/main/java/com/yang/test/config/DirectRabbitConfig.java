@@ -28,14 +28,14 @@ public class DirectRabbitConfig {
 
         //一般设置一下队列的持久化就好,其余两个就是默认false
         logger.info("Consumer -----> A new queue is generated : Lyon Direct Queue");
-        return new Queue("Lyon Direct Queue",true);
+        return new Queue("Lyon Direct Queue", true);
     }
 
     //Direct交换机 起名：TestDirectExchange
     @Bean
     DirectExchange DirectExchange() {
         logger.info("Consumer---> A new Direct Exchange is generated : Lyon Direct Exchange");
-        return new DirectExchange("Lyon Direct Exchange",true,false);
+        return new DirectExchange("Lyon Direct Exchange", true, false);
     }
 
     //绑定  将队列和交换机绑定, 并设置用于匹配键：TestDirectRouting
@@ -46,13 +46,11 @@ public class DirectRabbitConfig {
     }
 
 
-
     @Bean
     DirectExchange lonelyDirectExchange() {
         logger.info("Consumer --->A new lonely Exchange is generated : lonely Direct Exchange ");
         return new DirectExchange("lonely Direct Exchange");
     }
-
 
 
 }

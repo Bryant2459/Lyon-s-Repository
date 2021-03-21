@@ -18,7 +18,7 @@ public interface ILifeRecordService {
     //根据分类id
     List<LifeRecord> selectLifeRecordByCategoryID(Integer categoryId);
 
-     //修改
+    //修改
     Boolean updateLifeRecordByID(LifeRecord lifeRecord);
 
     //新增

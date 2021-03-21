@@ -16,7 +16,7 @@ import java.util.List;
 public interface PrintIncomeMapper {
 
     //查询所有
-   // @Select("select * from printincome")
+    // @Select("select * from printincome")
     List<PrintIncome> selectAllRecords();
 
     //按照ID 修改记录

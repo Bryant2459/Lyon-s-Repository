@@ -15,7 +15,7 @@ public interface IOilRecordService {
     //查询所有
     List<OilRecord> selectAllOilRecords();
 
-     //修改
+    //修改
     Boolean updateOilRecordByID(OilRecord oilRecord);
 
     //新增

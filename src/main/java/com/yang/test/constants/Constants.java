@@ -60,7 +60,6 @@ public interface Constants {
     public static final String UPLOAD_FAILED_MESSAGE = "上传失败";
 
 
-
     public static final int LIFE_RECORD_SUPERMARKET = 1;
     public static final int LIFE_RECORD_SALARY = 2;
     public static final int LIFE_RECORD_ABOUT_CAR = 3;
@@ -92,8 +91,6 @@ public interface Constants {
     public static final String LIFE_RECORD_PERSON_LYON_CH = "李阳";
     public static final String LIFE_RECORD_PERSON_YUYING_CH = "党玉莹";
     public static final String LIFE_RECORD_ABOUT_OTHER_CH = "其他";
-
-
 
 
 }

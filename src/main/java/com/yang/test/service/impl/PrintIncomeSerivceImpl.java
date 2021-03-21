@@ -24,7 +24,7 @@ import java.util.List;
 @Service
 public class PrintIncomeSerivceImpl implements IPrintIncomeService {
 
-    Logger logger= LoggerFactory.getLogger(PrintIncomeSerivceImpl.class);
+    Logger logger = LoggerFactory.getLogger(PrintIncomeSerivceImpl.class);
 
     @Autowired(required = true)
     private PrintIncomeMapper printIncomeMapper;

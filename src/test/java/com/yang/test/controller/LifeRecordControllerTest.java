@@ -74,10 +74,10 @@ public class LifeRecordControllerTest {
     public void selectAllrecord() {
         String redisID = "REDISID";
         List<LifeRecord> lifeRecords = null;
-        if (lifeRecords==null) {
-            lifeRecords=lifeRecordService.selectAllLifeRecord();
-            logger.info("get record from DB :"+ JSON.toJSONString(lifeRecords));
-            redisUtils.set(redisID,lifeRecords);
+        if (lifeRecords == null) {
+            lifeRecords = lifeRecordService.selectAllLifeRecord();
+            logger.info("get record from DB :" + JSON.toJSONString(lifeRecords));
+            redisUtils.set(redisID, lifeRecords);
         }
 
 
@@ -88,7 +88,6 @@ public class LifeRecordControllerTest {
 //        for(int a =0;a<=100;a++){
 //            List<LifeRecord> lifeRecords = lifeRecordService.selectLifeRecordByCategoryID(3);
 //        }
-
 
 
         List<LifeRecord> lifeRecords = lifeRecordService.selectLifeRecordByCategoryID(3);

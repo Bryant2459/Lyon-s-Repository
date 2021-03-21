@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -26,7 +27,7 @@ import java.util.UUID;
 @RequestMapping(value = "/print")
 public class PrintController {
 
-    Logger logger= LoggerFactory.getLogger(PrintController.class);
+    Logger logger = LoggerFactory.getLogger(PrintController.class);
     // 获取.yml 文件中值
     @Value("${name}")
     private String name;

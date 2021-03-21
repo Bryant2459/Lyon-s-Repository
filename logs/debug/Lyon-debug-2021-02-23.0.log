@@ -1,0 +1,186 @@
+2021-02-23 22:50:58.624 [http-nio-8081-exec-1] DEBUG com.yang.test.mapper.UserMapper.findAllUsers - ==>  Preparing: select * from user
+2021-02-23 22:50:59.219 [http-nio-8081-exec-1] DEBUG com.yang.test.mapper.UserMapper.findAllUsers - ==> Parameters: 
+2021-02-23 22:50:59.300 [http-nio-8081-exec-1] DEBUG com.yang.test.mapper.UserMapper.findAllUsers - <==      Total: 4
+2021-02-23 22:50:59.324 [http-nio-8081-exec-1] DEBUG com.yang.test.mapper.UserMapper.login - ==>  Preparing: select * from user where username = ? and userpassword = ?
+2021-02-23 22:50:59.380 [http-nio-8081-exec-1] DEBUG com.yang.test.mapper.UserMapper.login - ==> Parameters: a(String), a(String)
+2021-02-23 22:50:59.384 [http-nio-8081-exec-1] DEBUG com.yang.test.mapper.UserMapper.login - <==      Total: 1
+2021-02-23 22:50:59.387 [http-nio-8081-exec-1] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:50:59.396 [http-nio-8081-exec-1] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 8c91dcc6-b3df-4adc-87a9-e8cc4f4b1c22(String), LOGIN(String), 2021-02-23 22:50:59(String), 李阳(String), 用户记录表(String), null
+2021-02-23 22:50:59.426 [http-nio-8081-exec-1] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:50:59.857 [http-nio-8081-exec-2] DEBUG c.y.t.mapper.OilRecordMapper.selectAllOilRecords - ==>  Preparing: select * from oil_record
+2021-02-23 22:50:59.860 [http-nio-8081-exec-2] DEBUG c.y.t.mapper.OilRecordMapper.selectAllOilRecords - ==> Parameters: 
+2021-02-23 22:50:59.906 [http-nio-8081-exec-2] DEBUG c.y.t.mapper.OilRecordMapper.selectAllOilRecords - <==      Total: 56
+2021-02-23 22:50:59.953 [http-nio-8081-exec-2] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:50:59.954 [http-nio-8081-exec-2] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 9d033464-bd63-42e0-a646-5e5784472635(String), SELECT(String), 2021-02-23 22:50:59(String), 李阳(String), 加油记录表(String), null
+2021-02-23 22:50:59.958 [http-nio-8081-exec-2] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:52:37.392 [http-nio-8081-exec-3] DEBUG com.yang.test.mapper.OilRecordMapper.addOilRecord - ==>  Preparing: insert into oil_record(id, add_oil_date, oil_volume, dashboard_mileage, cost, real_cost, oil_unit_price, real_oil_unit_price, remark, record_first_date, record_last_update_date, operator) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2021-02-23 22:52:37.399 [http-nio-8081-exec-3] DEBUG com.yang.test.mapper.OilRecordMapper.addOilRecord - ==> Parameters: 83e28dae-0b6a-4df2-9aa3-d3bda1baecb0(String), 2021-02-22 21:51:29(String), 50.64(Double), 48229(String), 318.0(Double), 257.25(Double), 6.28(Double), 5.08(Double), 正奥    60.75(String), 2021-02-23 22:52:37(String), 2021-02-23 22:52:37(String), (String)
+2021-02-23 22:52:37.405 [http-nio-8081-exec-3] DEBUG com.yang.test.mapper.OilRecordMapper.addOilRecord - <==    Updates: 1
+2021-02-23 22:52:37.407 [http-nio-8081-exec-3] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:52:37.407 [http-nio-8081-exec-3] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 09f7237d-21da-4b16-b3fb-56924767a732(String), ADD(String), 2021-02-23 22:52:37(String), 李阳(String), 加油记录表(String), 83e28dae-0b6a-4df2-9aa3-d3bda1baecb0(String)
+2021-02-23 22:52:37.412 [http-nio-8081-exec-3] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:52:37.638 [http-nio-8081-exec-4] DEBUG c.y.t.mapper.OilRecordMapper.selectAllOilRecords - ==>  Preparing: select * from oil_record
+2021-02-23 22:52:37.638 [http-nio-8081-exec-4] DEBUG c.y.t.mapper.OilRecordMapper.selectAllOilRecords - ==> Parameters: 
+2021-02-23 22:52:37.663 [http-nio-8081-exec-4] DEBUG c.y.t.mapper.OilRecordMapper.selectAllOilRecords - <==      Total: 57
+2021-02-23 22:52:37.667 [http-nio-8081-exec-4] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:52:37.668 [http-nio-8081-exec-4] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 3c9eaa48-cbfc-4469-9dfc-a29c19a36298(String), SELECT(String), 2021-02-23 22:52:37(String), 李阳(String), 加油记录表(String), null
+2021-02-23 22:52:37.675 [http-nio-8081-exec-4] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:52:41.152 [http-nio-8081-exec-5] DEBUG c.y.t.mapper.OilRecordMapper.selectAllOilRecords - ==>  Preparing: select * from oil_record
+2021-02-23 22:52:41.152 [http-nio-8081-exec-5] DEBUG c.y.t.mapper.OilRecordMapper.selectAllOilRecords - ==> Parameters: 
+2021-02-23 22:52:41.163 [http-nio-8081-exec-5] DEBUG c.y.t.mapper.OilRecordMapper.selectAllOilRecords - <==      Total: 57
+2021-02-23 22:52:41.167 [http-nio-8081-exec-5] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:52:41.168 [http-nio-8081-exec-5] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: aef6b262-fbee-478f-869a-7d21e1d3b229(String), SELECT(String), 2021-02-23 22:52:41(String), 李阳(String), 加油记录表(String), null
+2021-02-23 22:52:41.173 [http-nio-8081-exec-5] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:52:45.509 [http-nio-8081-exec-7] DEBUG com.yang.test.mapper.UserMapper.findAllUsers - ==>  Preparing: select * from user
+2021-02-23 22:52:45.510 [http-nio-8081-exec-7] DEBUG com.yang.test.mapper.UserMapper.findAllUsers - ==> Parameters: 
+2021-02-23 22:52:45.515 [http-nio-8081-exec-7] DEBUG com.yang.test.mapper.UserMapper.findAllUsers - <==      Total: 4
+2021-02-23 22:52:45.726 [http-nio-8081-exec-7] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:52:45.727 [http-nio-8081-exec-7] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 8cc7d6b7-ef39-4537-a764-db50db89f2fa(String), SELECT(String), 2021-02-23 22:52:45(String), 李阳(String), 用户记录表(String), null
+2021-02-23 22:52:45.731 [http-nio-8081-exec-7] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:52:46.270 [http-nio-8081-exec-9] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==>  Preparing: select * from record.income_expenditure_record
+2021-02-23 22:52:46.272 [http-nio-8081-exec-9] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==> Parameters: 
+2021-02-23 22:52:46.309 [http-nio-8081-exec-9] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - <==      Total: 138
+2021-02-23 22:52:46.356 [http-nio-8081-exec-9] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:52:46.357 [http-nio-8081-exec-9] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 01310934-9f65-4e5f-8a57-9c0edcdcd76e(String), SELECT(String), 2021-02-23 22:52:46(String), 李阳(String), 收支记录表(String), null
+2021-02-23 22:52:46.361 [http-nio-8081-exec-9] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:53:09.823 [http-nio-8081-exec-8] DEBUG c.yang.test.mapper.LifeRecordMapper.addLifeRecord - ==>  Preparing: insert into income_expenditure_record(id, produce_record_date, category_id, category, record_producer, money, first_add_date, last_update_date, remark, operator) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2021-02-23 22:53:09.832 [http-nio-8081-exec-8] DEBUG c.yang.test.mapper.LifeRecordMapper.addLifeRecord - ==> Parameters: c956879a-fcb8-46b8-bd75-f8f90476a768(String), 2021-02-21 20:52:51(String), 1(Integer), 超市(String), 党玉莹(String), -119.0(Double), 2021-02-23 22:53:09(String), 2021-02-23 22:53:09(String), (String), (String)
+2021-02-23 22:53:09.838 [http-nio-8081-exec-8] DEBUG c.yang.test.mapper.LifeRecordMapper.addLifeRecord - <==    Updates: 1
+2021-02-23 22:53:09.840 [http-nio-8081-exec-8] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:53:09.842 [http-nio-8081-exec-8] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: d4a9584f-8de4-4f47-b014-eea93bff0468(String), ADD(String), 2021-02-23 22:53:09(String), 李阳(String), 收支记录表(String), c956879a-fcb8-46b8-bd75-f8f90476a768(String)
+2021-02-23 22:53:09.845 [http-nio-8081-exec-8] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:53:10.080 [http-nio-8081-exec-10] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==>  Preparing: select * from record.income_expenditure_record
+2021-02-23 22:53:10.080 [http-nio-8081-exec-10] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==> Parameters: 
+2021-02-23 22:53:10.094 [http-nio-8081-exec-10] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - <==      Total: 139
+2021-02-23 22:53:10.105 [http-nio-8081-exec-10] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:53:10.106 [http-nio-8081-exec-10] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 22bb5034-d59a-462d-b50f-94fd87023640(String), SELECT(String), 2021-02-23 22:53:10(String), 李阳(String), 收支记录表(String), null
+2021-02-23 22:53:10.111 [http-nio-8081-exec-10] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:54:10.414 [http-nio-8081-exec-1] DEBUG c.yang.test.mapper.LifeRecordMapper.addLifeRecord - ==>  Preparing: insert into income_expenditure_record(id, produce_record_date, category_id, category, record_producer, money, first_add_date, last_update_date, remark, operator) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2021-02-23 22:54:10.416 [http-nio-8081-exec-1] DEBUG c.yang.test.mapper.LifeRecordMapper.addLifeRecord - ==> Parameters: 13baa86d-85c1-4054-a064-7470da4299ae(String), 2021-02-16 22:53:12(String), 5(Integer), 上课(String), 李阳(String), 200.0(Double), 2021-02-23 22:54:10(String), 2021-02-23 22:54:10(String), 张靓颖  正月初六(String), (String)
+2021-02-23 22:54:10.423 [http-nio-8081-exec-1] DEBUG c.yang.test.mapper.LifeRecordMapper.addLifeRecord - <==    Updates: 1
+2021-02-23 22:54:10.424 [http-nio-8081-exec-1] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:54:10.425 [http-nio-8081-exec-1] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: ad84ae79-7af5-46b8-add6-1525f9e3a13f(String), ADD(String), 2021-02-23 22:54:10(String), 李阳(String), 收支记录表(String), 13baa86d-85c1-4054-a064-7470da4299ae(String)
+2021-02-23 22:54:10.429 [http-nio-8081-exec-1] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:54:10.668 [http-nio-8081-exec-2] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==>  Preparing: select * from record.income_expenditure_record
+2021-02-23 22:54:10.669 [http-nio-8081-exec-2] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==> Parameters: 
+2021-02-23 22:54:10.680 [http-nio-8081-exec-2] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - <==      Total: 140
+2021-02-23 22:54:10.690 [http-nio-8081-exec-2] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:54:10.691 [http-nio-8081-exec-2] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 393b9df5-c8c4-4ac8-bfd3-9c13adc15157(String), SELECT(String), 2021-02-23 22:54:10(String), 李阳(String), 收支记录表(String), null
+2021-02-23 22:54:10.695 [http-nio-8081-exec-2] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:54:48.441 [http-nio-8081-exec-3] DEBUG c.yang.test.mapper.LifeRecordMapper.addLifeRecord - ==>  Preparing: insert into income_expenditure_record(id, produce_record_date, category_id, category, record_producer, money, first_add_date, last_update_date, remark, operator) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2021-02-23 22:54:48.442 [http-nio-8081-exec-3] DEBUG c.yang.test.mapper.LifeRecordMapper.addLifeRecord - ==> Parameters: d82a82a8-a929-4ad5-b904-1559efc816d9(String), 2021-02-21 20:54:14(String), 5(Integer), 上课(String), 李阳(String), 200.0(Double), 2021-02-23 22:54:48(String), 2021-02-23 22:54:48(String), (String), (String)
+2021-02-23 22:54:48.447 [http-nio-8081-exec-3] DEBUG c.yang.test.mapper.LifeRecordMapper.addLifeRecord - <==    Updates: 1
+2021-02-23 22:54:48.449 [http-nio-8081-exec-3] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:54:48.450 [http-nio-8081-exec-3] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: b8a4c4ce-5839-4dc9-a0bc-25ea3eed474d(String), ADD(String), 2021-02-23 22:54:48(String), 李阳(String), 收支记录表(String), d82a82a8-a929-4ad5-b904-1559efc816d9(String)
+2021-02-23 22:54:48.455 [http-nio-8081-exec-3] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:54:48.713 [http-nio-8081-exec-4] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==>  Preparing: select * from record.income_expenditure_record
+2021-02-23 22:54:48.716 [http-nio-8081-exec-4] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==> Parameters: 
+2021-02-23 22:54:48.729 [http-nio-8081-exec-4] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - <==      Total: 141
+2021-02-23 22:54:48.741 [http-nio-8081-exec-4] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:54:48.742 [http-nio-8081-exec-4] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: f779cb0d-d5ec-4873-99ed-2f0933d0da8d(String), SELECT(String), 2021-02-23 22:54:48(String), 李阳(String), 收支记录表(String), null
+2021-02-23 22:54:48.748 [http-nio-8081-exec-4] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:14.606 [http-nio-8081-exec-5] DEBUG c.yang.test.mapper.LifeRecordMapper.addLifeRecord - ==>  Preparing: insert into income_expenditure_record(id, produce_record_date, category_id, category, record_producer, money, first_add_date, last_update_date, remark, operator) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:14.607 [http-nio-8081-exec-5] DEBUG c.yang.test.mapper.LifeRecordMapper.addLifeRecord - ==> Parameters: 4c9dc07b-a4fd-4188-aeb6-b08099b028ee(String), 2021-02-23 21:54:50(String), 5(Integer), 上课(String), 李阳(String), 200.0(Double), 2021-02-23 22:55:14(String), 2021-02-23 22:55:14(String), 未结   200(String), (String)
+2021-02-23 22:55:14.612 [http-nio-8081-exec-5] DEBUG c.yang.test.mapper.LifeRecordMapper.addLifeRecord - <==    Updates: 1
+2021-02-23 22:55:14.614 [http-nio-8081-exec-5] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:14.615 [http-nio-8081-exec-5] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: db9f659e-d356-4ab5-abc3-d4e59c2ad196(String), ADD(String), 2021-02-23 22:55:14(String), 李阳(String), 收支记录表(String), 4c9dc07b-a4fd-4188-aeb6-b08099b028ee(String)
+2021-02-23 22:55:14.619 [http-nio-8081-exec-5] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:14.875 [http-nio-8081-exec-6] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==>  Preparing: select * from record.income_expenditure_record
+2021-02-23 22:55:14.875 [http-nio-8081-exec-6] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==> Parameters: 
+2021-02-23 22:55:14.892 [http-nio-8081-exec-6] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - <==      Total: 142
+2021-02-23 22:55:14.902 [http-nio-8081-exec-6] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:14.902 [http-nio-8081-exec-6] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 19365f28-05cd-4472-81e0-f82c832cd0f5(String), SELECT(String), 2021-02-23 22:55:14(String), 李阳(String), 收支记录表(String), null
+2021-02-23 22:55:14.906 [http-nio-8081-exec-6] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:20.581 [http-nio-8081-exec-7] DEBUG c.y.t.mapper.LifeRecordMapper.updateLifeRecordByID - ==>  Preparing: update income_expenditure_record set produce_record_date = ?, category_id = ?, category = ?, record_producer = ?, money = ?, last_update_date = ?, remark = ?, operator = ? where id = ?
+2021-02-23 22:55:20.589 [http-nio-8081-exec-7] DEBUG c.y.t.mapper.LifeRecordMapper.updateLifeRecordByID - ==> Parameters: 2021-02-16 22:53:12(String), 5(Integer), 上课(String), 李阳(String), 200.0(Double), 2021-02-23 22:55:20(String), 张靓颖  正月初六(String), (String), 13baa86d-85c1-4054-a064-7470da4299ae(String)
+2021-02-23 22:55:20.598 [http-nio-8081-exec-7] DEBUG c.y.t.mapper.LifeRecordMapper.updateLifeRecordByID - <==    Updates: 1
+2021-02-23 22:55:20.600 [http-nio-8081-exec-7] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:20.603 [http-nio-8081-exec-7] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: e8c1b9db-6eaa-4dbe-bf55-ca61a1b7e0f6(String), UPDATE(String), 2021-02-23 22:55:20(String), 李阳(String), 收支记录表(String), 13baa86d-85c1-4054-a064-7470da4299ae(String)
+2021-02-23 22:55:20.606 [http-nio-8081-exec-7] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:20.808 [http-nio-8081-exec-9] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==>  Preparing: select * from record.income_expenditure_record
+2021-02-23 22:55:20.808 [http-nio-8081-exec-9] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==> Parameters: 
+2021-02-23 22:55:20.816 [http-nio-8081-exec-9] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - <==      Total: 142
+2021-02-23 22:55:20.824 [http-nio-8081-exec-9] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:20.825 [http-nio-8081-exec-9] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 1fcce45a-85e5-4106-97e9-c20c2c1561e3(String), SELECT(String), 2021-02-23 22:55:20(String), 李阳(String), 收支记录表(String), null
+2021-02-23 22:55:20.828 [http-nio-8081-exec-9] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:21.255 [http-nio-8081-exec-8] DEBUG c.y.t.mapper.LifeRecordMapper.updateLifeRecordByID - ==>  Preparing: update income_expenditure_record set produce_record_date = ?, category_id = ?, category = ?, record_producer = ?, money = ?, last_update_date = ?, remark = ?, operator = ? where id = ?
+2021-02-23 22:55:21.256 [http-nio-8081-exec-8] DEBUG c.y.t.mapper.LifeRecordMapper.updateLifeRecordByID - ==> Parameters: 2021-02-21 20:52:51(String), 1(Integer), 超市(String), 党玉莹(String), -119.0(Double), 2021-02-23 22:55:21(String), 张靓颖(String), (String), c956879a-fcb8-46b8-bd75-f8f90476a768(String)
+2021-02-23 22:55:21.261 [http-nio-8081-exec-8] DEBUG c.y.t.mapper.LifeRecordMapper.updateLifeRecordByID - <==    Updates: 1
+2021-02-23 22:55:21.262 [http-nio-8081-exec-8] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:21.262 [http-nio-8081-exec-8] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 0296d58c-b998-41a8-a321-49e0ce6c59f6(String), UPDATE(String), 2021-02-23 22:55:21(String), 李阳(String), 收支记录表(String), c956879a-fcb8-46b8-bd75-f8f90476a768(String)
+2021-02-23 22:55:21.265 [http-nio-8081-exec-8] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:21.599 [http-nio-8081-exec-10] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==>  Preparing: select * from record.income_expenditure_record
+2021-02-23 22:55:21.599 [http-nio-8081-exec-10] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==> Parameters: 
+2021-02-23 22:55:21.606 [http-nio-8081-exec-10] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - <==      Total: 142
+2021-02-23 22:55:21.614 [http-nio-8081-exec-10] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:21.614 [http-nio-8081-exec-10] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 86c7e3b5-9bc7-4497-8ea7-b014e55b8933(String), SELECT(String), 2021-02-23 22:55:21(String), 李阳(String), 收支记录表(String), null
+2021-02-23 22:55:21.618 [http-nio-8081-exec-10] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:26.495 [http-nio-8081-exec-1] DEBUG c.y.t.mapper.LifeRecordMapper.updateLifeRecordByID - ==>  Preparing: update income_expenditure_record set produce_record_date = ?, category_id = ?, category = ?, record_producer = ?, money = ?, last_update_date = ?, remark = ?, operator = ? where id = ?
+2021-02-23 22:55:26.496 [http-nio-8081-exec-1] DEBUG c.y.t.mapper.LifeRecordMapper.updateLifeRecordByID - ==> Parameters: 2021-02-21 20:54:14(String), 5(Integer), 上课(String), 李阳(String), 200.0(Double), 2021-02-23 22:55:26(String), 张靓颖 done(String), (String), d82a82a8-a929-4ad5-b904-1559efc816d9(String)
+2021-02-23 22:55:26.501 [http-nio-8081-exec-1] DEBUG c.y.t.mapper.LifeRecordMapper.updateLifeRecordByID - <==    Updates: 1
+2021-02-23 22:55:26.502 [http-nio-8081-exec-1] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:26.503 [http-nio-8081-exec-1] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: db07073c-d421-4e5f-b8de-5bde11f4b7f9(String), UPDATE(String), 2021-02-23 22:55:26(String), 李阳(String), 收支记录表(String), d82a82a8-a929-4ad5-b904-1559efc816d9(String)
+2021-02-23 22:55:26.506 [http-nio-8081-exec-1] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:26.829 [http-nio-8081-exec-2] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==>  Preparing: select * from record.income_expenditure_record
+2021-02-23 22:55:26.830 [http-nio-8081-exec-2] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==> Parameters: 
+2021-02-23 22:55:26.837 [http-nio-8081-exec-2] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - <==      Total: 142
+2021-02-23 22:55:26.846 [http-nio-8081-exec-2] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:26.847 [http-nio-8081-exec-2] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 9878cdbd-5b32-424a-9bbc-a5277856e46b(String), SELECT(String), 2021-02-23 22:55:26(String), 李阳(String), 收支记录表(String), null
+2021-02-23 22:55:26.851 [http-nio-8081-exec-2] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:29.706 [http-nio-8081-exec-3] DEBUG c.y.t.mapper.LifeRecordMapper.updateLifeRecordByID - ==>  Preparing: update income_expenditure_record set produce_record_date = ?, category_id = ?, category = ?, record_producer = ?, money = ?, last_update_date = ?, remark = ?, operator = ? where id = ?
+2021-02-23 22:55:29.707 [http-nio-8081-exec-3] DEBUG c.y.t.mapper.LifeRecordMapper.updateLifeRecordByID - ==> Parameters: 2021-02-21 20:52:51(String), 1(Integer), 超市(String), 党玉莹(String), -119.0(Double), 2021-02-23 22:55:29(String), 张靓颖done(String), (String), c956879a-fcb8-46b8-bd75-f8f90476a768(String)
+2021-02-23 22:55:29.712 [http-nio-8081-exec-3] DEBUG c.y.t.mapper.LifeRecordMapper.updateLifeRecordByID - <==    Updates: 1
+2021-02-23 22:55:29.713 [http-nio-8081-exec-3] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:29.714 [http-nio-8081-exec-3] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: f03647c8-df30-4211-96e3-6c34eb1f567f(String), UPDATE(String), 2021-02-23 22:55:29(String), 李阳(String), 收支记录表(String), c956879a-fcb8-46b8-bd75-f8f90476a768(String)
+2021-02-23 22:55:29.718 [http-nio-8081-exec-3] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:29.965 [http-nio-8081-exec-4] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==>  Preparing: select * from record.income_expenditure_record
+2021-02-23 22:55:29.965 [http-nio-8081-exec-4] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==> Parameters: 
+2021-02-23 22:55:29.971 [http-nio-8081-exec-4] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - <==      Total: 142
+2021-02-23 22:55:29.979 [http-nio-8081-exec-4] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:29.979 [http-nio-8081-exec-4] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: ff05b2f6-bcd9-4980-9e10-7a8419f73929(String), SELECT(String), 2021-02-23 22:55:29(String), 李阳(String), 收支记录表(String), null
+2021-02-23 22:55:29.983 [http-nio-8081-exec-4] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:56.504 [http-nio-8081-exec-5] DEBUG com.yang.test.mapper.StudentMapper.selectStudents - ==>  Preparing: select * from record.student_record
+2021-02-23 22:55:56.506 [http-nio-8081-exec-5] DEBUG com.yang.test.mapper.StudentMapper.selectStudents - ==> Parameters: 
+2021-02-23 22:55:56.521 [http-nio-8081-exec-5] DEBUG com.yang.test.mapper.StudentMapper.selectStudents - <==      Total: 1
+2021-02-23 22:55:56.524 [http-nio-8081-exec-5] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:56.525 [http-nio-8081-exec-5] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 73e85335-c4f9-42eb-a654-657770136c4c(String), SELECT(String), 2021-02-23 22:55:56(String), 李阳(String), 学生记录表(String), null
+2021-02-23 22:55:56.529 [http-nio-8081-exec-5] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:58.417 [http-nio-8081-exec-6] DEBUG com.yang.test.mapper.UserMapper.findAllUsers - ==>  Preparing: select * from user
+2021-02-23 22:55:58.418 [http-nio-8081-exec-6] DEBUG com.yang.test.mapper.UserMapper.findAllUsers - ==> Parameters: 
+2021-02-23 22:55:58.420 [http-nio-8081-exec-6] DEBUG com.yang.test.mapper.UserMapper.findAllUsers - <==      Total: 4
+2021-02-23 22:55:58.426 [http-nio-8081-exec-6] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:58.427 [http-nio-8081-exec-6] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 6482bcc4-f4a8-4f37-8c4a-431a1dc464c7(String), SELECT(String), 2021-02-23 22:55:58(String), 李阳(String), 用户记录表(String), null
+2021-02-23 22:55:58.431 [http-nio-8081-exec-6] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:58.813 [http-nio-8081-exec-7] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==>  Preparing: select * from record.income_expenditure_record
+2021-02-23 22:55:58.813 [http-nio-8081-exec-7] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==> Parameters: 
+2021-02-23 22:55:58.830 [http-nio-8081-exec-7] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - <==      Total: 142
+2021-02-23 22:55:58.839 [http-nio-8081-exec-7] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:58.840 [http-nio-8081-exec-7] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 21134a92-d082-43af-8ac0-d574a895ce3f(String), SELECT(String), 2021-02-23 22:55:58(String), 李阳(String), 收支记录表(String), null
+2021-02-23 22:55:58.844 [http-nio-8081-exec-7] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:59.179 [http-nio-8081-exec-9] DEBUG c.y.t.m.XiYaoPersonMapper.selectAllXiYaoPerson - ==>  Preparing: select * from record.xiyao_village_person ORDER BY xiyao_village_person.headhousehold
+2021-02-23 22:55:59.183 [http-nio-8081-exec-9] DEBUG c.y.t.m.XiYaoPersonMapper.selectAllXiYaoPerson - ==> Parameters: 
+2021-02-23 22:55:59.199 [http-nio-8081-exec-9] DEBUG c.y.t.m.XiYaoPersonMapper.selectAllXiYaoPerson - <==      Total: 4
+2021-02-23 22:55:59.200 [http-nio-8081-exec-9] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:59.201 [http-nio-8081-exec-9] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: ab0ffb61-a8c2-4752-95b3-9aaf717f6352(String), SELECT(String), 2021-02-23 22:55:59(String), 李阳(String), 西姚花名册记录表(String), null
+2021-02-23 22:55:59.204 [http-nio-8081-exec-9] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:55:59.609 [http-nio-8081-exec-8] DEBUG c.y.test.mapper.PrintIncomeMapper.selectAllRecords - ==>  Preparing: select * from print_income_record
+2021-02-23 22:55:59.611 [http-nio-8081-exec-8] DEBUG c.y.test.mapper.PrintIncomeMapper.selectAllRecords - ==> Parameters: 
+2021-02-23 22:55:59.627 [http-nio-8081-exec-8] DEBUG c.y.test.mapper.PrintIncomeMapper.selectAllRecords - <==      Total: 113
+2021-02-23 22:55:59.635 [http-nio-8081-exec-8] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:55:59.636 [http-nio-8081-exec-8] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 9f1bee7c-a3c4-4002-b88e-116ef43b34a1(String), SELECT(String), 2021-02-23 22:55:59(String), 李阳(String), 打印收入记录表(String), null
+2021-02-23 22:55:59.641 [http-nio-8081-exec-8] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:56:00.318 [http-nio-8081-exec-10] DEBUG c.y.t.mapper.OilRecordMapper.selectAllOilRecords - ==>  Preparing: select * from oil_record
+2021-02-23 22:56:00.319 [http-nio-8081-exec-10] DEBUG c.y.t.mapper.OilRecordMapper.selectAllOilRecords - ==> Parameters: 
+2021-02-23 22:56:00.325 [http-nio-8081-exec-10] DEBUG c.y.t.mapper.OilRecordMapper.selectAllOilRecords - <==      Total: 57
+2021-02-23 22:56:00.328 [http-nio-8081-exec-10] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:56:00.329 [http-nio-8081-exec-10] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 0b76f7d8-8b27-44f9-a503-b36ed542cee5(String), SELECT(String), 2021-02-23 22:56:00(String), 李阳(String), 加油记录表(String), null
+2021-02-23 22:56:00.332 [http-nio-8081-exec-10] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:56:02.364 [http-nio-8081-exec-1] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:56:02.364 [http-nio-8081-exec-1] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: b7b35315-3e79-4aa6-a6af-00a1f3d9fbfe(String), SELECT(String), 2021-02-23 22:56:02(String), 李阳(String), 用户记录表(String), null
+2021-02-23 22:56:02.369 [http-nio-8081-exec-1] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1
+2021-02-23 22:56:03.530 [http-nio-8081-exec-2] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==>  Preparing: select * from record.income_expenditure_record
+2021-02-23 22:56:03.530 [http-nio-8081-exec-2] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - ==> Parameters: 
+2021-02-23 22:56:03.540 [http-nio-8081-exec-2] DEBUG c.y.t.mapper.LifeRecordMapper.selectAllLifeRecord - <==      Total: 142
+2021-02-23 22:56:03.550 [http-nio-8081-exec-2] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==>  Preparing: insert into action_record (id, action, actiontime, operator, service, recordid) values (?, ?, ?, ?, ?, ?)
+2021-02-23 22:56:03.550 [http-nio-8081-exec-2] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - ==> Parameters: 4c7cf86d-d733-4052-aada-96112134a0be(String), SELECT(String), 2021-02-23 22:56:03(String), 李阳(String), 收支记录表(String), null
+2021-02-23 22:56:03.556 [http-nio-8081-exec-2] DEBUG c.y.test.mapper.ActionRecordMapper.addActionRecord - <==    Updates: 1

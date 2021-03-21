@@ -26,7 +26,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/oil")
 public class OilController {
-    Logger logger= LoggerFactory.getLogger(OilController.class);
+    Logger logger = LoggerFactory.getLogger(OilController.class);
 
     @Autowired(required = true)
     private OilRecordSerivceImpl oilRecordSerivceImpl;
@@ -197,9 +197,9 @@ public class OilController {
         } else {
             record.setOilUnitPrice(new Double(0.0));
         }
-        if(null !=oilRecord.getRealOilUnitPrice()){
+        if (null != oilRecord.getRealOilUnitPrice()) {
             record.setRealOilUnitPrice(oilRecord.getRealOilUnitPrice());
-        }else{
+        } else {
             record.setRealOilUnitPrice(new Double(0.0));
         }
 

@@ -16,7 +16,7 @@ import java.nio.file.Path;
  * @Description:
  */
 public class Test {
-//D:\temp\Java
+    //D:\temp\Java
     private static final String QR_CODE_IMAGE_PATH = "D:/temp/Java/MyQRCode.png";
 
     private static void generateQRCodeImage(String text, int width, int height, String filePath) throws WriterException, IOException, WriterException, IOException {
@@ -29,6 +29,7 @@ public class Test {
         MatrixToImageWriter.writeToPath(bitMatrix, "PNG", path);
 
     }
+
     public static void main(String[] args) {
         try {
             generateQRCodeImage("This is my first QR Code", 350, 350, QR_CODE_IMAGE_PATH);

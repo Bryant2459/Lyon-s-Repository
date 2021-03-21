@@ -14,7 +14,7 @@ public interface IPrintIncomeService {
     //查询所有
     List<PrintIncome> findAll();
 
-     //修改
+    //修改
     Boolean updateRecordByID(PrintIncome printIncome);
 
     //新增

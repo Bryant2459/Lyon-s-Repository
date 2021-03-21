@@ -47,9 +47,9 @@
     <!--新增record-->
     <insert id="addLifeRecord" parameterType="com.yang.test.po.LifeRecord">
         insert into income_expenditure_record(id, produce_record_date, category_id, category, record_producer, money,
-                                              first_add_date, last_update_date, remark, operator)
+        first_add_date, last_update_date, remark, operator)
         values (#{id}, #{produceRecordDate}, #{categoryId}, #{category}, #{recordProducer}, #{money}, #{firstAddDate},
-                #{lastUpdateDate}, #{remark}, #{operator})
+        #{lastUpdateDate}, #{remark}, #{operator})
     </insert>
 
     <!--删除-->

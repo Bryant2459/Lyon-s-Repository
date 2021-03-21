@@ -47,7 +47,7 @@ public class LifeRecordController {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String realname = (String) session.getAttribute("realName");
         List<LifeRecord> listRecord = lifeRecordService.selectAllLifeRecord();
-        logger.info("数据库中查的"+ JSON.toJSONString(listRecord));
+        logger.info("数据库中查的" + JSON.toJSONString(listRecord));
         Response response = new Response();
         if (CollectionUtils.isEmpty(listRecord)) {
             response.setStatus(Constants.FAILED_CODE);

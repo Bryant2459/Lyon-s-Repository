@@ -15,7 +15,7 @@ public interface IUserService {
     List<User> findAllUsers();
 
     //登录
-    User login(User user) ;
+    User login(User user);
 
     //注册
     Boolean register(User user);

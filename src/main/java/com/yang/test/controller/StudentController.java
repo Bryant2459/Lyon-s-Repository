@@ -33,7 +33,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/student")
 public class StudentController {
-    Logger logger= LoggerFactory.getLogger(StudentController.class);
+    Logger logger = LoggerFactory.getLogger(StudentController.class);
 
     @Autowired(required = true)
     private IStudentService studentService;
@@ -82,7 +82,7 @@ public class StudentController {
     public Response updateStudentByID(Student student, HttpSession session) {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String realname = (String) session.getAttribute("realName");
-        Student record=new Student();
+        Student record = new Student();
         Response response = new Response();
         if (StringUtils.isNotBlank(student.getId())) {
             record.setId(student.getId());
@@ -117,7 +117,7 @@ public class StudentController {
         } else {
             record.setFirstDate(df.format(new Date()));
         }
-         record.setLastDate(df.format(new Date()));
+        record.setLastDate(df.format(new Date()));
 
         Boolean updateResult = studentService.updateStudentByID(record);
         if (!updateResult) {
@@ -149,7 +149,7 @@ public class StudentController {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String realname = (String) session.getAttribute("realName");
         Response response = new Response();
-        Student addStudent=new Student();
+        Student addStudent = new Student();
         addStudent.setId(UUID.randomUUID().toString());
         if (StringUtils.isNotBlank(student.getName())) {
             addStudent.setName(student.getName());

@@ -51,10 +51,11 @@
     <!--新增record-->
     <insert id="addScore" parameterType="com.yang.test.po.Score">
         insert into record.score_record
-         (ID,CHINESE,MATHEMATIC,ENGLISH,PHYSIC,CHEMISTRY,HISTORY,POLITICAL,SPORT,BIOLOGICAL,GEOGRAPHY,EXAMINATION_TIME,FIRST_ADD_TIME,LAST_MODIFIED_TIME,OPERATOR )
+        (ID,CHINESE,MATHEMATIC,ENGLISH,PHYSIC,CHEMISTRY,HISTORY,POLITICAL,SPORT,BIOLOGICAL,GEOGRAPHY,EXAMINATION_TIME,FIRST_ADD_TIME,LAST_MODIFIED_TIME,OPERATOR
+        )
         values (#{id}, #{chinese}, #{mathematic}, #{english}, #{physic}, #{chemistry}, #{history}, #{political},
         #{sport}, #{biological}, #{geography}, #{examinationTime}, #{firstAddTime}, #{lastModifiedTime}, #{operator}
-            )
+        )
     </insert>
 
     <!--删除-->
